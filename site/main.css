@@ -65,13 +65,6 @@ main, footer { max-width: 1200px; margin: auto; padding: 0 clamp(16px, 4vw, 40px
 .cover-cell:hover { transform: scale(1.15) rotate(0); background: var(--panel-2); }
 .cover-cell svg { width: 80%; height: auto; max-width: 56px; }
 
-/* ── stats ──────────────────────────────────────────────── */
-.stats { display: grid; grid-template-columns: repeat(5, 1fr); margin: 8px 0 0; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); overflow: hidden; }
-.stats > div { padding: 18px 20px; border-left: 1px solid var(--line); }
-.stats > div:first-child { border-left: 0; }
-.stats dt { color: var(--muted); font-size: 12px; }
-.stats dd { margin: 2px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
-.stats dd small { display: block; color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: 0; }
 
 /* ── sections ───────────────────────────────────────────── */
 .section { padding: 64px 0 0; }
@@ -131,18 +124,13 @@ code { padding: 1px 5px; border-radius: 5px; background: var(--code); font-size:
 
 
 /* ── info + download (itch.io "More information") ───────── */
-.info { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }
-.meta { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); overflow: hidden; font-size: 14px; }
-.meta th, .meta td { padding: 12px 18px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
-.meta tr:first-child th, .meta tr:first-child td { border-top: 0; }
-.meta th { width: 110px; color: var(--muted); font-weight: 500; }
-.tags { display: flex; flex-wrap: wrap; gap: 6px; }
-.meta td.tags { display: table-cell; }
-.tags span { display: inline-block; margin: 0 4px 4px 0; padding: 1px 9px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: 12px; }
-.download { position: sticky; top: 80px; display: grid; gap: 10px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
-.download h2 { margin: 0; font-size: 18px; }
-.price { margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -.03em; }
-.dl-note { margin: 0 0 4px; color: var(--muted); font-size: 12px; }
+.hero-facts { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
+.hero-facts b { color: var(--text); font-weight: 750; font-variant-numeric: tabular-nums; }
+.download-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding: 28px 30px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); }
+.download-card h2 { margin: 0 0 6px; font-size: 22px; letter-spacing: -.02em; }
+.dl-meta { margin: 0 0 4px; font-size: 14px; }
+.dl-note { margin: 0; color: var(--muted); font-size: 12.5px; }
+.dl-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* ── footer / toast ─────────────────────────────────────── */
 footer { margin-top: 72px; padding-top: 22px; padding-bottom: 32px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
@@ -155,11 +143,6 @@ footer a { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; }
   .cover { max-width: 520px; }
-  .stats { grid-template-columns: repeat(3, 1fr); }
-  .stats > div:nth-child(4) { border-left: 0; }
-  .stats > div:nth-child(n + 4) { border-top: 1px solid var(--line); }
-  .info { grid-template-columns: 1fr; }
-  .download { position: static; }
 }
 @media (max-width: 640px) {
   body { font-size: 14px; }
@@ -167,16 +150,10 @@ footer a { text-decoration: underline; text-underline-offset: 3px; }
   .bar nav { gap: 14px; font-size: 13px; }
   .search kbd { display: none; }
   .cta .btn { flex: 1 1 auto; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .stats > div { border-left: 0; border-top: 1px solid var(--line); }
-  .stats > div:nth-child(even) { border-left: 1px solid var(--line); }
-  .stats > div:nth-child(-n + 2) { border-top: 0; }
-  .stats > div:last-child { grid-column: 1 / -1; }
-  .stats dd { font-size: 24px; }
   .section { padding-top: 48px; }
   .size { margin-left: 0; }
   .features { grid-template-columns: 1fr; }
-  .meta th { width: 84px; padding-right: 8px; }
+  .dl-actions, .dl-actions .btn { flex: 1 1 auto; }
 }
 
 /* ── quick start (full guide lives in docs/) ──────────────── */

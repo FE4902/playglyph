@@ -38,19 +38,13 @@
         <a class="btn" href="./docs/" data-i18n="cta.docs">문서</a>
         <a class="btn" href="#download" data-i18n="cta.download">다운로드</a>
       </div>
+      <p class="hero-facts" data-i18n="hero.facts">아이콘 <b data-stat="icons">134</b>종 · 스타일 <b>3</b>가지 · 재질 <b data-stat="materials">10</b>가지 · 의존성 <b>0</b></p>
     </div>
     <div class="cover" aria-hidden="true">
       <div class="cover-sheet" id="cover-sheet"></div>
     </div>
   </section>
 
-  <dl class="stats" aria-label="Playglyph 요약" data-i18n-attr="aria-label=stats.aria">
-    <div><dt data-i18n="stats.icons">게임 UI 아이콘</dt><dd data-stat="icons">134</dd></div>
-    <div><dt data-i18n="stats.styles">스타일</dt><dd>3<small data-i18n="stats.stylesList">단색 · 스티커 · 도트</small></dd></div>
-    <div><dt data-i18n="stats.materials">재질 테마</dt><dd data-stat="materials">10</dd></div>
-    <div><dt data-i18n="stats.aliases">호환 이름</dt><dd data-stat="aliases">814</dd></div>
-    <div><dt data-i18n="stats.deps">의존성</dt><dd>0</dd></div>
-  </dl>
 
   <section class="section demo" aria-labelledby="comparison-title">
     <figure class="game-comparison" aria-labelledby="comparison-title">
@@ -107,13 +101,9 @@
     </div>
     <ul class="features">
       <li><i data-pg="heart" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.icons.t"><span data-stat="icons">134</span>종 게임 UI 아이콘</strong><p data-i18n="feat.icons.d">꽉 찬·반·빈·깨진 하트, 코인, 보석, 물약, 보상, 출석, 잠긴 스테이지까지. 앱 아이콘 세트에 없는 게임 화면 아이콘이 중심입니다.</p></div></li>
-      <li><i data-pg="palette" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.styles.t">단색 · 컬러 스티커 · 도트</strong><p data-i18n="feat.styles.d">모든 아이콘이 단색과 두꺼운 외곽선의 스티커로 그려져 있어요. 16×16 도트 스타일은 실험 중입니다.</p></div></li>
       <li><i data-pg="gem" data-style="sticker" data-material="arcane" data-size="36"></i><div><strong data-i18n="feat.materials.t"><span data-stat="materials">10</span>가지 재질 테마</strong><p data-i18n="feat.materials.d">wood, stone, steel, gold, bronze, silver와 빛나는 lava, poison, arcane, holy. 옵션 하나로 세트 전체를 다시 칠합니다.</p></div></li>
       <li><i data-pg="search" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.names.t">익숙한 이름 그대로</strong><p data-i18n="feat.names.d">Lucide, Font Awesome, Material 이름 <span data-stat="aliases">814</span>개가 별칭으로 통합니다. 없는 이름은 "?" 아이콘과 비슷한 이름 제안으로 처리돼 화면이 깨지지 않아요.</p></div></li>
-      <li><i data-pg="magic-wand" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.ai.t">AI 코딩 친화</strong><p data-i18n="feat.ai.d"><code>llms.txt</code>가 들어 있어 AI가 웹게임을 만들 때 이름과 사용법을 바로 찾습니다.</p></div></li>
       <li><i data-pg="joystick" data-style="sticker" data-size="36"></i><div><strong>Canvas · Phaser · Pixi</strong><p data-i18n="feat.canvas.d"><code>toImage</code>, <code>toCanvas</code>로 로딩 때 한 번 이미지로 만들고 매 프레임에는 <code>drawImage</code>만.</p></div></li>
-      <li><i data-pg="lock" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.state.t">비활성 · 잠김 상태</strong><p data-i18n="feat.state.d">스티커·도트 아이콘은 <code>state: 'disabled' | 'locked'</code>로 잠긴 스테이지, 비활성 버튼을 따로 그리지 않아도 됩니다.</p></div></li>
-      <li><i data-pg="zap" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.deps.t">의존성 없음</strong><p data-i18n="feat.deps.d">ES 모듈은 트리셰이킹되고, HTML 한 파일에는 스크립트 하나면 끝. React는 선택입니다.</p></div></li>
     </ul>
   </section>
 
@@ -132,27 +122,18 @@
     <p class="quick-more"><a class="btn" href="./docs/" data-i18n="start.more">ES 모듈 · React · Canvas · AI 사용법은 문서에서 →</a></p>
   </section>
 
-  <section class="section info" id="download" aria-labelledby="info-title">
-    <div>
-      <div class="section-head"><h2 id="info-title" data-i18n="info.title">정보</h2></div>
-      <table class="meta">
-        <tbody>
-          <tr><th scope="row" data-i18n="info.version">버전</th><td data-i18n="info.versionValue">v<span data-version>0.1.0</span> · 2026년 11월</td></tr>
-          <tr><th scope="row" data-i18n="info.license">라이선스</th><td data-i18n="info.licenseValue">ISC — 상업용 게임에도 무료. 저작권 표시만 남겨 주세요.</td></tr>
-          <tr><th scope="row" data-i18n="info.styles">스타일</th><td data-i18n="info.stylesValue">단색(24×24), 컬러 스티커(24×24), 도트(16×16, 실험)</td></tr>
-          <tr><th scope="row" data-i18n="info.formats">형식</th><td data-i18n="info.formatsValue">SVG · ES 모듈 · 전역 스크립트 · React · SVG 스프라이트 · Canvas</td></tr>
-          <tr><th scope="row" data-i18n="info.categories">카테고리</th><td id="meta-cats">—</td></tr>
-          <tr><th scope="row" data-i18n="info.tags">태그</th><td class="tags"><span>game-ui</span><span>hud</span><span>icons</span><span>svg</span><span>web-game</span><span>phaser</span><span>pixi</span><span>react</span></td></tr>
-        </tbody>
-      </table>
+  <section class="section" id="download" aria-labelledby="dl-title">
+    <div class="download-card">
+      <div>
+        <h2 id="dl-title" data-i18n="dl.title">무료로 받기</h2>
+        <p class="dl-meta" data-i18n="dl.meta">v<span data-version>0.1.0</span> · ISC 라이선스 — 상업용 게임에도 무료예요. 저작권 표시만 남겨 주세요.</p>
+        <p class="dl-note" data-i18n="dl.note">SVG 원본, ES 모듈, 전역 스크립트, React 컴포넌트, 스프라이트, llms.txt</p>
+      </div>
+      <div class="dl-actions">
+        <a class="btn primary" id="dl-zip" href="./playglyph-0.1.0.zip" download><span data-i18n="dl.button">playglyph-<span data-version>0.1.0</span>.zip 받기</span></a>
+        <a class="btn" href="https://github.com/FE4902/playglyph" data-i18n="dl.github">GitHub에서 보기</a>
+      </div>
     </div>
-    <aside class="download" aria-labelledby="dl-title">
-      <h2 id="dl-title" data-i18n="dl.title">다운로드</h2>
-      <p class="price" data-i18n="dl.price">무료</p>
-      <a class="btn primary wide" id="dl-zip" href="./playglyph-0.1.0.zip" download><span data-i18n="dl.button">playglyph-<span data-version>0.1.0</span>.zip 받기</span></a>
-      <p class="dl-note" data-i18n="dl.note">SVG 원본, ES 모듈, 전역 스크립트, React 컴포넌트, 스프라이트, llms.txt</p>
-      <a class="btn wide" href="https://github.com/FE4902/playglyph" data-i18n="dl.github">GitHub에서 보기</a>
-    </aside>
   </section>
 </main>
 
