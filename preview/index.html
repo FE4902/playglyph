@@ -91,29 +91,33 @@
 <body>
 <header>
   <div class="bar">
-    <a class="brand" href="../" style="color:inherit;text-decoration:none" aria-label="Playglyph 메인"><i data-pg="gamepad"></i> Playglyph <small id="ver"></small></a>
+    <a class="brand" href="../" style="color:inherit;text-decoration:none" aria-label="Playglyph 메인" data-i18n-aria="home"><i data-pg="gamepad"></i> Playglyph <small id="ver"></small></a>
+    <div class="seg" id="lang" role="group" aria-label="언어" data-i18n-aria="language">
+      <button type="button" data-lang="ko" aria-pressed="true">KO</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
     <button id="theme" type="button">Light</button>
   </div>
 </header>
 <main>
   <section class="catalog" id="catalog" aria-labelledby="catalog-title">
     <div class="catalog-title">
-      <h2 id="catalog-title">아이콘 갤러리</h2>
+      <h2 id="catalog-title" data-i18n="galleryTitle">아이콘 갤러리</h2>
       <span class="count" id="count" role="status"></span>
     </div>
     <div class="filters">
       <div class="toolbar">
-        <input id="q" type="search" aria-label="아이콘 검색" placeholder="이름, 별칭, 한글로 검색" autocomplete="off" />
+        <input id="q" type="search" aria-label="아이콘 검색" data-i18n-aria="searchLabel" placeholder="이름, 별칭, 한글로 검색" data-i18n-placeholder="searchPlaceholder" autocomplete="off" />
         <div class="options">
-          <div class="seg" id="style" role="group" aria-label="아이콘 스타일">
-            <button data-v="sticker" aria-pressed="true">컬러</button>
-            <button data-v="filled" aria-pressed="false">단색</button>
+          <div class="seg" id="style" role="group" aria-label="아이콘 스타일" data-i18n-aria="styleLabel">
+            <button data-v="sticker" aria-pressed="true" data-i18n="styleColor">컬러</button>
+            <button data-v="filled" aria-pressed="false" data-i18n="styleMono">단색</button>
           </div>
-          <label class="ctl">재질 <select id="material"><option value="">기본</option></select></label>
-          <label class="ctl">크기 <input id="size" type="range" min="16" max="64" step="8" value="32" /><output id="sizeOut">32</output></label>
+          <label class="ctl"><span data-i18n="material">재질</span> <select id="material"><option value="" data-i18n="materialDefault">기본</option></select></label>
+          <label class="ctl"><span data-i18n="size">크기</span> <input id="size" type="range" min="16" max="64" step="8" value="32" /><output id="sizeOut">32</output></label>
         </div>
       </div>
-      <div class="chips" id="chips" role="group" aria-label="카테고리"></div>
+      <div class="chips" id="chips" role="group" aria-label="카테고리" data-i18n-aria="categories"></div>
     </div>
     <div class="grid" id="grid"></div>
   </section>
@@ -127,14 +131,14 @@
         <h2 id="dName"></h2>
         <p class="desc" id="dDesc"></p>
       </div>
-      <div><div class="sec">이름 · 별칭 · 태그</div><div class="tags" id="dTags"></div></div>
-      <div><div class="sec">재질</div><div class="mats" id="dMats"></div></div>
-      <div><div class="sec">사용법</div><pre id="dCode"></pre></div>
+      <div><div class="sec" data-i18n="secTags">이름 · 별칭 · 태그</div><div class="tags" id="dTags"></div></div>
+      <div><div class="sec" data-i18n="material">재질</div><div class="mats" id="dMats"></div></div>
+      <div><div class="sec" data-i18n="secUsage">사용법</div><pre id="dCode"></pre></div>
       <div class="row">
-        <button data-copy="svg">SVG 복사</button>
-        <button data-copy="html">HTML 복사</button>
-        <button data-copy="name">이름 복사</button>
-        <button id="close" style="margin-left:auto">닫기</button>
+        <button data-copy="svg" data-i18n="copySvg">SVG 복사</button>
+        <button data-copy="html" data-i18n="copyHtml">HTML 복사</button>
+        <button data-copy="name" data-i18n="copyName">이름 복사</button>
+        <button id="close" style="margin-left:auto" data-i18n="close">닫기</button>
       </div>
     </div>
   </div>
@@ -147,19 +151,63 @@
 
   const meta = await fetch('../dist/meta.json').then((r) => r.json());
   const $ = (id) => document.getElementById(id);
-  const CATS = { all: '전체', system: '시스템', control: '진행 제어', menu: '메뉴', currency: '재화·보상', hud: '상태·HUD', combat: '전투·행동', social: '소셜', input: '입력', misc: '기타' };
+  const CATS = ['all', 'system', 'control', 'menu', 'currency', 'hud', 'combat', 'social', 'input', 'misc'];
+  const I18N = {
+    ko: {
+      pageTitle: '아이콘 갤러리 — Playglyph', home: 'Playglyph 메인', language: '언어',
+      galleryTitle: '아이콘 갤러리', count: '{n}종',
+      searchLabel: '아이콘 검색', searchPlaceholder: '이름, 별칭, 한글로 검색',
+      styleLabel: '아이콘 스타일', styleColor: '컬러', styleMono: '단색',
+      material: '재질', materialDefault: '기본', size: '크기', categories: '카테고리',
+      legacyNote: '흐린 아이콘은 이전 스타일', legacyBadge: '이전',
+      secTags: '이름 · 별칭 · 태그', secUsage: '사용법',
+      copySvg: 'SVG 복사', copyHtml: 'HTML 복사', copyName: '이름 복사', close: '닫기', copied: '복사됨',
+      codeHtml: 'HTML 한 파일', codeEsm: 'ES 모듈', codeAliases: '별칭도 됨',
+      'cat.all': '전체', 'cat.system': '시스템', 'cat.control': '진행 제어', 'cat.menu': '메뉴', 'cat.currency': '재화·보상',
+      'cat.hud': '상태·HUD', 'cat.combat': '전투·행동', 'cat.social': '소셜', 'cat.input': '입력', 'cat.misc': '기타',
+    },
+    en: {
+      pageTitle: 'Icon gallery — Playglyph', home: 'Playglyph home', language: 'Language',
+      galleryTitle: 'Icon gallery', count: '{n} icons',
+      searchLabel: 'Search icons', searchPlaceholder: 'Search by name or alias — heart, coin, settings',
+      styleLabel: 'Icon style', styleColor: 'Color', styleMono: 'Solid',
+      material: 'Material', materialDefault: 'Default', size: 'Size', categories: 'Categories',
+      legacyNote: 'faded icons use the old style', legacyBadge: 'Old',
+      secTags: 'Name · aliases · tags', secUsage: 'Usage',
+      copySvg: 'Copy SVG', copyHtml: 'Copy HTML', copyName: 'Copy name', close: 'Close', copied: 'Copied',
+      codeHtml: 'Plain HTML', codeEsm: 'ES module', codeAliases: 'Aliases work too',
+      'cat.all': 'All', 'cat.system': 'System', 'cat.control': 'Flow control', 'cat.menu': 'Menu', 'cat.currency': 'Currency & rewards',
+      'cat.hud': 'Status & HUD', 'cat.combat': 'Combat & actions', 'cat.social': 'Social', 'cat.input': 'Input', 'cat.misc': 'Misc',
+    },
+  };
+  const LANGS = ['ko', 'en'];
+  const store = {
+    get: () => { try { return localStorage.getItem('pg-lang'); } catch { return null; } },
+    set: (v) => { try { localStorage.setItem('pg-lang', v); } catch {} },
+  };
+  const resolveLang = () => {
+    const fromUrl = new URLSearchParams(location.search).get('lang');
+    if (LANGS.includes(fromUrl)) { store.set(fromUrl); return fromUrl; }
+    const saved = store.get();
+    if (LANGS.includes(saved)) return saved;
+    return (navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
+  };
+  let lang = resolveLang();
+  const t = (key, vars = {}) => (I18N[lang][key] ?? I18N.ko[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
   const state = { q: '', cat: 'all', style: 'sticker', material: '', size: 32 };
 
   createIcons();
-  $('ver').textContent = `${meta.length}종`;
   for (const m of Object.keys(materials)) $('material').append(new Option(m, m));
 
   const counts = meta.reduce((acc, m) => ((acc[m.category] = (acc[m.category] ?? 0) + 1), acc), {});
-  for (const [c, label] of Object.entries(CATS)) {
+  for (const c of CATS) {
     if (c !== 'all' && !counts[c]) continue;
     const b = document.createElement('button');
     b.className = 'chip';
-    b.innerHTML = `${label}<span>${c === 'all' ? meta.length : counts[c]}</span>`;
+    b.dataset.i18n = `cat.${c}`;
+    b.append(document.createElement('b'), document.createElement('span'));
+    b.firstChild.style.fontWeight = 'inherit';
+    b.lastChild.textContent = c === 'all' ? meta.length : counts[c];
     b.setAttribute('aria-pressed', c === 'all');
     b.onclick = () => { state.cat = c; [...$('chips').children].forEach((x) => x.setAttribute('aria-pressed', x === b)); render(); };
     $('chips').append(b);
@@ -183,13 +231,13 @@
     const list = meta.filter((m) => (state.cat === 'all' || m.category === state.cat) && matches(m, q));
     // new art first
     list.sort((a, b) => Number(isLegacy(a)) - Number(isLegacy(b)));
-    const legacyNote = list.some(isLegacy) ? ' · 흐린 아이콘은 이전 스타일' : '';
+    const legacyNote = list.some(isLegacy) ? ` · ${t('legacyNote')}` : '';
     $('count').textContent = `${list.length} / ${meta.length}${legacyNote}`;
     $('grid').replaceChildren(...list.map((m) => {
       const cell = document.createElement('button');
       cell.className = 'cell' + (isLegacy(m) ? ' dim' : '');
       cell.title = `${m.name} — ${m.description}`;
-      cell.innerHTML = render1(m) + `<span class="nm">${m.name}</span>` + (!has(m, 'filled') ? '<span class="badge">이전</span>' : '');
+      cell.innerHTML = render1(m) + `<span class="nm">${m.name}</span>` + (!has(m, 'filled') ? `<span class="badge">${t('legacyBadge')}</span>` : '');
       cell.onclick = () => open(m);
       return cell;
     }));
@@ -212,13 +260,13 @@
     const styleAttr = state.style === 'sticker' && has(m, 'sticker') ? ' data-style="sticker"' : '';
     const matAttr = state.material ? ` data-material="${state.material}"` : '';
     $('dCode').textContent =
-`<!-- HTML 한 파일 -->
+`<!-- ${t('codeHtml')} -->
 <script src="https://cdn.jsdelivr.net/npm/playglyph/dist/playglyph.js"><\/script>
 <i data-pg="${m.name}"${styleAttr}${matAttr}></i>
 
-// ES 모듈
+// ${t('codeEsm')}
 import { ${m.export} } from 'playglyph${styleAttr ? '/sticker' : ''}';
-${m.aliases.length ? `// 별칭도 됨: ${m.aliases.slice(0, 3).join(', ')}` : ''}`;
+${m.aliases.length ? `// ${t('codeAliases')}: ${m.aliases.slice(0, 3).join(', ')}` : ''}`;
     if (!$('dlg').open) $('dlg').showModal();
   }
 
@@ -230,7 +278,7 @@ ${m.aliases.length ? `// 별칭도 됨: ${m.aliases.slice(0, 3).join(', ')}` : '
       : kind === 'html' ? `<i data-pg="${m.name}"${state.style === 'sticker' && has(m, 'sticker') ? ' data-style="sticker"' : ''}${state.material ? ` data-material="${state.material}"` : ''}></i>`
       : m.name;
     await navigator.clipboard.writeText(text);
-    toast('복사됨');
+    toast(t('copied'));
   }));
 
   $('close').onclick = () => $('dlg').close();
@@ -253,7 +301,28 @@ ${m.aliases.length ? `// 별칭도 됨: ${m.aliases.slice(0, 3).join(', ')}` : '
   // The intro page's search box links here as ?q=coin
   const initialQ = new URLSearchParams(location.search).get('q');
   if (initialQ) { $('q').value = initialQ; state.q = initialQ; }
-  render();
+  function applyLang() {
+    document.documentElement.lang = lang;
+    document.title = t('pageTitle');
+    $('ver').textContent = t('count', { n: meta.length });
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const target = el.classList.contains('chip') ? el.firstChild : el;
+      target.textContent = t(el.dataset.i18n);
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => (el.placeholder = t(el.dataset.i18nPlaceholder)));
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+    [...$('lang').children].forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
+    render();
+    if ($('dlg').open && state.current) open(state.current);
+  }
+  $('lang').onclick = (e) => {
+    const v = e.target.closest('[data-lang]')?.dataset.lang;
+    if (!v || v === lang) return;
+    lang = v;
+    store.set(v);
+    applyLang();
+  };
+  applyLang();
 </script>
 </body>
 </html>

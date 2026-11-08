@@ -19,7 +19,7 @@ npm run preview
 
 - 메인 · 2D 게임 아이콘 비교: `http://127.0.0.1:5178/`
 - 갤러리: `http://127.0.0.1:5178/preview/`
-- HTML 한 파일 예제: `http://localhost:5178/examples/single-file.html`
+- 문서: `http://localhost:5178/docs/`
 - 스타일 비교 샘플: `http://localhost:5178/samples/compare.html`
 
 ## 사용법

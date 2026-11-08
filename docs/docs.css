@@ -1,0 +1,127 @@
+/* Playglyph docs page. Builds on ../site/main.css (tokens, header, tabs, code, buttons). */
+
+/* ── layout: sticky table of contents + content column ──── */
+.docs { display: grid; grid-template-columns: 196px minmax(0, 1fr); gap: 56px; align-items: start; padding-top: 40px; }
+.doc { min-width: 0; max-width: 860px; }
+/* Korean wraps at word boundaries, not mid-word */
+.doc p, .doc li, .doc td, .doc h3, .doc figcaption strong { word-break: keep-all; overflow-wrap: break-word; }
+
+.toc { position: sticky; top: 84px; max-height: calc(100vh - 104px); overflow-y: auto; font-size: 14px; }
+.toc-title { margin: 0 0 10px; color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+.toc ol { margin: 0; padding: 0; list-style: none; border-left: 1px solid var(--line); }
+.toc a { display: block; margin-left: -1px; padding: 6px 14px; border-left: 2px solid transparent; color: var(--muted); transition: color .15s, border-color .15s; }
+.toc a:hover { color: var(--text); }
+.toc a[aria-current] { border-left-color: var(--accent); color: var(--text); font-weight: 650; }
+
+/* ── page head ──────────────────────────────────────────── */
+.doc-head h1 { margin: 0; font-size: clamp(32px, 4.2vw, 46px); line-height: 1.1; letter-spacing: -.045em; }
+.doc-head .lede { max-width: 60ch; margin: 14px 0 0; }
+.doc-head .lede a, .doc p a, .tips a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── sections and prose ─────────────────────────────────── */
+.doc-section { padding-top: 64px; }
+.doc-section h2 { margin: 0 0 10px; font-size: clamp(22px, 2.6vw, 28px); letter-spacing: -.035em; }
+.doc-section h3 { margin: 32px 0 8px; font-size: 17px; letter-spacing: -.02em; }
+.doc-section > p, .doc-section .unknown p { max-width: 68ch; margin: 0 0 12px; line-height: 1.75; }
+.anchor { color: inherit; }
+.anchor:hover::after { content: " #"; color: var(--muted); font-weight: 500; }
+.note { color: var(--muted); font-size: 13px; }
+.text-link { color: var(--accent); font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+.btn-sub { color: inherit; font-size: 12px; font-weight: 500; opacity: .75; }
+
+/* standalone code blocks reuse .tabpanel so main.js gives them a copy button */
+.tabpanel.doc-code { margin: 12px 0; padding: 0; }
+.tabpanel pre code { white-space: pre; }
+.tabpanel > pre + p { margin-top: 18px; }
+
+/* ── get started ────────────────────────────────────────── */
+.ways { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin-top: 18px; }
+.way { min-width: 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.way h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 6px; }
+.way p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
+.way .btn { margin-bottom: 4px; }
+.way .tabpanel.doc-code { margin-bottom: 0; }
+.way-n { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 800; }
+
+.demo-pair { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 14px; }
+.demo-pair .tabpanel.doc-code { margin: 0; }
+.demo-pair .tabpanel pre { border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+/* a game HUD stays dark in both themes, like the screens these icons are made for */
+.demo-hud { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; padding: 18px 20px; background: radial-gradient(#ffffff10 1px, transparent 1.2px) 0 0 / 14px 14px, #1b1e2b; color: #fff; }
+.hud-group { display: inline-flex; align-items: center; gap: 4px; }
+.hud-group b { margin-left: 4px; font-size: 16px; font-variant-numeric: tabular-nums; }
+.hud-spacer { flex: 1; }
+
+/* ── tables ─────────────────────────────────────────────── */
+.table-scroll { margin: 14px 0; overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.doc-table { width: 100%; border-collapse: collapse; font-size: 13.5px; line-height: 1.6; }
+.doc-table th, .doc-table td { padding: 10px 14px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+.doc-table thead th { border-top: 0; background: var(--panel-2); color: var(--muted); font-size: 12px; font-weight: 650; }
+.doc-table tbody th { font-weight: 500; }
+.opt-table { min-width: 680px; }
+.opt-table tbody th { white-space: nowrap; }
+.opt-table tbody th code { display: block; width: max-content; }
+.opt-table code.attr { margin-top: 3px; padding: 0; background: none; color: var(--muted); font-size: 12px; }
+.opt-table td:nth-child(3) { color: var(--muted); white-space: nowrap; }
+.alias-table td:last-child { white-space: nowrap; }
+.alias-table td svg { margin-right: 8px; vertical-align: -6px; }
+
+/* ── option examples ────────────────────────────────────── */
+.examples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.examples + .note { margin-top: 12px; }
+.ex { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.ex-view { display: grid; place-items: center; height: 96px; background: radial-gradient(var(--grid-dot) 1px, transparent 1.2px) 0 0 / 12px 12px, var(--panel-2); color: var(--text); }
+.ex-view.ex-light { background: radial-gradient(#15182114 1px, transparent 1.2px) 0 0 / 12px 12px, #cfd2db; }
+.ex-view.ex-dark { background: radial-gradient(#ffffff10 1px, transparent 1.2px) 0 0 / 12px 12px, #1b1e2b; }
+.ex figcaption { display: grid; gap: 2px; padding: 10px 12px; border-top: 1px solid var(--line); font-size: 12px; }
+.ex figcaption strong { font-size: 13px; }
+.ex figcaption code { padding: 0; background: none; color: var(--muted); font-size: 11.5px; overflow-wrap: anywhere; }
+
+/* ── styles ─────────────────────────────────────────────── */
+.style-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 16px; }
+.style-card { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); }
+.style-card h3 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; padding: 14px 18px 4px; font-size: 16px; }
+.style-card p { margin: 0; padding: 0 18px 16px; color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+.style-view { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 22px 12px; border-bottom: 1px solid var(--line); background: radial-gradient(var(--grid-dot) 1px, transparent 1.2px) 0 0 / 12px 12px, var(--panel-2); color: var(--text); }
+
+.pixel-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 8px; margin: 14px 0; padding: 0; list-style: none; }
+.pixel-list li { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+.pixel-list code { padding: 0; background: none; color: var(--muted); font-size: 11.5px; }
+
+/* ── materials ──────────────────────────────────────────── */
+.materials { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; margin: 16px 0 6px; padding: 0; list-style: none; }
+.mat { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px 12px 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.mat > svg { margin-bottom: 4px; }
+.mat code { padding: 0; background: none; font-size: 13px; font-weight: 650; }
+.mat-group { color: var(--muted); font-size: 11.5px; }
+.mat-group.glow { color: var(--accent); }
+.tones { display: flex; width: 100%; height: 8px; margin-top: 4px; overflow: hidden; border-radius: 99px; box-shadow: inset 0 0 0 1px #0002; }
+.tones b { flex: 1; }
+.tips { margin: 14px 0 0; padding-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.tips li + li { margin-top: 4px; }
+
+/* ── names ──────────────────────────────────────────────── */
+.unknown { display: flex; align-items: center; gap: 18px; margin: 4px 0 4px; }
+.unknown .ex-view { flex-shrink: 0; width: 96px; height: 80px; border: 1px solid var(--line); border-radius: 12px; }
+.unknown p { margin: 0; }
+
+/* ── responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .docs { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 0; }
+  /* the table of contents turns into a horizontal strip of links */
+  .toc { position: static; max-height: none; margin: 0 calc(-1 * clamp(16px, 4vw, 40px)); padding: 0 clamp(16px, 4vw, 40px); overflow-x: auto; overflow-y: hidden; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+  .toc::-webkit-scrollbar { display: none; }
+  .toc-title { display: none; }
+  .toc ol { display: flex; gap: 4px; width: max-content; border-left: 0; }
+  .toc a { margin: 0 0 -1px; padding: 12px 10px 10px; border-left: 0; border-bottom: 2px solid transparent; white-space: nowrap; }
+  .toc a[aria-current] { border-bottom-color: var(--accent); }
+  .doc { max-width: none; padding-top: 32px; }
+}
+@media (max-width: 640px) {
+  .doc-section { padding-top: 48px; }
+  .way { padding: 16px; }
+  .demo-hud { gap: 10px 16px; padding: 14px 16px; }
+  .examples { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ex figcaption code { font-size: 10.5px; }
+  .unknown { align-items: flex-start; }
+}

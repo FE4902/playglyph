@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = Number(process.env.PORT ?? process.argv[2] ?? 5178);
-const PUBLIC_ROOTS = new Set(['index.html', 'site', 'preview', 'dist', 'examples', 'samples']);
+const PUBLIC_ROOTS = new Set(['index.html', 'site', 'preview', 'docs', 'dist', 'samples']);
 const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.css': 'text/css', '.png': 'image/png', '.jpg': 'image/jpeg', '.gif': 'image/gif' };
 
 createServer(async (req, res) => {

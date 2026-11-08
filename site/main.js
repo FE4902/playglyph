@@ -6,6 +6,9 @@ const VERSION = '0.1.0';
 // Switch to `https://cdn.jsdelivr.net/npm/playglyph@${VERSION}/dist` after the npm release.
 const CDN = 'https://fe4902.github.io/playglyph/dist';
 
+// site/i18n.js (a classic script) runs first and holds the Korean/English strings.
+const t = (key, vars) => (window.pgI18n ? window.pgI18n.t(key, vars) : key);
+
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
@@ -38,7 +41,7 @@ async function copyText(text, msg) {
     showToast(msg);
   } catch (e) {
     console.warn('[site] clipboard:', e);
-    showToast('복사하지 못했어요');
+    showToast(t('toast.copyFailed'));
   }
 }
 
@@ -51,12 +54,14 @@ safe('theme', () => {
     root.dataset.theme = theme;
     if (!btn) return;
     const isLight = theme === 'light';
-    btn.textContent = isLight ? 'Dark' : 'Light';
-    btn.setAttribute('aria-label', isLight ? '어두운 테마로 전환' : '밝은 테마로 전환');
+    // Both icons live in the button; CSS shows the one for the theme a click switches to.
+    const label = t(isLight ? 'theme.toDark' : 'theme.toLight');
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
   };
   let saved = null;
   try { saved = localStorage.getItem('pg-theme'); } catch {}
-  if (saved === 'light' || saved === 'dark') apply(saved);
+  apply(saved === 'light' ? 'light' : 'dark');
   btn?.addEventListener('click', () => {
     const next = root.dataset.theme !== 'light' ? 'light' : 'dark';
     apply(next);
@@ -73,8 +78,8 @@ safe('search shortcut', () => {
   if (!input) return;
   document.addEventListener('keydown', (e) => {
     if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return;
-    const t = e.target;
-    if (t instanceof HTMLElement && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+    const el = e.target;
+    if (el instanceof HTMLElement && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
     e.preventDefault();
     input.focus();
   });
@@ -116,11 +121,11 @@ safe('copy buttons', () => {
     const btn = document.createElement('button');
     btn.className = 'copy';
     btn.type = 'button';
-    btn.setAttribute('aria-label', '코드 복사');
-    btn.textContent = '복사';
+    btn.setAttribute('aria-label', t('copy.aria'));
+    btn.textContent = t('copy.button');
     btn.addEventListener('click', () => {
       const code = pre.querySelector('code');
-      copyText(code ? code.textContent : pre.textContent.replace(/복사$/, ''), '복사됨');
+      copyText(code ? code.textContent : pre.textContent.slice(0, -btn.textContent.length), t('toast.copied'));
     });
     pre.append(btn);
   }
@@ -179,7 +184,7 @@ if (lib) {
     };
 
     if (matGroup) {
-      const opts = [[null, '기본', null], ...Object.keys(materials).map((k) => [k, k, materials[k].tones[2]])];
+      const opts = [[null, t('pg.default'), null], ...Object.keys(materials).map((k) => [k, k, materials[k].tones[2]])];
       matGroup.innerHTML = opts.map(([k, label, color]) =>
         `<button type="button" class="swatch" data-m="${escapeHtml(k ?? '')}" aria-pressed="${k === state.material}" title="${escapeHtml(label)}">` +
         `${color ? `<span class="dot" style="background:${escapeHtml(color)}"></span>` : '<span class="dot dot-none"></span>'}${escapeHtml(label)}</button>`).join('');
@@ -212,7 +217,7 @@ if (lib) {
       const size = renderSize();
       if (sizeOut) sizeOut.textContent = String(size);
       if (note) note.textContent = state.style === 'pixel'
-        ? '도트 스타일은 실험 중이라 16종만 있어요. 16×16 도안이라 16·32·48px처럼 정수 배율에서 또렷합니다.'
+        ? t('pg.pixelNote', { n: PIXEL.length })
         : '';
       const list = state.style === 'pixel' ? PIXEL : LIST;
       const opts = { style: state.style, size, ...(state.material ? { material: state.material } : {}) };
@@ -230,7 +235,7 @@ if (lib) {
       const { style, material } = state;
       const size = renderSize();
       const snippet = `<i data-pg="${name}"${style !== 'filled' ? ` data-style="${style}"` : ''}${material ? ` data-material="${material}"` : ''}${size !== 24 ? ` data-size="${size}"` : ''}></i>`;
-      copyText(snippet, `복사됨 — ${name}`);
+      copyText(snippet, t('toast.copiedName', { name }));
     });
 
     render();
@@ -249,10 +254,8 @@ try {
   console.error('[site] could not load dist/meta.json:', e);
 }
 
-const CATEGORIES = [
-  ['hud', '상태·HUD'], ['currency', '재화·보상'], ['combat', '전투·행동'], ['menu', '메뉴'], ['system', '시스템'],
-  ['control', '진행 제어'], ['input', '입력'], ['social', '소셜'], ['misc', '기타'],
-];
+const CATEGORIES = ['hud', 'currency', 'combat', 'menu', 'system', 'control', 'input', 'social', 'misc']
+  .map((id) => [id, t(`cat.${id}`)]);
 
 function groupByCategory(list) {
   const labels = new Map(CATEGORIES);
@@ -273,27 +276,11 @@ if (meta) {
     for (const el of $$('[data-stat="aliases"]')) el.textContent = fmt(aliasCount);
     if (lib) for (const el of $$('[data-stat="materials"]')) el.textContent = fmt(Object.keys(lib.materials).length);
     const input = $('form.search input[name="q"]');
-    if (input) input.placeholder = `${meta.length}개 아이콘 검색 — heart, 코인, 설정`;
+    if (input) input.placeholder = t('search.placeholder', { n: meta.length });
   });
 
   safe('meta categories', () => {
     const el = document.getElementById('meta-cats');
     if (el) el.textContent = groupByCategory(meta).map((g) => `${g.label} ${g.items.length}`).join(' · ');
-  });
-
-  if (lib) safe('catalog', () => {
-    const root = document.getElementById('catalog');
-    if (!root) return;
-    const sticker = (n, size) => {
-      try { return lib.icon(n, { style: 'sticker', size }); } catch { return ''; }
-    };
-    root.innerHTML = groupByCategory(meta).map((g, i) => {
-      const preview = g.items.slice(0, 6).map((m) => sticker(m.name, 20)).join('');
-      const cells = g.items.map((m) =>
-        `<li><a href="./preview/?q=${encodeURIComponent(m.name)}" title="${escapeHtml(m.description)}">${sticker(m.name, 32)}<span>${escapeHtml(m.name)}</span></a></li>`).join('');
-      return `<details class="cat"${i === 0 ? ' open' : ''}><summary><span class="cat-name">${escapeHtml(g.label)}</span>` +
-        `<span class="cat-count">${g.items.length}</span><span class="cat-preview">${preview}</span></summary>` +
-        `<ul class="cat-grid">${cells}</ul></details>`;
-    }).join('');
   });
 }
