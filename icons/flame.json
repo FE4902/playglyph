@@ -1,0 +1,24 @@
+{
+  "description": "Fire status effect, daily streak",
+  "aliases": [
+    "fire",
+    "burn",
+    "streak",
+    "hot",
+    "local-fire-department",
+    "whatshot",
+    "fire-alt"
+  ],
+  "tags": [
+    "damage"
+  ],
+  "tagsKo": [
+    "불",
+    "불꽃",
+    "화상",
+    "연속 기록"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

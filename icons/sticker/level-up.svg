@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="gold">
+  <path d="M2.4 12a9.6 9.6 0 1 0 19.2 0a9.6 9.6 0 1 0 -19.2 0z" fill="#3d1e10" data-fill="outline" stroke="#3d1e10" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M2.4 12a9.6 9.6 0 1 0 19.2 0a9.6 9.6 0 1 0 -19.2 0z" fill="#a3531c" data-fill="shadow"/>
+  <path d="M2.4 12a9.6 9.6 0 1 0 19.2 0a9.6 9.6 0 1 0 -19.2 0z" fill="#e39a2b" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M12 5.4L17.6 11L14.3 11L14.3 17.8L9.7 17.8L9.7 11L6.4 11z" fill="#a3531c" data-fill="shadow" transform="translate(0.1 0.5)"/>
+  <path d="M12 5.4L17.6 11L14.3 11L14.3 17.8L9.7 17.8L9.7 11L6.4 11z" fill="#fff7d6" data-fill="shine" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.86 9.4A7.6 7.6 0 0 1 7.32 6.01" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#fff7d6" data-stroke="shine"/>
+</svg>

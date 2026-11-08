@@ -1,0 +1,98 @@
+{
+  "name": "playglyph",
+  "version": "0.1.0",
+  "description": "Game UI icon library for web games: health hearts, coins, gems, rewards and HUD icons in filled and color sticker styles with material themes. Lucide/Font Awesome/Material names work as aliases; llms.txt for AI coding.",
+  "type": "module",
+  "license": "ISC",
+  "author": "FE4902",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FE4902/playglyph.git"
+  },
+  "homepage": "https://github.com/FE4902/playglyph#readme",
+  "bugs": {
+    "url": "https://github.com/FE4902/playglyph/issues"
+  },
+  "sideEffects": [
+    "./dist/playglyph.js"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./sticker": {
+      "types": "./dist/sticker.d.ts",
+      "default": "./dist/sticker.js"
+    },
+    "./line": {
+      "types": "./dist/line.d.ts",
+      "default": "./dist/line.js"
+    },
+    "./pixel": {
+      "types": "./dist/pixel.d.ts",
+      "default": "./dist/pixel.js"
+    },
+    "./materials": {
+      "types": "./dist/materials.d.ts",
+      "default": "./dist/materials.js"
+    },
+    "./lookup": {
+      "types": "./dist/lookup.d.ts",
+      "default": "./dist/lookup.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "default": "./dist/react.js"
+    },
+    "./global": "./dist/playglyph.js",
+    "./llms.txt": "./dist/llms.txt",
+    "./sprite.svg": "./dist/sprite.svg",
+    "./meta.json": "./dist/meta.json",
+    "./svg/*": "./dist/svg/*",
+    "./icons/*": "./icons/*",
+    "./pixel/*": "./pixel/*"
+  },
+  "files": [
+    "dist",
+    "icons",
+    "pixel"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check",
+    "preview": "npm run build && node scripts/serve.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "game",
+    "game-ui",
+    "game-ui-icons",
+    "game-icons",
+    "hud",
+    "hud-icons",
+    "web-game",
+    "html5-game",
+    "gamedev",
+    "canvas",
+    "phaser",
+    "pixi",
+    "react",
+    "sticker-icons",
+    "lucide-alternative",
+    "ai",
+    "llms-txt"
+  ]
+}

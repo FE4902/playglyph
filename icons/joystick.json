@@ -1,0 +1,18 @@
+{
+  "description": "Arcade or virtual joystick",
+  "aliases": [
+    "arcade",
+    "stick"
+  ],
+  "tags": [
+    "retro"
+  ],
+  "tagsKo": [
+    "조이스틱",
+    "스틱",
+    "아케이드"
+  ],
+  "categories": [
+    "input"
+  ]
+}

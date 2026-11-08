@@ -1,0 +1,18 @@
+{
+  "description": "Repeat, loop",
+  "aliases": [
+    "loop",
+    "repeat-all",
+    "cycle"
+  ],
+  "tags": [
+    "again"
+  ],
+  "tagsKo": [
+    "반복",
+    "루프"
+  ],
+  "categories": [
+    "control"
+  ]
+}

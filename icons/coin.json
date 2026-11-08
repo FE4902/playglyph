@@ -1,0 +1,26 @@
+{
+  "description": "Soft currency, gold, money",
+  "aliases": [
+    "gold",
+    "money",
+    "cash",
+    "coins",
+    "paid",
+    "monetization-on",
+    "attach-money",
+    "dollar",
+    "coins-stack"
+  ],
+  "tags": [
+    "buy"
+  ],
+  "tagsKo": [
+    "동전",
+    "코인",
+    "골드",
+    "돈"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

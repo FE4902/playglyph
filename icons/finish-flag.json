@@ -1,0 +1,26 @@
+{
+  "description": "Finish line, race end, stage clear",
+  "aliases": [
+    "finish",
+    "flag-checkered",
+    "race-end",
+    "goal-line"
+  ],
+  "tags": [
+    "race"
+  ],
+  "tagsKo": [
+    "결승",
+    "골인",
+    "완주"
+  ],
+  "categories": [
+    "hud"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "A flag hangs its cloth from the top of the pole; it is centered by its outline."
+  }
+}

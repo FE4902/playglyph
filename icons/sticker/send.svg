@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M19.94 4.06L12.8 21.54L9.79 14.21L2.46 11.2z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M19.94 4.06L12.8 21.54L9.79 14.21L2.46 11.2z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M19.94 4.06L12.8 21.54L9.79 14.21L2.46 11.2z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M17.31 6.69L10.73 13.27" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#4d5a7c" data-stroke="shadow" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.09 11.20L8.85 9.70" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

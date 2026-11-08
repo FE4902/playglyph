@@ -1,0 +1,21 @@
+{
+  "description": "Power, turn off, quit the app",
+  "aliases": [
+    "quit-app",
+    "turn-off",
+    "shutdown",
+    "power-off",
+    "power-settings-new"
+  ],
+  "tags": [
+    "on-off"
+  ],
+  "tagsKo": [
+    "전원",
+    "끄기",
+    "종료"
+  ],
+  "categories": [
+    "system"
+  ]
+}

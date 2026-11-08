@@ -1,0 +1,18 @@
+{
+  "description": "Notifications off, mute alerts",
+  "aliases": [
+    "notifications-off",
+    "mute-notifications",
+    "alerts-off"
+  ],
+  "tags": [
+    "silent"
+  ],
+  "tagsKo": [
+    "알림 끔",
+    "알림 꺼짐"
+  ],
+  "categories": [
+    "system"
+  ]
+}

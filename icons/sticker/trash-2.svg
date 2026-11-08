@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M9.6 5V3.8a1 1 0 0 1 1 -1h2.8a1 1 0 0 1 1 1V5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="5.4"/>
+  <path d="M4.8 5h14.4a1.4 1.4 0 0 1 1.4 1.4v0a1.4 1.4 0 0 1 -1.4 1.4h-14.4a1.4 1.4 0 0 1 -1.4 -1.4v0a1.4 1.4 0 0 1 1.4 -1.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M5.6 9.6H18.4L17.3 19.4A2 2 0 0 1 15.3 21.2H8.7A2 2 0 0 1 6.7 19.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M9.6 5V3.8a1 1 0 0 1 1 -1h2.8a1 1 0 0 1 1 1V5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2"/>
+  <path d="M4.8 5h14.4a1.4 1.4 0 0 1 1.4 1.4v0a1.4 1.4 0 0 1 -1.4 1.4h-14.4a1.4 1.4 0 0 1 -1.4 -1.4v0a1.4 1.4 0 0 1 1.4 -1.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M5.6 9.6H18.4L17.3 19.4A2 2 0 0 1 15.3 21.2H8.7A2 2 0 0 1 6.7 19.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M9.6 5V3.8a1 1 0 0 1 1 -1h2.8a1 1 0 0 1 1 1V5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.8 5h14.4a1.4 1.4 0 0 1 1.4 1.4v0a1.4 1.4 0 0 1 -1.4 1.4h-14.4a1.4 1.4 0 0 1 -1.4 -1.4v0a1.4 1.4 0 0 1 1.4 -1.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.6 9.6H18.4L17.3 19.4A2 2 0 0 1 15.3 21.2H8.7A2 2 0 0 1 6.7 19.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10 13v4.8M14 13v4.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#4d5a7c" data-stroke="shadow" transform="translate(-0.5 -0.6)"/>
+  <path d="M5 6.4h2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

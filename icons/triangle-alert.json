@@ -1,0 +1,31 @@
+{
+  "description": "Warning, caution, low health or danger alert",
+  "aliases": [
+    "warning",
+    "caution",
+    "attention",
+    "alert-triangle",
+    "warning-sign",
+    "triangle-exclamation",
+    "exclamation-triangle",
+    "warning-amber",
+    "report-problem"
+  ],
+  "tags": [
+    "exclamation"
+  ],
+  "tagsKo": [
+    "경고",
+    "주의",
+    "위험"
+  ],
+  "categories": [
+    "hud"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "A triangle carries its weight in the bottom third; it is centered by its outline, as far as the edge margin allows."
+  }
+}

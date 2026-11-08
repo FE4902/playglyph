@@ -1,0 +1,19 @@
+{
+  "description": "Half heart, half a life in the health bar",
+  "aliases": [
+    "half-heart",
+    "half-life",
+    "heart-half-full"
+  ],
+  "tags": [
+    "partial"
+  ],
+  "tagsKo": [
+    "반 하트",
+    "반 목숨",
+    "체력 절반"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

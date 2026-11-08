@@ -1,0 +1,23 @@
+{
+  "description": "Undo the last move",
+  "aliases": [
+    "undo",
+    "undo-move",
+    "step-back",
+    "take-back",
+    "rotate-left",
+    "arrow-rotate-left",
+    "reply"
+  ],
+  "tags": [
+    "revert"
+  ],
+  "tagsKo": [
+    "실행 취소",
+    "되돌리기",
+    "무르기"
+  ],
+  "categories": [
+    "control"
+  ]
+}

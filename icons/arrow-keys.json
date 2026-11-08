@@ -1,0 +1,26 @@
+{
+  "description": "Keyboard movement keys, key bindings",
+  "aliases": [
+    "keyboard-keys",
+    "wasd",
+    "keys"
+  ],
+  "tags": [
+    "keyboard"
+  ],
+  "tagsKo": [
+    "키보드",
+    "방향키",
+    "WASD",
+    "키 설정"
+  ],
+  "categories": [
+    "input"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "Three keys sit in the bottom row and one on top, so the weight is low; centered by outline."
+  }
+}

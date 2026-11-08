@@ -1,0 +1,26 @@
+{
+  "description": "Codex, encyclopedia, story, guide book",
+  "aliases": [
+    "codex",
+    "encyclopedia",
+    "book",
+    "bestiary",
+    "journal",
+    "lore",
+    "menu-book",
+    "auto-stories",
+    "import-contacts"
+  ],
+  "tags": [
+    "read"
+  ],
+  "tagsKo": [
+    "도감",
+    "백과",
+    "책",
+    "스토리"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

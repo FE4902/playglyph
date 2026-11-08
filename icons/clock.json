@@ -1,0 +1,23 @@
+{
+  "description": "Clock, time attack, play time",
+  "aliases": [
+    "stopwatch",
+    "time-attack",
+    "clock-face",
+    "play-time",
+    "schedule",
+    "access-time",
+    "alarm"
+  ],
+  "tags": [
+    "hours"
+  ],
+  "tagsKo": [
+    "시계",
+    "시간",
+    "타임 어택"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

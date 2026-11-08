@@ -1,0 +1,21 @@
+{
+  "description": "Speed up the game or animation",
+  "aliases": [
+    "speed-up",
+    "fast",
+    "double-speed",
+    "ff"
+  ],
+  "tags": [
+    "speed",
+    "2x"
+  ],
+  "tagsKo": [
+    "빨리 감기",
+    "배속",
+    "가속"
+  ],
+  "categories": [
+    "control"
+  ]
+}

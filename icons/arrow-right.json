@@ -1,0 +1,25 @@
+{
+  "description": "Go to the next screen or step",
+  "aliases": [
+    "next",
+    "forward",
+    "proceed",
+    "go-next",
+    "chevron-right",
+    "arrow-forward",
+    "caret-right",
+    "arrow",
+    "chevron"
+  ],
+  "tags": [
+    "right"
+  ],
+  "tagsKo": [
+    "다음",
+    "앞으로",
+    "진행"
+  ],
+  "categories": [
+    "control"
+  ]
+}

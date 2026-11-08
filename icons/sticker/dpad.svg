@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M8.8 2.6L15.2 2.6L15.2 8.8L21.4 8.8L21.4 15.2L15.2 15.2L15.2 21.4L8.8 21.4L8.8 15.2L2.6 15.2L2.6 8.8L8.8 8.8z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M8.8 2.6L15.2 2.6L15.2 8.8L21.4 8.8L21.4 15.2L15.2 15.2L15.2 21.4L8.8 21.4L8.8 15.2L2.6 15.2L2.6 8.8L8.8 8.8z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M8.8 2.6L15.2 2.6L15.2 8.8L21.4 8.8L21.4 15.2L15.2 15.2L15.2 21.4L8.8 21.4L8.8 15.2L2.6 15.2L2.6 8.8L8.8 8.8z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M12 4.6L13.7 6.8L10.3 6.8z M12 19.4L10.3 17.2L13.7 17.2z M4.6 12L6.8 10.3L6.8 13.7z M19.4 12L17.2 13.7L17.2 10.3z" fill="#1b1f33" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.4 4.2v2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

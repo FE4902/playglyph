@@ -1,0 +1,19 @@
+{
+  "description": "Directional pad, movement controls",
+  "aliases": [
+    "d-pad",
+    "directions",
+    "move-controls"
+  ],
+  "tags": [
+    "arrows"
+  ],
+  "tagsKo": [
+    "방향키",
+    "십자키",
+    "이동"
+  ],
+  "categories": [
+    "input"
+  ]
+}

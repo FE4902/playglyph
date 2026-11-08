@@ -1,0 +1,20 @@
+{
+  "description": "Customize colors, paint, theme",
+  "aliases": [
+    "customize",
+    "colors",
+    "paint",
+    "color-picker"
+  ],
+  "tags": [
+    "art"
+  ],
+  "tagsKo": [
+    "커스터마이즈",
+    "색상",
+    "팔레트"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

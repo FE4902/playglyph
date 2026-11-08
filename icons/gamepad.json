@@ -1,0 +1,23 @@
+{
+  "description": "Controller input, controller settings, play",
+  "aliases": [
+    "controller",
+    "joypad",
+    "console",
+    "play-game",
+    "gamepad-2",
+    "sports-esports",
+    "videogame-asset"
+  ],
+  "tags": [
+    "console"
+  ],
+  "tagsKo": [
+    "게임패드",
+    "컨트롤러",
+    "패드"
+  ],
+  "categories": [
+    "input"
+  ]
+}

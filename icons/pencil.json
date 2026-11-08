@@ -1,0 +1,23 @@
+{
+  "description": "Edit, rename",
+  "aliases": [
+    "edit",
+    "rename",
+    "write",
+    "pen",
+    "pen-to-square",
+    "edit-note",
+    "mode-edit"
+  ],
+  "tags": [
+    "draw"
+  ],
+  "tagsKo": [
+    "편집",
+    "이름 바꾸기",
+    "수정"
+  ],
+  "categories": [
+    "control"
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M6.8 18A4 4 0 0 1 6.4 10.1A6 6 0 0 1 16.4 9A4.5 4.5 0 0 1 16.4 18z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M6.8 18A4 4 0 0 1 6.4 10.1A6 6 0 0 1 16.4 9A4.5 4.5 0 0 1 16.4 18z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M6.8 18A4 4 0 0 1 6.4 10.1A6 6 0 0 1 16.4 9A4.5 4.5 0 0 1 16.4 18z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M11.6 9.8L14.6 12.8L12.8 12.8L12.8 16L10.4 16L10.4 12.8L8.6 12.8z" fill="#4d5a7c" data-fill="shadow" transform="translate(0.1 0.5)"/>
+  <path d="M11.6 9.8L14.6 12.8L12.8 12.8L12.8 16L10.4 16L10.4 12.8L8.6 12.8z" fill="#f6fbff" data-fill="shine" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.4 13a2.6 2.6 0 0 1 1.2 -1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

@@ -1,0 +1,21 @@
+{
+  "description": "Objective, goal reached, accuracy",
+  "aliases": [
+    "bullseye",
+    "target-arrow",
+    "objective",
+    "goal",
+    "mission-target"
+  ],
+  "tags": [
+    "hit"
+  ],
+  "tagsKo": [
+    "목표",
+    "과녁",
+    "명중"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "description": "Open the main or side menu",
+  "aliases": [
+    "hamburger",
+    "menu-bar",
+    "burger",
+    "bars",
+    "hamburger-menu",
+    "navicon"
+  ],
+  "tags": [
+    "list",
+    "nav"
+  ],
+  "tagsKo": [
+    "메뉴",
+    "햄버거 메뉴"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

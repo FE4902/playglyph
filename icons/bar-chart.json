@@ -1,0 +1,33 @@
+{
+  "description": "Stats, statistics, records",
+  "aliases": [
+    "stats",
+    "statistics",
+    "chart",
+    "chart-column",
+    "records",
+    "chart-simple",
+    "chart-bar",
+    "bar-chart-2",
+    "bar-chart-3",
+    "analytics",
+    "leaderboard-stats"
+  ],
+  "tags": [
+    "graph"
+  ],
+  "tagsKo": [
+    "통계",
+    "기록",
+    "그래프"
+  ],
+  "categories": [
+    "menu"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "Rising bars put their weight low and to the right; centered by outline."
+  }
+}

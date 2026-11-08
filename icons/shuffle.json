@@ -1,0 +1,18 @@
+{
+  "description": "Shuffle, mix up the order",
+  "aliases": [
+    "mix",
+    "randomize",
+    "shuffle-play"
+  ],
+  "tags": [
+    "random-order"
+  ],
+  "tagsKo": [
+    "섞기",
+    "셔플"
+  ],
+  "categories": [
+    "control"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "description": "Rotate your device, change orientation",
+  "aliases": [
+    "rotate-screen",
+    "landscape",
+    "orientation",
+    "rotate-phone",
+    "screen-rotation",
+    "screen-rotation-alt",
+    "phone-rotate",
+    "rotate",
+    "device-rotate",
+    "smartphone-rotate"
+  ],
+  "tags": [
+    "portrait"
+  ],
+  "tagsKo": [
+    "화면 회전",
+    "가로 모드"
+  ],
+  "categories": [
+    "system"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "The phone is heavier than the arrow turning around it; balanced as far as the 24 box allows."
+  }
+}

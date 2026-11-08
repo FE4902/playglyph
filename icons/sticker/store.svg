@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M3.4 8.4V5.4a2 2 0 0 1 2 -2H18.6a2 2 0 0 1 2 2V8.4a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M5.8 12.8H18.2a1 1 0 0 1 1 1V20.6H14.6V16a1 1 0 0 0 -1 -1H10.4a1 1 0 0 0 -1 1V20.6H4.8V13.8a1 1 0 0 1 1 -1z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M3.4 8.4V5.4a2 2 0 0 1 2 -2H18.6a2 2 0 0 1 2 2V8.4a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M5.8 12.8H18.2a1 1 0 0 1 1 1V20.6H14.6V16a1 1 0 0 0 -1 -1H10.4a1 1 0 0 0 -1 1V20.6H4.8V13.8a1 1 0 0 1 1 -1z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M3.4 8.4V5.4a2 2 0 0 1 2 -2H18.6a2 2 0 0 1 2 2V8.4a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0a2.15 2.15 0 0 1 -4.3 0z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.8 12.8H18.2a1 1 0 0 1 1 1V20.6H14.6V16a1 1 0 0 0 -1 -1H10.4a1 1 0 0 0 -1 1V20.6H4.8V13.8a1 1 0 0 1 1 -1z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.7 15.7h2.6a0.6 0.6 0 0 1 0.6 0.6v3.7a0.6 0.6 0 0 1 -0.6 0.6h-2.6a0.6 0.6 0 0 1 -0.6 -0.6v-3.7a0.6 0.6 0 0 1 0.6 -0.6z" fill="#4d5a7c" data-fill="shadow" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.2 5.4v1.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

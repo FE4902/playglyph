@@ -1,0 +1,23 @@
+{
+  "description": "Quest log, mission available",
+  "aliases": [
+    "mission",
+    "quests",
+    "task",
+    "objectives",
+    "scroll",
+    "scroll-text",
+    "assignment"
+  ],
+  "tags": [
+    "npc"
+  ],
+  "tagsKo": [
+    "퀘스트",
+    "임무",
+    "미션"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <ellipse cx="7.69" cy="18.55" rx="3.96" ry="3.3"/>
+  <path d="M12.43 18.55L12.43 16.22L9.35 13.14L9.35 18.55zM12.43 8.77L12.43 3.69L12.35 3.22L12.13 2.79L11.79 2.45L11.36 2.23L10.89 2.15L10.41 2.23L9.98 2.45L9.64 2.79L9.42 3.22L9.35 3.69L9.35 5.69z"/>
+  <path d="M11.54 3.03L11.81 3.62L12.23 4.16L12.76 4.66L13.37 5.16L14.05 5.65L14.77 6.16L15.51 6.69L16.22 7.27L16.9 7.91L17.52 8.62L18.05 9.42L18.45 10.32L18.72 11.34L18.81 12.5L18.75 12.79L18.62 13L18.42 13.11L18.19 13.13L17.94 13.03L17.71 12.82L17.36 12.33L17 11.9L16.63 11.52L16.23 11.18L15.82 10.88L15.4 10.61L15.02 10.43L11.54 6.95z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M3.3 3.37l17.4 17.4" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

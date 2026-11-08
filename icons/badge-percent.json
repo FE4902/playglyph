@@ -1,0 +1,26 @@
+{
+  "description": "Sale, discount, special offer",
+  "aliases": [
+    "sale",
+    "discount",
+    "deal",
+    "percent",
+    "offer",
+    "tag",
+    "price-tag",
+    "tags",
+    "label-sale"
+  ],
+  "tags": [
+    "promo",
+    "bargain"
+  ],
+  "tagsKo": [
+    "할인",
+    "세일",
+    "특가"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>아이콘 갤러리 — Playglyph</title>
+<style>
+  :root {
+    --bg: #0f1117; --panel: #171a23; --panel-2: #1e2230; --line: #2a2f40;
+    --text: #e7e9f0; --muted: #8b90a3; --accent: #7cf29c; --accent-ink: #0b2814; --icon: #e7e9f0;
+  }
+  :root[data-theme="light"] {
+    --bg: #f5f6f8; --panel: #ffffff; --panel-2: #eef0f4; --line: #dde0e7;
+    --text: #151821; --muted: #626879; --accent: #15803d; --accent-ink: #ffffff; --icon: #151821;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Pretendard", sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .bar { max-width: 1200px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; gap: 12px; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; margin-right: auto; }
+  .brand small { color: var(--muted); font-weight: 500; }
+  input[type="search"] { background: var(--bg); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 9px 12px; width: 100%; min-width: 0; font: inherit; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; border-radius: 0; background: var(--panel); padding: 6px 12px; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  label.ctl { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+  label.ctl output { color: var(--text); min-width: 24px; font-variant-numeric: tabular-nums; }
+  select { font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; }
+  button { font: inherit; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
+  button:hover { border-color: var(--muted); }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip { border-radius: 999px; padding: 4px 12px; font-size: 12px; }
+  .chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .chip span { opacity: .7; margin-left: 4px; }
+  main { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 80px; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(24px, 6vw, 80px); align-items: center; padding: clamp(32px, 6vw, 76px) 0; }
+  .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+  .hero h1 { margin: 0; font-size: clamp(36px, 5.5vw, 68px); line-height: 1.06; letter-spacing: -.05em; }
+  .hero p:not(.eyebrow) { max-width: 40ch; margin: 16px 0 24px; color: var(--muted); font-size: 15px; }
+  .hero a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-weight: 650; }
+  .hero a.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .hero a:hover { border-color: var(--accent); }
+  .showcase { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+  .showcase > span { display: grid; place-items: center; min-height: 70px; background: var(--panel-2); border-radius: 8px; }
+  .catalog { border-top: 1px solid var(--line); padding-top: 24px; scroll-margin-top: 76px; }
+  .catalog-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 12px; }
+  .catalog-title h2 { margin: 0; font-size: 22px; letter-spacing: -.03em; }
+  .count { color: var(--muted); font-size: 12px; }
+  .filters { display: grid; gap: 12px; padding: 12px; margin-bottom: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
+  .toolbar { display: grid; grid-template-columns: minmax(180px, 1fr) auto; align-items: center; gap: 12px; }
+  .options { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  #size { width: 86px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 108px), 1fr)); gap: 8px; }
+  .cell { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; cursor: pointer; color: var(--icon); padding: 8px; position: relative; }
+  .cell:hover { border-color: var(--accent); }
+  .cell .nm { color: var(--muted); font-size: 11px; text-align: center; word-break: break-word; }
+  .cell.dim { opacity: .45; }
+  .cell .badge { position: absolute; top: 6px; right: 6px; font-size: 9px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+  dialog { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 14px; padding: 0; width: min(760px, calc(100vw - 32px)); }
+  dialog::backdrop { background: rgb(0 0 0 / .55); }
+  .dlg { display: grid; grid-template-columns: 220px 1fr; }
+  .stage { background: var(--panel-2); display: grid; place-items: center; border-right: 1px solid var(--line); color: var(--icon); min-height: 220px; }
+  .info { padding: 18px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .info h2 { margin: 0; font-size: 18px; }
+  .desc { color: var(--muted); margin: 2px 0 0; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+  .tags span { font-size: 11px; color: var(--muted); background: var(--panel-2); border-radius: 6px; padding: 2px 6px; }
+  .tags span.alias { color: var(--text); }
+  .mats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; background: #12141b; border-radius: 8px; padding: 10px; }
+  .mats figure { margin: 0; text-align: center; font-size: 10px; color: #8b90a3; display: grid; justify-items: center; gap: 4px; }
+  pre { margin: 0; background: var(--panel-2); border-radius: 8px; padding: 10px; font-size: 12px; overflow-x: auto; white-space: pre; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .sec { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  @media (max-width: 820px) {
+    .toolbar { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: minmax(0, 1fr); }
+    .showcase { grid-template-columns: repeat(6, minmax(0, 1fr)); padding: 8px; gap: 4px; }
+    .showcase > span { min-height: 44px; }
+    .showcase svg { max-width: 28px; height: auto; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 90px), 1fr)); }
+    .dlg { grid-template-columns: 1fr; }
+    .stage { border-right: 0; border-bottom: 1px solid var(--line); }
+    .mats { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="../" style="color:inherit;text-decoration:none" aria-label="Playglyph 메인"><i data-pg="gamepad"></i> Playglyph <small id="ver"></small></a>
+    <button id="theme" type="button">Light</button>
+  </div>
+</header>
+<main>
+  <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+    <div class="catalog-title">
+      <h2 id="catalog-title">아이콘 갤러리</h2>
+      <span class="count" id="count" role="status"></span>
+    </div>
+    <div class="filters">
+      <div class="toolbar">
+        <input id="q" type="search" aria-label="아이콘 검색" placeholder="이름, 별칭, 한글로 검색" autocomplete="off" />
+        <div class="options">
+          <div class="seg" id="style" role="group" aria-label="아이콘 스타일">
+            <button data-v="sticker" aria-pressed="true">컬러</button>
+            <button data-v="filled" aria-pressed="false">단색</button>
+          </div>
+          <label class="ctl">재질 <select id="material"><option value="">기본</option></select></label>
+          <label class="ctl">크기 <input id="size" type="range" min="16" max="64" step="8" value="32" /><output id="sizeOut">32</output></label>
+        </div>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="카테고리"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<dialog id="dlg">
+  <div class="dlg">
+    <div class="stage" id="big"></div>
+    <div class="info">
+      <div>
+        <h2 id="dName"></h2>
+        <p class="desc" id="dDesc"></p>
+      </div>
+      <div><div class="sec">이름 · 별칭 · 태그</div><div class="tags" id="dTags"></div></div>
+      <div><div class="sec">재질</div><div class="mats" id="dMats"></div></div>
+      <div><div class="sec">사용법</div><pre id="dCode"></pre></div>
+      <div class="row">
+        <button data-copy="svg">SVG 복사</button>
+        <button data-copy="html">HTML 복사</button>
+        <button data-copy="name">이름 복사</button>
+        <button id="close" style="margin-left:auto">닫기</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script type="module">
+  import { icon, createIcons } from '../dist/lookup.js';
+  import { materials } from '../dist/materials.js';
+
+  const meta = await fetch('../dist/meta.json').then((r) => r.json());
+  const $ = (id) => document.getElementById(id);
+  const CATS = { all: '전체', system: '시스템', control: '진행 제어', menu: '메뉴', currency: '재화·보상', hud: '상태·HUD', combat: '전투·행동', social: '소셜', input: '입력', misc: '기타' };
+  const state = { q: '', cat: 'all', style: 'sticker', material: '', size: 32 };
+
+  createIcons();
+  $('ver').textContent = `${meta.length}종`;
+  for (const m of Object.keys(materials)) $('material').append(new Option(m, m));
+
+  const counts = meta.reduce((acc, m) => ((acc[m.category] = (acc[m.category] ?? 0) + 1), acc), {});
+  for (const [c, label] of Object.entries(CATS)) {
+    if (c !== 'all' && !counts[c]) continue;
+    const b = document.createElement('button');
+    b.className = 'chip';
+    b.innerHTML = `${label}<span>${c === 'all' ? meta.length : counts[c]}</span>`;
+    b.setAttribute('aria-pressed', c === 'all');
+    b.onclick = () => { state.cat = c; [...$('chips').children].forEach((x) => x.setAttribute('aria-pressed', x === b)); render(); };
+    $('chips').append(b);
+  }
+
+  const has = (m, style) => m.styles.includes(style);
+  const render1 = (m, extra = {}) => {
+    const style = extra.style ?? state.style;
+    const material = (extra.material ?? state.material) || undefined;
+    const size = extra.size ?? state.size;
+    if (style === 'sticker' && has(m, 'sticker')) return icon(m.name, { style: 'sticker', material, size });
+    return icon(m.name, { size, ...(material ? { material } : {}) });
+  };
+  const isLegacy = (m) => !has(m, 'filled') || (state.style === 'sticker' && !has(m, 'sticker'));
+
+  const matches = (m, q) =>
+    !q || m.name.includes(q) || m.aliases.some((a) => a.includes(q)) || m.tags.some((t) => t.includes(q)) || m.tagsKo.some((t) => t.includes(q)) || m.description.toLowerCase().includes(q);
+
+  function render() {
+    const q = state.q.trim().toLowerCase();
+    const list = meta.filter((m) => (state.cat === 'all' || m.category === state.cat) && matches(m, q));
+    // new art first
+    list.sort((a, b) => Number(isLegacy(a)) - Number(isLegacy(b)));
+    const legacyNote = list.some(isLegacy) ? ' · 흐린 아이콘은 이전 스타일' : '';
+    $('count').textContent = `${list.length} / ${meta.length}${legacyNote}`;
+    $('grid').replaceChildren(...list.map((m) => {
+      const cell = document.createElement('button');
+      cell.className = 'cell' + (isLegacy(m) ? ' dim' : '');
+      cell.title = `${m.name} — ${m.description}`;
+      cell.innerHTML = render1(m) + `<span class="nm">${m.name}</span>` + (!has(m, 'filled') ? '<span class="badge">이전</span>' : '');
+      cell.onclick = () => open(m);
+      return cell;
+    }));
+  }
+
+  function open(m) {
+    state.current = m;
+    $('dName').textContent = m.name;
+    $('dDesc').textContent = m.description;
+    $('big').innerHTML = render1(m, { size: 140 });
+    $('dTags').replaceChildren(
+      ...m.aliases.map((t) => Object.assign(document.createElement('span'), { textContent: t, className: 'alias' })),
+      ...[...m.tagsKo, ...m.tags].map((t) => Object.assign(document.createElement('span'), { textContent: t })),
+    );
+    $('dMats').replaceChildren(...Object.keys(materials).map((mat) => {
+      const f = document.createElement('figure');
+      f.innerHTML = render1(m, { material: mat, size: 40 }) + `<figcaption>${mat}</figcaption>`;
+      return f;
+    }));
+    const styleAttr = state.style === 'sticker' && has(m, 'sticker') ? ' data-style="sticker"' : '';
+    const matAttr = state.material ? ` data-material="${state.material}"` : '';
+    $('dCode').textContent =
+`<!-- HTML 한 파일 -->
+<script src="https://cdn.jsdelivr.net/npm/playglyph/dist/playglyph.js"><\/script>
+<i data-pg="${m.name}"${styleAttr}${matAttr}></i>
+
+// ES 모듈
+import { ${m.export} } from 'playglyph${styleAttr ? '/sticker' : ''}';
+${m.aliases.length ? `// 별칭도 됨: ${m.aliases.slice(0, 3).join(', ')}` : ''}`;
+    if (!$('dlg').open) $('dlg').showModal();
+  }
+
+  function toast(msg) { const t = $('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1200); }
+  document.querySelectorAll('[data-copy]').forEach((b) => (b.onclick = async () => {
+    const m = state.current;
+    const kind = b.dataset.copy;
+    const text = kind === 'svg' ? render1(m, { size: 24 })
+      : kind === 'html' ? `<i data-pg="${m.name}"${state.style === 'sticker' && has(m, 'sticker') ? ' data-style="sticker"' : ''}${state.material ? ` data-material="${state.material}"` : ''}></i>`
+      : m.name;
+    await navigator.clipboard.writeText(text);
+    toast('복사됨');
+  }));
+
+  $('close').onclick = () => $('dlg').close();
+  $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
+  $('q').oninput = (e) => { state.q = e.target.value; render(); };
+  $('style').onclick = (e) => {
+    const v = e.target.dataset?.v; if (!v) return;
+    state.style = v;
+    [...$('style').children].forEach((b) => b.setAttribute('aria-pressed', b.dataset.v === v));
+    render();
+  };
+  $('material').onchange = (e) => { state.material = e.target.value; render(); };
+  $('size').oninput = (e) => { state.size = +e.target.value; $('sizeOut').textContent = state.size; render(); };
+  $('theme').onclick = () => {
+    const light = document.documentElement.dataset.theme !== 'light';
+    document.documentElement.dataset.theme = light ? 'light' : 'dark';
+    $('theme').textContent = light ? 'Dark' : 'Light';
+  };
+  document.addEventListener('keydown', (e) => { if (e.key === '/' && document.activeElement !== $('q')) { e.preventDefault(); $('q').focus(); } });
+  render();
+</script>
+</body>
+</html>

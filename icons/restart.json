@@ -1,0 +1,27 @@
+{
+  "description": "Restart level, retry, replay",
+  "aliases": [
+    "retry",
+    "replay",
+    "reset",
+    "try-again",
+    "rotate-ccw",
+    "refresh-cw",
+    "refresh",
+    "rotate-cw",
+    "rotate-right",
+    "redo"
+  ],
+  "tags": [
+    "again"
+  ],
+  "tagsKo": [
+    "재시작",
+    "다시하기",
+    "재도전",
+    "리셋"
+  ],
+  "categories": [
+    "control"
+  ]
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M12 12L12 3M12 12L19.79 7.5M12 12L19.79 16.5M12 12L12 21M12 12L4.21 16.5M12 12L4.21 7.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="3.2"/>
+  <path d="M13.61 6.78L12.00 5.00L10.39 6.78M17.32 10.78L18.06 8.50L15.71 8M15.71 16L18.06 15.50L17.32 13.22M10.39 17.22L12.00 19.00L13.61 17.22M6.68 13.22L5.94 15.50L8.29 16M8.29 8L5.94 8.50L6.68 10.78" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="2.8"/>
+  <path d="M12 12L12 3M12 12L19.79 7.5M12 12L19.79 16.5M12 12L12 21M12 12L4.21 16.5M12 12L4.21 7.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="1.8"/>
+  <path d="M13.61 6.78L12.00 5.00L10.39 6.78M17.32 10.78L18.06 8.50L15.71 8M15.71 16L18.06 15.50L17.32 13.22M10.39 17.22L12.00 19.00L13.61 17.22M6.68 13.22L5.94 15.50L8.29 16M8.29 8L5.94 8.50L6.68 10.78" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="1.4"/>
+  <path d="M12 12L12 3M12 12L19.79 7.5M12 12L19.79 16.5M12 12L12 21M12 12L4.21 16.5M12 12L4.21 7.5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="1.8" transform="translate(-0.5 -0.6)"/>
+  <path d="M13.61 6.78L12.00 5.00L10.39 6.78M17.32 10.78L18.06 8.50L15.71 8M15.71 16L18.06 15.50L17.32 13.22M10.39 17.22L12.00 19.00L13.61 17.22M6.68 13.22L5.94 15.50L8.29 16M8.29 8L5.94 8.50L6.68 10.78" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="1.4" transform="translate(-0.5 -0.6)"/>
+  <path d="M11.4 5.2v1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

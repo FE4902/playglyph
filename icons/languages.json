@@ -1,0 +1,22 @@
+{
+  "description": "Change language",
+  "aliases": [
+    "language",
+    "translate",
+    "locale",
+    "globe",
+    "lang"
+  ],
+  "tags": [
+    "world",
+    "i18n"
+  ],
+  "tagsKo": [
+    "언어",
+    "번역",
+    "지구본"
+  ],
+  "categories": [
+    "system"
+  ]
+}

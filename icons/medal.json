@@ -1,0 +1,21 @@
+{
+  "description": "Badges, awards, medal collection",
+  "aliases": [
+    "badge",
+    "award",
+    "honor",
+    "military-tech",
+    "workspace-premium"
+  ],
+  "tags": [
+    "rank"
+  ],
+  "tagsKo": [
+    "메달",
+    "배지",
+    "훈장"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

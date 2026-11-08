@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M2.8 17.6H4.4C7.40 17.60 8.60 6.40 11.60 6.40H16.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="3.8"/>
+  <path d="M2.8 6.4H4.4C5.33 6.40 6.09 7.48 6.78 8.96" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="3.8"/>
+  <path d="M9.22 15.04C9.91 16.52 10.67 17.60 11.60 17.60H16.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="3.8"/>
+  <path d="M15.2 2.6L21.5 6.4L15.2 10.2z M15.2 13.8L21.5 17.6L15.2 21.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M2.8 17.6H4.4C7.40 17.60 8.60 6.40 11.60 6.40H16.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2"/>
+  <path d="M2.8 6.4H4.4C5.33 6.40 6.09 7.48 6.78 8.96" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2"/>
+  <path d="M9.22 15.04C9.91 16.52 10.67 17.60 11.60 17.60H16.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2"/>
+  <path d="M15.2 2.6L21.5 6.4L15.2 10.2z M15.2 13.8L21.5 17.6L15.2 21.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M2.8 17.6H4.4C7.40 17.60 8.60 6.40 11.60 6.40H16.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2" transform="translate(-0.5 -0.6)"/>
+  <path d="M2.8 6.4H4.4C5.33 6.40 6.09 7.48 6.78 8.96" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.22 15.04C9.91 16.52 10.67 17.60 11.60 17.60H16.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2" transform="translate(-0.5 -0.6)"/>
+  <path d="M15.2 2.6L21.5 6.4L15.2 10.2z M15.2 13.8L21.5 17.6L15.2 21.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M3.6 5.8h1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

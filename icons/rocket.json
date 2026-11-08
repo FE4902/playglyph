@@ -1,0 +1,21 @@
+{
+  "description": "Boost, speed up, launch",
+  "aliases": [
+    "boost",
+    "launch",
+    "speed-boost",
+    "booster",
+    "rocket-launch"
+  ],
+  "tags": [
+    "fast"
+  ],
+  "tagsKo": [
+    "부스트",
+    "로켓",
+    "가속"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

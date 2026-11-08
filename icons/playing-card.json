@@ -1,0 +1,19 @@
+{
+  "description": "Card game, deck, hand of cards",
+  "aliases": [
+    "cards",
+    "card",
+    "deck"
+  ],
+  "tags": [
+    "poker"
+  ],
+  "tagsKo": [
+    "카드",
+    "덱",
+    "카드 게임"
+  ],
+  "categories": [
+    "misc"
+  ]
+}

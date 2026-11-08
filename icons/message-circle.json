@@ -1,0 +1,26 @@
+{
+  "description": "Chat, messages, comments",
+  "aliases": [
+    "chat",
+    "talk",
+    "comment",
+    "speech",
+    "chat-bubble",
+    "comment-dots",
+    "forum",
+    "chat-bubble-outline",
+    "sms"
+  ],
+  "tags": [
+    "dialog",
+    "conversation"
+  ],
+  "tagsKo": [
+    "채팅",
+    "대화",
+    "말풍선"
+  ],
+  "categories": [
+    "social"
+  ]
+}

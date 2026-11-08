@@ -1,0 +1,19 @@
+{
+  "description": "Ranged attack, archer class",
+  "aliases": [
+    "bow",
+    "archery",
+    "ranged"
+  ],
+  "tags": [
+    "shoot"
+  ],
+  "tagsKo": [
+    "활",
+    "원거리",
+    "궁수"
+  ],
+  "categories": [
+    "combat"
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M17.43 4.23L18.09 4.48L18.59 4.97L18.88 5.61L18.89 6.31L16.53 19.7L16.28 20.36L15.79 20.87L15.15 21.15L14.45 21.16L6.57 19.77L5.91 19.52L5.41 19.03L5.12 18.39L5.11 17.69L7.47 4.3L7.72 3.64L8.21 3.13L8.85 2.85L9.55 2.84z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M17.43 4.23L18.09 4.48L18.59 4.97L18.88 5.61L18.89 6.31L16.53 19.7L16.28 20.36L15.79 20.87L15.15 21.15L14.45 21.16L6.57 19.77L5.91 19.52L5.41 19.03L5.12 18.39L5.11 17.69L7.47 4.3L7.72 3.64L8.21 3.13L8.85 2.85L9.55 2.84z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M17.43 4.23L18.09 4.48L18.59 4.97L18.88 5.61L18.89 6.31L16.53 19.7L16.28 20.36L15.79 20.87L15.15 21.15L14.45 21.16L6.57 19.77L5.91 19.52L5.41 19.03L5.12 18.39L5.11 17.69L7.47 4.3L7.72 3.64L8.21 3.13L8.85 2.85L9.55 2.84z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M12.9 6.88L15.34 10.35L16.37 12.57L15.89 14.11L14.54 14.88L13.16 14.64L12.28 13.88L12.55 16.97L9.79 16.48L11.1 13.67L10.01 14.09L8.63 13.84L7.62 12.65L7.7 11.04L9.43 9.31z" fill="#1b1f33" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M8.84 5.76L8.38 8.32" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

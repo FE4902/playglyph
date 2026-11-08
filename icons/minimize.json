@@ -1,0 +1,23 @@
+{
+  "description": "Exit fullscreen, windowed mode",
+  "aliases": [
+    "exit-fullscreen",
+    "shrink",
+    "windowed",
+    "minimize-screen",
+    "compress",
+    "minimize-2",
+    "fullscreen-exit",
+    "close-fullscreen"
+  ],
+  "tags": [
+    "contract"
+  ],
+  "tagsKo": [
+    "전체 화면 나가기",
+    "창 모드"
+  ],
+  "categories": [
+    "system"
+  ]
+}

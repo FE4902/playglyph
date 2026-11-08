@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M8.18 14.18L8.71 13.72L9.30 13.32L9.93 13.01L10.60 12.78L11.30 12.65L12.00 12.60L12.70 12.65L13.40 12.78L14.07 13.01L14.70 13.32L15.29 13.72L15.82 14.18" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="6.2"/>
+  <path d="M8.18 14.18L8.71 13.72L9.30 13.32L9.93 13.01L10.60 12.78L11.30 12.65L12.00 12.60L12.70 12.65L13.40 12.78L14.07 13.01L14.70 13.32L15.29 13.72L15.82 14.18" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.8"/>
+  <path d="M8.18 14.18L8.71 13.72L9.30 13.32L9.93 13.01L10.60 12.78L11.30 12.65L12.00 12.60L12.70 12.65L13.40 12.78L14.07 13.01L14.70 13.32L15.29 13.72L15.82 14.18" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.8" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.42 11.17L5.44 10.19L6.59 9.35L7.85 8.68L9.19 8.20L10.58 7.90L12.00 7.80L13.42 7.90L14.81 8.20L16.15 8.68L17.41 9.35L18.56 10.19L19.58 11.17" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="6.2"/>
+  <path d="M4.42 11.17L5.44 10.19L6.59 9.35L7.85 8.68L9.19 8.20L10.58 7.90L12.00 7.80L13.42 7.90L14.81 8.20L16.15 8.68L17.41 9.35L18.56 10.19L19.58 11.17" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.8"/>
+  <path d="M4.42 11.17L5.44 10.19L6.59 9.35L7.85 8.68L9.19 8.20L10.58 7.90L12.00 7.80L13.42 7.90L14.81 8.20L16.15 8.68L17.41 9.35L18.56 10.19L19.58 11.17" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.8" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.2 18a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M10.2 18a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M10.2 18a1.8 1.8 0 1 0 3.6 0a1.8 1.8 0 1 0 -3.6 0z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M3.4 3.4L20.6 20.6" fill="none" stroke="#4a1029" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M3.4 3.4L20.6 20.6" fill="none" stroke="#a3203f" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M3.4 3.4L20.6 20.6" fill="none" stroke="#e33e4a" stroke-width="1.8" stroke-linecap="round" transform="translate(-0.3 -0.3)"/>
+  <path d="M6.30 9.54L6.90 9.17L7.53 8.83L8.18 8.54L8.85 8.30" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

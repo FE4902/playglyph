@@ -1,0 +1,20 @@
+{
+  "description": "Save the game or progress",
+  "aliases": [
+    "save-game",
+    "disk",
+    "floppy",
+    "save-progress",
+    "floppy-disk"
+  ],
+  "tags": [
+    "store-progress"
+  ],
+  "tagsKo": [
+    "저장",
+    "세이브"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

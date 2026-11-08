@@ -1,0 +1,20 @@
+{
+  "description": "Share score or invite link",
+  "aliases": [
+    "share",
+    "send-link",
+    "social-share",
+    "share-nodes",
+    "share-alt"
+  ],
+  "tags": [
+    "network"
+  ],
+  "tagsKo": [
+    "공유",
+    "공유하기"
+  ],
+  "categories": [
+    "social"
+  ]
+}

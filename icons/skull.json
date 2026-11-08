@@ -1,0 +1,22 @@
+{
+  "description": "Kill count, death, game over, danger",
+  "aliases": [
+    "death",
+    "dead",
+    "kills",
+    "game-over",
+    "danger"
+  ],
+  "tags": [
+    "enemy"
+  ],
+  "tagsKo": [
+    "해골",
+    "죽음",
+    "처치 수",
+    "게임 오버"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

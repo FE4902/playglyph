@@ -1,0 +1,17 @@
+{
+  "description": "Key item, unlock with key",
+  "aliases": [
+    "unlock-key",
+    "access"
+  ],
+  "tags": [
+    "door"
+  ],
+  "tagsKo": [
+    "열쇠",
+    "키"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

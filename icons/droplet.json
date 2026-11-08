@@ -1,0 +1,25 @@
+{
+  "description": "Mana, MP, water or liquid resource",
+  "aliases": [
+    "mana",
+    "mp",
+    "water",
+    "drop",
+    "liquid",
+    "water-drop",
+    "opacity",
+    "mana-bar",
+    "mp-bar"
+  ],
+  "tags": [
+    "magic-points"
+  ],
+  "tagsKo": [
+    "마나",
+    "물방울",
+    "MP"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

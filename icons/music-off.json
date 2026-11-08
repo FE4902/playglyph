@@ -1,0 +1,20 @@
+{
+  "description": "Background music off toggle",
+  "aliases": [
+    "bgm-off",
+    "mute-music",
+    "no-music"
+  ],
+  "tags": [
+    "audio",
+    "mute"
+  ],
+  "tagsKo": [
+    "음악 끔",
+    "배경음 끔",
+    "BGM 끔"
+  ],
+  "categories": [
+    "system"
+  ]
+}

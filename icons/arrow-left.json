@@ -1,0 +1,24 @@
+{
+  "description": "Go back to the previous screen",
+  "aliases": [
+    "back",
+    "previous",
+    "prev",
+    "return",
+    "go-back",
+    "chevron-left",
+    "arrow-back",
+    "caret-left"
+  ],
+  "tags": [
+    "left"
+  ],
+  "tagsKo": [
+    "뒤로",
+    "이전",
+    "돌아가기"
+  ],
+  "categories": [
+    "control"
+  ]
+}

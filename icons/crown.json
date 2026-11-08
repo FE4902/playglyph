@@ -1,0 +1,22 @@
+{
+  "description": "VIP, premium, first place, winner",
+  "aliases": [
+    "king",
+    "vip",
+    "premium",
+    "winner",
+    "first"
+  ],
+  "tags": [
+    "royal"
+  ],
+  "tagsKo": [
+    "왕관",
+    "VIP",
+    "프리미엄",
+    "1등"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

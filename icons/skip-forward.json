@@ -1,0 +1,22 @@
+{
+  "description": "Skip a cutscene, dialog or track",
+  "aliases": [
+    "skip",
+    "next-track",
+    "skip-cutscene",
+    "forward-step",
+    "skip-next",
+    "step-forward",
+    "next-step"
+  ],
+  "tags": [
+    "end"
+  ],
+  "tagsKo": [
+    "건너뛰기",
+    "스킵"
+  ],
+  "categories": [
+    "control"
+  ]
+}

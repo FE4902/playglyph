@@ -1,0 +1,19 @@
+{
+  "description": "List view, quest list, log",
+  "aliases": [
+    "list-view",
+    "log",
+    "entries",
+    "menu-list"
+  ],
+  "tags": [
+    "items"
+  ],
+  "tagsKo": [
+    "목록",
+    "리스트"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

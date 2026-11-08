@@ -1,0 +1,27 @@
+{
+  "description": "Add, increase, more",
+  "aliases": [
+    "add",
+    "increase",
+    "more",
+    "plus-sign",
+    "zoom-in-plus"
+  ],
+  "tags": [
+    "new"
+  ],
+  "tagsKo": [
+    "더하기",
+    "추가",
+    "증가"
+  ],
+  "categories": [
+    "control"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "light"
+    ],
+    "why": "A plus/minus is just lines; it keeps the 2.8 weight of close and check so +/−, OK and X match."
+  }
+}

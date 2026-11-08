@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M5.6 4.4h12.8a2.2 2.2 0 0 1 2.2 2.2v7.4a2.2 2.2 0 0 1 -2.2 2.2h-12.8a2.2 2.2 0 0 1 -2.2 -2.2v-7.4a2.2 2.2 0 0 1 2.2 -2.2z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M10.61 16.2h2.78a0.01 0.01 0 0 1 0.01 0.01v3.18a0.01 0.01 0 0 1 -0.01 0.01h-2.78a0.01 0.01 0 0 1 -0.01 -0.01v-3.18a0.01 0.01 0 0 1 0.01 -0.01z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M8.2 19.2h7.6a1 1 0 0 1 1 1v0a1 1 0 0 1 -1 1h-7.6a1 1 0 0 1 -1 -1v0a1 1 0 0 1 1 -1z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M5.6 4.4h12.8a2.2 2.2 0 0 1 2.2 2.2v7.4a2.2 2.2 0 0 1 -2.2 2.2h-12.8a2.2 2.2 0 0 1 -2.2 -2.2v-7.4a2.2 2.2 0 0 1 2.2 -2.2z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M10.61 16.2h2.78a0.01 0.01 0 0 1 0.01 0.01v3.18a0.01 0.01 0 0 1 -0.01 0.01h-2.78a0.01 0.01 0 0 1 -0.01 -0.01v-3.18a0.01 0.01 0 0 1 0.01 -0.01z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M8.2 19.2h7.6a1 1 0 0 1 1 1v0a1 1 0 0 1 -1 1h-7.6a1 1 0 0 1 -1 -1v0a1 1 0 0 1 1 -1z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M5.6 4.4h12.8a2.2 2.2 0 0 1 2.2 2.2v7.4a2.2 2.2 0 0 1 -2.2 2.2h-12.8a2.2 2.2 0 0 1 -2.2 -2.2v-7.4a2.2 2.2 0 0 1 2.2 -2.2z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.61 16.2h2.78a0.01 0.01 0 0 1 0.01 0.01v3.18a0.01 0.01 0 0 1 -0.01 0.01h-2.78a0.01 0.01 0 0 1 -0.01 -0.01v-3.18a0.01 0.01 0 0 1 0.01 -0.01z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M8.2 19.2h7.6a1 1 0 0 1 1 1v0a1 1 0 0 1 -1 1h-7.6a1 1 0 0 1 -1 -1v0a1 1 0 0 1 1 -1z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M6 6h12a1 1 0 0 1 1 1v6.8a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1v-6.8a1 1 0 0 1 1 -1z" fill="#4d5a7c" data-fill="shadow" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.8 7.2L15.8 10.4L9.8 13.6z" fill="#4d5a7c" data-fill="shadow" transform="translate(0.1 0.5)"/>
+  <path d="M9.8 7.2L15.8 10.4L9.8 13.6z" fill="#f6fbff" data-fill="shine" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.4 9.4V6.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

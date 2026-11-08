@@ -1,0 +1,21 @@
+{
+  "description": "Down, move down, scroll down",
+  "aliases": [
+    "down",
+    "move-down",
+    "scroll-down",
+    "chevron-down",
+    "caret-down",
+    "arrow-downward"
+  ],
+  "tags": [
+    "south"
+  ],
+  "tagsKo": [
+    "아래로",
+    "아래"
+  ],
+  "categories": [
+    "control"
+  ]
+}

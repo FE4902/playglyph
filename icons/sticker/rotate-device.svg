@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M5 5.4h3.4a1.8 1.8 0 0 1 1.8 1.8v11a1.8 1.8 0 0 1 -1.8 1.8h-3.4a1.8 1.8 0 0 1 -1.8 -1.8v-11a1.8 1.8 0 0 1 1.8 -1.8z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M13.74 6.48A8 8 0 0 1 19 13.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="6.2"/>
+  <path d="M16 12.8L22 12.8L19 16.8z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M5 5.4h3.4a1.8 1.8 0 0 1 1.8 1.8v11a1.8 1.8 0 0 1 -1.8 1.8h-3.4a1.8 1.8 0 0 1 -1.8 -1.8v-11a1.8 1.8 0 0 1 1.8 -1.8z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M13.74 6.48A8 8 0 0 1 19 13.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.8"/>
+  <path d="M16 12.8L22 12.8L19 16.8z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M5 5.4h3.4a1.8 1.8 0 0 1 1.8 1.8v11a1.8 1.8 0 0 1 -1.8 1.8h-3.4a1.8 1.8 0 0 1 -1.8 -1.8v-11a1.8 1.8 0 0 1 1.8 -1.8z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M13.74 6.48A8 8 0 0 1 19 13.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.8" transform="translate(-0.5 -0.6)"/>
+  <path d="M16 12.8L22 12.8L19 16.8z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M5 8.6v2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

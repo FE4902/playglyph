@@ -1,0 +1,19 @@
+# volume-2 — 16x16 pixel icon
+# roles: . empty | 1-5 primary (outline shadow base light shine) | a-e secondary | A-Z fixed
+@materials steel silver
+................
+........1..a....
+.......11..aa...
+......151..aea..
+.....1521..adda.
+.11114321...ada.
+.15443321....ada
+.14333321....ada
+.14333321....ada
+.14223321....ada
+.11112321...ada.
+.....1421..aeba.
+......141..ada..
+.......11..aa...
+........1..a....
+................

@@ -1,0 +1,22 @@
+{
+  "description": "Toggle fullscreen mode",
+  "aliases": [
+    "maximize",
+    "full-screen",
+    "expand-screen",
+    "expand",
+    "maximize-2",
+    "open-in-full"
+  ],
+  "tags": [
+    "window",
+    "display"
+  ],
+  "tagsKo": [
+    "전체 화면",
+    "최대화"
+  ],
+  "categories": [
+    "system"
+  ]
+}

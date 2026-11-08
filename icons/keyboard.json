@@ -1,0 +1,18 @@
+{
+  "description": "Keyboard controls, key bindings",
+  "aliases": [
+    "keyboard-controls",
+    "key-bindings",
+    "typing"
+  ],
+  "tags": [
+    "input"
+  ],
+  "tagsKo": [
+    "키보드",
+    "키 설정"
+  ],
+  "categories": [
+    "input"
+  ]
+}

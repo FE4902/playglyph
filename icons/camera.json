@@ -1,0 +1,22 @@
+{
+  "description": "Screenshot, photo mode",
+  "aliases": [
+    "screenshot",
+    "photo",
+    "snapshot",
+    "photo-mode",
+    "photo-camera",
+    "camera-alt"
+  ],
+  "tags": [
+    "picture"
+  ],
+  "tagsKo": [
+    "스크린샷",
+    "사진",
+    "카메라"
+  ],
+  "categories": [
+    "system"
+  ]
+}

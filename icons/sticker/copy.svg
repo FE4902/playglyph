@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M2.8 5A2.2 2.2 0 0 1 5 2.8H13.4A2.2 2.2 0 0 1 15.6 5V7H7V15.6H5A2.2 2.2 0 0 1 2.8 13.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M10.6 8.4H19A2.2 2.2 0 0 1 21.2 10.6V19A2.2 2.2 0 0 1 19 21.2H10.6A2.2 2.2 0 0 1 8.4 19V10.6A2.2 2.2 0 0 1 10.6 8.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M2.8 5A2.2 2.2 0 0 1 5 2.8H13.4A2.2 2.2 0 0 1 15.6 5V7H7V15.6H5A2.2 2.2 0 0 1 2.8 13.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M10.6 8.4H19A2.2 2.2 0 0 1 21.2 10.6V19A2.2 2.2 0 0 1 19 21.2H10.6A2.2 2.2 0 0 1 8.4 19V10.6A2.2 2.2 0 0 1 10.6 8.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M2.8 5A2.2 2.2 0 0 1 5 2.8H13.4A2.2 2.2 0 0 1 15.6 5V7H7V15.6H5A2.2 2.2 0 0 1 2.8 13.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.6 8.4H19A2.2 2.2 0 0 1 21.2 10.6V19A2.2 2.2 0 0 1 19 21.2H10.6A2.2 2.2 0 0 1 8.4 19V10.6A2.2 2.2 0 0 1 10.6 8.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.2 11v2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

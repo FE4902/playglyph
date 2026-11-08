@@ -1,0 +1,22 @@
+{
+  "description": "Gift, present, free reward",
+  "aliases": [
+    "present",
+    "free-gift",
+    "gift-box",
+    "redeem",
+    "card-giftcard"
+  ],
+  "tags": [
+    "bonus",
+    "surprise"
+  ],
+  "tagsKo": [
+    "선물",
+    "선물 상자",
+    "보상"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

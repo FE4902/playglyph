@@ -1,0 +1,28 @@
+{
+  "description": "Open the shop or store",
+  "aliases": [
+    "shop",
+    "market",
+    "shopping",
+    "buy",
+    "marketplace",
+    "shopping-cart",
+    "cart",
+    "cart-shopping",
+    "storefront",
+    "shopping-bag",
+    "shop-bag"
+  ],
+  "tags": [
+    "storefront",
+    "purchase"
+  ],
+  "tagsKo": [
+    "상점",
+    "가게",
+    "구매"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

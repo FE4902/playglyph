@@ -1,0 +1,27 @@
+{
+  "description": "Cast spell, skill button, magic class",
+  "aliases": [
+    "wand",
+    "spell",
+    "magic",
+    "skill",
+    "cast",
+    "wand-magic-sparkles",
+    "wand-sparkles",
+    "auto-fix-high",
+    "wand-magic"
+  ],
+  "tags": [
+    "mage",
+    "wizard"
+  ],
+  "tagsKo": [
+    "마법",
+    "스킬",
+    "주문",
+    "마법봉"
+  ],
+  "categories": [
+    "combat"
+  ]
+}

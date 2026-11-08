@@ -1,0 +1,26 @@
+{
+  "description": "Location, waypoint, marker",
+  "aliases": [
+    "pin",
+    "location",
+    "waypoint",
+    "marker",
+    "place",
+    "location-dot",
+    "map-marker",
+    "location-pin",
+    "pin-drop",
+    "location-on"
+  ],
+  "tags": [
+    "gps"
+  ],
+  "tagsKo": [
+    "위치",
+    "핀",
+    "목적지"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

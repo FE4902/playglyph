@@ -1,0 +1,24 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Playglyph 도트게임 GIF</title><link rel="stylesheet" href="./main.css"><link rel="stylesheet" href="../preview/comparison.css"><style>
+html,body{margin:0;padding:0;width:960px;height:540px;overflow:hidden}.comparison-scene{width:960px;height:540px;aspect-ratio:auto;border:0;border-radius:0;--split:0%!important}.comparison-divider,.comparison-handle,.label-lucide{display:none}.label-playglyph{left:3%;right:auto}.game-hud{padding-top:6.5%}
+</style></head><body>      <div class="comparison-scene" id="comparison-scene" style="--split: 0%">
+        <picture>
+          <source media="(prefers-reduced-motion: reduce)" srcset="./pixel-game-still.png" />
+          <img class="game-background" src="./pixel-game.gif" width="681" height="381" alt="도트 캐릭터가 걷고 슬라임과 코인이 움직이는 2D 게임 애니메이션" fetchpriority="high" draggable="false" />
+        </picture>
+        <div class="game-shade" aria-hidden="true"></div>
+        <div class="game-hud game-hud-lucide" id="hud-lucide" aria-hidden="true"></div>
+        <div class="game-hud game-hud-playglyph" id="hud-playglyph" aria-hidden="true"></div>
+        <div class="comparison-label label-lucide" aria-hidden="true">Lucide <span>아이콘 적용</span></div>
+        <div class="comparison-label label-playglyph" aria-hidden="true">Playglyph <span>도트 아이콘 적용</span></div>
+        <div class="comparison-divider" aria-hidden="true"></div>
+        <button class="comparison-handle" id="comparison-slider" type="button" role="slider" aria-label="Lucide와 Playglyph 아이콘 비교" aria-describedby="comparison-help comparison-accessibility" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Lucide 50%, Playglyph 50%" aria-orientation="horizontal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M12 6v12" /></svg>
+        </button>
+      </div>
+<script type="module">
+const frame=new URLSearchParams(location.search).get('frame');
+if(frame!==null && /^[0-5]$/.test(frame)){
+ document.querySelector('source').remove();
+ document.querySelector('.game-background').src=`./pixel-frames/${frame.padStart(2,'0')}.png`;
+}
+</script><script type="module" src="../preview/comparison.js"></script></body></html>

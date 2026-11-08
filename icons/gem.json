@@ -1,0 +1,23 @@
+{
+  "description": "Premium currency, gems, diamonds",
+  "aliases": [
+    "diamond",
+    "jewel",
+    "crystal",
+    "premium-currency",
+    "gems",
+    "diamond-icon"
+  ],
+  "tags": [
+    "shop"
+  ],
+  "tagsKo": [
+    "보석",
+    "젬",
+    "다이아",
+    "유료 재화"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

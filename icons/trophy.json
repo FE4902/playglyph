@@ -1,0 +1,24 @@
+{
+  "description": "Achievements, victory, trophy room",
+  "aliases": [
+    "achievement",
+    "achievements",
+    "cup",
+    "win",
+    "emoji-events",
+    "victory",
+    "winner-cup",
+    "award-cup"
+  ],
+  "tags": [
+    "champion"
+  ],
+  "tagsKo": [
+    "트로피",
+    "업적",
+    "승리"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "description": "Teleport, warp, next stage portal",
+  "aliases": [
+    "teleport",
+    "warp",
+    "vortex",
+    "spiral"
+  ],
+  "tags": [
+    "dimension"
+  ],
+  "tagsKo": [
+    "포털",
+    "텔레포트",
+    "워프",
+    "소용돌이"
+  ],
+  "categories": [
+    "misc"
+  ]
+}

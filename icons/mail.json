@@ -1,0 +1,22 @@
+{
+  "description": "Mailbox, inbox, gifts from mail",
+  "aliases": [
+    "inbox",
+    "mailbox",
+    "letter",
+    "message",
+    "envelope"
+  ],
+  "tags": [
+    "post"
+  ],
+  "tagsKo": [
+    "우편",
+    "메일",
+    "우편함",
+    "편지"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

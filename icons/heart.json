@@ -1,0 +1,26 @@
+{
+  "description": "Health, lives remaining, like",
+  "aliases": [
+    "health",
+    "hp",
+    "life",
+    "lives",
+    "heart-fill",
+    "health-bar",
+    "hp-bar",
+    "heart-full",
+    "full-heart"
+  ],
+  "tags": [
+    "love"
+  ],
+  "tagsKo": [
+    "하트",
+    "체력",
+    "목숨",
+    "생명"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

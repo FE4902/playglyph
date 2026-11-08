@@ -1,0 +1,23 @@
+{
+  "description": "Use item, heal, consumables tab",
+  "aliases": [
+    "heal",
+    "use-item",
+    "flask",
+    "elixir",
+    "consumable"
+  ],
+  "tags": [
+    "health",
+    "mana"
+  ],
+  "tagsKo": [
+    "포션",
+    "물약",
+    "회복",
+    "아이템 사용"
+  ],
+  "categories": [
+    "combat"
+  ]
+}

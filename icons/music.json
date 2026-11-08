@@ -1,0 +1,25 @@
+{
+  "description": "Background music on, music volume",
+  "aliases": [
+    "bgm",
+    "music-on",
+    "song",
+    "note",
+    "soundtrack",
+    "music-note",
+    "audiotrack",
+    "library-music"
+  ],
+  "tags": [
+    "audio"
+  ],
+  "tagsKo": [
+    "음악",
+    "음표",
+    "배경음",
+    "BGM"
+  ],
+  "categories": [
+    "system"
+  ]
+}

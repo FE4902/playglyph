@@ -1,0 +1,22 @@
+{
+  "description": "Aim reticle, shooting target",
+  "aliases": [
+    "aim",
+    "reticle",
+    "scope",
+    "crosshairs",
+    "gps-fixed",
+    "my-location"
+  ],
+  "tags": [
+    "fps"
+  ],
+  "tagsKo": [
+    "조준",
+    "조준점",
+    "크로스헤어"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

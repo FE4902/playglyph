@@ -1,0 +1,19 @@
+{
+  "description": "Zoom in on the map or view",
+  "aliases": [
+    "magnify",
+    "zoom",
+    "enlarge-view",
+    "magnifying-glass-plus",
+    "search-plus"
+  ],
+  "tags": [
+    "closer"
+  ],
+  "tagsKo": [
+    "확대"
+  ],
+  "categories": [
+    "control"
+  ]
+}

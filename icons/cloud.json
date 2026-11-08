@@ -1,0 +1,25 @@
+{
+  "description": "Cloud save, sync progress online",
+  "aliases": [
+    "cloud-save",
+    "sync",
+    "online",
+    "upload-save",
+    "cloud-upload",
+    "cloud-download",
+    "upload",
+    "download",
+    "cloud-sync"
+  ],
+  "tags": [
+    "backup"
+  ],
+  "tagsKo": [
+    "클라우드",
+    "클라우드 저장",
+    "동기화"
+  ],
+  "categories": [
+    "system"
+  ]
+}

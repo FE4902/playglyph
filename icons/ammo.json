@@ -1,0 +1,20 @@
+{
+  "description": "Ammo count, reload",
+  "aliases": [
+    "bullets",
+    "reload",
+    "magazine"
+  ],
+  "tags": [
+    "gun",
+    "shooter"
+  ],
+  "tagsKo": [
+    "탄약",
+    "총알",
+    "장전"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

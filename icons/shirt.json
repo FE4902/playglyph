@@ -1,0 +1,25 @@
+{
+  "description": "Skins, outfits, costumes",
+  "aliases": [
+    "skins",
+    "skin",
+    "outfit",
+    "costume",
+    "wardrobe",
+    "checkroom",
+    "apparel",
+    "t-shirt",
+    "tshirt"
+  ],
+  "tags": [
+    "clothes"
+  ],
+  "tagsKo": [
+    "스킨",
+    "의상",
+    "옷"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

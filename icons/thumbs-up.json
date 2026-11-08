@@ -1,0 +1,23 @@
+{
+  "description": "Like, rate up, approve",
+  "aliases": [
+    "like",
+    "upvote",
+    "good",
+    "approve",
+    "rate",
+    "thumb-up",
+    "thumbs-up-alt"
+  ],
+  "tags": [
+    "thumb"
+  ],
+  "tagsKo": [
+    "좋아요",
+    "추천",
+    "엄지"
+  ],
+  "categories": [
+    "social"
+  ]
+}

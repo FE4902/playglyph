@@ -1,0 +1,22 @@
+{
+  "description": "Notifications, alerts",
+  "aliases": [
+    "notification",
+    "notifications",
+    "alert",
+    "alerts",
+    "notifications-active",
+    "bell-ring"
+  ],
+  "tags": [
+    "ring",
+    "news"
+  ],
+  "tagsKo": [
+    "알림",
+    "종"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "description": "Attack button, melee weapon slot",
+  "aliases": [
+    "attack",
+    "melee",
+    "blade"
+  ],
+  "tags": [
+    "weapon",
+    "fight",
+    "damage"
+  ],
+  "tagsKo": [
+    "칼",
+    "검",
+    "공격",
+    "근접"
+  ],
+  "categories": [
+    "combat"
+  ]
+}

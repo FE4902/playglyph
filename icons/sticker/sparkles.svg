@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="gold">
+  <path d="M10.4 5.2L12.17 11.43L18.4 13.2L12.17 14.97L10.4 21.2L8.63 14.97L2.4 13.2L8.63 11.43z" fill="#3d1e10" data-fill="outline" stroke="#3d1e10" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M18 2.8L18.81 5.39L21.4 6.2L18.81 7.01L18 9.6L17.19 7.01L14.6 6.2L17.19 5.39z" fill="#3d1e10" data-fill="outline" stroke="#3d1e10" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M10.4 5.2L12.17 11.43L18.4 13.2L12.17 14.97L10.4 21.2L8.63 14.97L2.4 13.2L8.63 11.43z" fill="#a3531c" data-fill="shadow"/>
+  <path d="M18 2.8L18.81 5.39L21.4 6.2L18.81 7.01L18 9.6L17.19 7.01L14.6 6.2L17.19 5.39z" fill="#a3531c" data-fill="shadow"/>
+  <path d="M10.4 5.2L12.17 11.43L18.4 13.2L12.17 14.97L10.4 21.2L8.63 14.97L2.4 13.2L8.63 11.43z" fill="#e39a2b" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M18 2.8L18.81 5.39L21.4 6.2L18.81 7.01L18 9.6L17.19 7.01L14.6 6.2L17.19 5.39z" fill="#e39a2b" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.4 8.6v2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#fff7d6" data-stroke="shine"/>
+</svg>

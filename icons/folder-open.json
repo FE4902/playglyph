@@ -1,0 +1,22 @@
+{
+  "description": "Load game, open saved files",
+  "aliases": [
+    "folder",
+    "load",
+    "load-game",
+    "open-file",
+    "files",
+    "saves"
+  ],
+  "tags": [
+    "directory"
+  ],
+  "tagsKo": [
+    "불러오기",
+    "폴더",
+    "저장 파일"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

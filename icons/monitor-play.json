@@ -1,0 +1,28 @@
+{
+  "description": "Watch an ad for a reward",
+  "aliases": [
+    "watch-ad",
+    "rewarded-ad",
+    "ad",
+    "ads",
+    "video-ad",
+    "tv",
+    "video",
+    "video-camera",
+    "film",
+    "clapperboard",
+    "movie"
+  ],
+  "tags": [
+    "video",
+    "advert"
+  ],
+  "tagsKo": [
+    "광고 보기",
+    "광고 보상",
+    "동영상"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

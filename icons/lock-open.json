@@ -1,0 +1,18 @@
+{
+  "description": "Unlocked, newly available content",
+  "aliases": [
+    "unlock",
+    "unlocked",
+    "padlock-open"
+  ],
+  "tags": [
+    "open"
+  ],
+  "tagsKo": [
+    "잠금 해제",
+    "열림"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

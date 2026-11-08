@@ -1,0 +1,19 @@
+{
+  "description": "Offline, no connection",
+  "aliases": [
+    "offline",
+    "no-connection",
+    "disconnected",
+    "no-internet"
+  ],
+  "tags": [
+    "network"
+  ],
+  "tagsKo": [
+    "오프라인",
+    "연결 끊김"
+  ],
+  "categories": [
+    "system"
+  ]
+}

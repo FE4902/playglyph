@@ -1,0 +1,21 @@
+{
+  "description": "Extra life, restore health",
+  "aliases": [
+    "extra-life",
+    "add-life",
+    "heal-plus",
+    "life-up",
+    "one-up"
+  ],
+  "tags": [
+    "bonus"
+  ],
+  "tagsKo": [
+    "목숨 추가",
+    "체력 회복",
+    "1UP"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

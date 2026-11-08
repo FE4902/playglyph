@@ -1,0 +1,27 @@
+{
+  "description": "Sound on, volume control, SFX volume",
+  "aliases": [
+    "volume",
+    "sound",
+    "audio",
+    "speaker",
+    "sound-on",
+    "sfx",
+    "volume-1",
+    "volume-high",
+    "volume-up"
+  ],
+  "tags": [
+    "loud"
+  ],
+  "tagsKo": [
+    "음량",
+    "소리",
+    "사운드",
+    "볼륨",
+    "효과음"
+  ],
+  "categories": [
+    "system"
+  ]
+}

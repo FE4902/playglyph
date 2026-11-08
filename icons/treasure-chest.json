@@ -1,0 +1,24 @@
+{
+  "description": "Reward chest, loot, prize",
+  "aliases": [
+    "chest",
+    "loot",
+    "reward",
+    "loot-box",
+    "chest-open",
+    "box-open",
+    "inventory-2"
+  ],
+  "tags": [
+    "drop"
+  ],
+  "tagsKo": [
+    "보물상자",
+    "상자",
+    "보상",
+    "전리품"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

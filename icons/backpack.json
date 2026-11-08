@@ -1,0 +1,19 @@
+{
+  "description": "Open inventory, items, bag",
+  "aliases": [
+    "inventory",
+    "bag",
+    "items"
+  ],
+  "tags": [
+    "storage"
+  ],
+  "tagsKo": [
+    "가방",
+    "인벤토리",
+    "아이템"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

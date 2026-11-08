@@ -1,0 +1,21 @@
+{
+  "description": "Previous track or step, back to start",
+  "aliases": [
+    "previous-track",
+    "prev-track",
+    "skip-previous",
+    "to-start",
+    "backward-step",
+    "step-backward"
+  ],
+  "tags": [
+    "previous"
+  ],
+  "tagsKo": [
+    "이전 곡",
+    "처음으로"
+  ],
+  "categories": [
+    "control"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "description": "Energy or stamina meter, power-up",
+  "aliases": [
+    "energy",
+    "lightning",
+    "stamina",
+    "bolt",
+    "power-up",
+    "energy-bar",
+    "stamina-bar"
+  ],
+  "tags": [
+    "electric",
+    "boost"
+  ],
+  "tagsKo": [
+    "에너지",
+    "번개",
+    "스태미나",
+    "파워"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

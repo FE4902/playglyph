@@ -1,0 +1,24 @@
+{
+  "description": "Random, roll dice, luck",
+  "aliases": [
+    "random",
+    "roll",
+    "luck",
+    "rng",
+    "d6",
+    "dice-5",
+    "dice-6",
+    "casino"
+  ],
+  "tags": [
+    "chance"
+  ],
+  "tagsKo": [
+    "주사위",
+    "랜덤",
+    "운"
+  ],
+  "categories": [
+    "misc"
+  ]
+}

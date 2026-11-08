@@ -1,0 +1,25 @@
+{
+  "description": "Level select, stage grid",
+  "aliases": [
+    "grid",
+    "levels",
+    "level-select",
+    "stages",
+    "stage-select",
+    "table-cells",
+    "grid-view",
+    "apps",
+    "grid-2x2"
+  ],
+  "tags": [
+    "tiles"
+  ],
+  "tagsKo": [
+    "스테이지 선택",
+    "레벨 선택",
+    "격자"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

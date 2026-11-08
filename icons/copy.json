@@ -1,0 +1,20 @@
+{
+  "description": "Copy a code or link, duplicate",
+  "aliases": [
+    "duplicate",
+    "clipboard",
+    "copy-link",
+    "clone",
+    "copy-code"
+  ],
+  "tags": [
+    "paste"
+  ],
+  "tagsKo": [
+    "복사",
+    "코드 복사"
+  ],
+  "categories": [
+    "control"
+  ]
+}

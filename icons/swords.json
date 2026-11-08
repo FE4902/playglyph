@@ -1,0 +1,23 @@
+{
+  "description": "Start battle, PvP mode, combat menu",
+  "aliases": [
+    "battle",
+    "pvp",
+    "fight",
+    "duel",
+    "swords-crossed"
+  ],
+  "tags": [
+    "versus",
+    "arena"
+  ],
+  "tagsKo": [
+    "전투",
+    "대결",
+    "결투",
+    "PVP"
+  ],
+  "categories": [
+    "combat"
+  ]
+}

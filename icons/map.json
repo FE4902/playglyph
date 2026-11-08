@@ -1,0 +1,22 @@
+{
+  "description": "Open map, world map, navigation",
+  "aliases": [
+    "world-map",
+    "treasure-map",
+    "minimap",
+    "map-icon",
+    "world-map-alt",
+    "folded-map"
+  ],
+  "tags": [
+    "explore"
+  ],
+  "tagsKo": [
+    "지도",
+    "맵",
+    "월드맵"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

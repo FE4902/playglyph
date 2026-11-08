@@ -1,0 +1,21 @@
+{
+  "description": "Search, find, zoom into items",
+  "aliases": [
+    "find",
+    "magnifier",
+    "magnifying-glass",
+    "lookup",
+    "search-icon"
+  ],
+  "tags": [
+    "lens"
+  ],
+  "tagsKo": [
+    "검색",
+    "찾기",
+    "돋보기"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

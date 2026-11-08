@@ -1,0 +1,27 @@
+{
+  "description": "Failed, error, wrong",
+  "aliases": [
+    "failed",
+    "fail",
+    "error",
+    "wrong",
+    "x-circle",
+    "circle-xmark",
+    "cancel-circle",
+    "highlight-off",
+    "lose",
+    "defeat",
+    "lost"
+  ],
+  "tags": [
+    "denied"
+  ],
+  "tagsKo": [
+    "실패",
+    "오류",
+    "틀림"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

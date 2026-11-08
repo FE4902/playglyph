@@ -1,0 +1,20 @@
+{
+  "description": "Hide, hidden, visibility off",
+  "aliases": [
+    "hide",
+    "hidden",
+    "invisible",
+    "visibility-off",
+    "eye-slash"
+  ],
+  "tags": [
+    "unseen"
+  ],
+  "tagsKo": [
+    "숨기기",
+    "안 보이기"
+  ],
+  "categories": [
+    "control"
+  ]
+}

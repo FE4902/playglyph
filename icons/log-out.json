@@ -1,0 +1,33 @@
+{
+  "description": "Exit or quit the game, leave the current screen",
+  "aliases": [
+    "exit",
+    "quit",
+    "leave",
+    "logout",
+    "exit-game",
+    "right-from-bracket",
+    "sign-out",
+    "door-open",
+    "logout-icon"
+  ],
+  "tags": [
+    "door",
+    "sign-out"
+  ],
+  "tagsKo": [
+    "나가기",
+    "종료",
+    "게임 종료",
+    "로그아웃"
+  ],
+  "categories": [
+    "system"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "The door is heavier than the arrow; balanced as far as the 24 box allows."
+  }
+}

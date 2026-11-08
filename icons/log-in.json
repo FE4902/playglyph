@@ -1,0 +1,29 @@
+{
+  "description": "Sign in, enter the game",
+  "aliases": [
+    "login",
+    "sign-in",
+    "enter",
+    "enter-game",
+    "right-to-bracket",
+    "sign-in-alt"
+  ],
+  "tags": [
+    "door",
+    "join"
+  ],
+  "tagsKo": [
+    "로그인",
+    "입장",
+    "들어가기"
+  ],
+  "categories": [
+    "system"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "The door is heavier than the arrow; balanced as far as the 24 box allows."
+  }
+}

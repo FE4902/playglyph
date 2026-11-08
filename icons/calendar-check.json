@@ -1,0 +1,26 @@
+{
+  "description": "Daily reward, daily login bonus, attendance",
+  "aliases": [
+    "daily-reward",
+    "daily",
+    "attendance",
+    "check-in",
+    "login-bonus",
+    "event-available",
+    "calendar-today",
+    "calendar"
+  ],
+  "tags": [
+    "calendar",
+    "day"
+  ],
+  "tagsKo": [
+    "출석",
+    "출석 보상",
+    "일일 보상",
+    "달력"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

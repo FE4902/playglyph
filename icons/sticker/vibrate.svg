@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M9.8 3.4h4.4a2.2 2.2 0 0 1 2.2 2.2v12.8a2.2 2.2 0 0 1 -2.2 2.2h-4.4a2.2 2.2 0 0 1 -2.2 -2.2v-12.8a2.2 2.2 0 0 1 2.2 -2.2z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M4.6 7.8L2.9 10L4.6 12.2L2.9 14.4L4.6 16.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="5.8"/>
+  <path d="M19.4 7.8L21.1 10L19.4 12.2L21.1 14.4L19.4 16.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="5.8"/>
+  <path d="M9.8 3.4h4.4a2.2 2.2 0 0 1 2.2 2.2v12.8a2.2 2.2 0 0 1 -2.2 2.2h-4.4a2.2 2.2 0 0 1 -2.2 -2.2v-12.8a2.2 2.2 0 0 1 2.2 -2.2z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M4.6 7.8L2.9 10L4.6 12.2L2.9 14.4L4.6 16.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.4"/>
+  <path d="M19.4 7.8L21.1 10L19.4 12.2L21.1 14.4L19.4 16.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.4"/>
+  <path d="M9.8 3.4h4.4a2.2 2.2 0 0 1 2.2 2.2v12.8a2.2 2.2 0 0 1 -2.2 2.2h-4.4a2.2 2.2 0 0 1 -2.2 -2.2v-12.8a2.2 2.2 0 0 1 2.2 -2.2z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.6 7.8L2.9 10L4.6 12.2L2.9 14.4L4.6 16.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.4" transform="translate(-0.5 -0.6)"/>
+  <path d="M19.4 7.8L21.1 10L19.4 12.2L21.1 14.4L19.4 16.6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.4" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.2 7.4h3.6a1 1 0 0 1 1 1v7.6a1 1 0 0 1 -1 1h-3.6a1 1 0 0 1 -1 -1v-7.6a1 1 0 0 1 1 -1z" fill="#4d5a7c" data-fill="shadow" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.3 5.6h1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

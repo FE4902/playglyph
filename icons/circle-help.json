@@ -1,0 +1,29 @@
+{
+  "description": "Help, how to play, tutorial",
+  "aliases": [
+    "help",
+    "question",
+    "faq",
+    "how-to-play",
+    "help-circle",
+    "circle-question",
+    "question-circle",
+    "help-outline",
+    "quiz",
+    "tutorial",
+    "how-to"
+  ],
+  "tags": [
+    "tutorial",
+    "guide"
+  ],
+  "tagsKo": [
+    "도움말",
+    "물음표",
+    "게임 방법",
+    "튜토리얼"
+  ],
+  "categories": [
+    "system"
+  ]
+}

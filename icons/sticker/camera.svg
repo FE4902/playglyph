@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M5 7h14a2.4 2.4 0 0 1 2.4 2.4v8.6a2.4 2.4 0 0 1 -2.4 2.4h-14a2.4 2.4 0 0 1 -2.4 -2.4v-8.6a2.4 2.4 0 0 1 2.4 -2.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M8 7.4L9.6 4.2L14.4 4.2L16 7.4z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M5 7h14a2.4 2.4 0 0 1 2.4 2.4v8.6a2.4 2.4 0 0 1 -2.4 2.4h-14a2.4 2.4 0 0 1 -2.4 -2.4v-8.6a2.4 2.4 0 0 1 2.4 -2.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M8 7.4L9.6 4.2L14.4 4.2L16 7.4z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M5 7h14a2.4 2.4 0 0 1 2.4 2.4v8.6a2.4 2.4 0 0 1 -2.4 2.4h-14a2.4 2.4 0 0 1 -2.4 -2.4v-8.6a2.4 2.4 0 0 1 2.4 -2.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M8 7.4L9.6 4.2L14.4 4.2L16 7.4z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M7.6 13.6a4.4 4.4 0 1 0 8.8 0a4.4 4.4 0 1 0 -8.8 0z" fill="#1b1f33" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.6 13.6a2.4 2.4 0 1 0 4.8 0a2.4 2.4 0 1 0 -4.8 0z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.6 10v2.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

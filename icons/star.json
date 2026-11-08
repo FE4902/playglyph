@@ -1,0 +1,22 @@
+{
+  "description": "Score, rating, level stars, favorite",
+  "aliases": [
+    "rating",
+    "favorite",
+    "score",
+    "rating-star",
+    "star-full"
+  ],
+  "tags": [
+    "rank"
+  ],
+  "tagsKo": [
+    "별",
+    "별점",
+    "점수",
+    "즐겨찾기"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

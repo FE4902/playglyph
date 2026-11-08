@@ -1,0 +1,19 @@
+{
+  "description": "Send a chat message or gift",
+  "aliases": [
+    "send-message",
+    "submit",
+    "paper-plane",
+    "send-gift"
+  ],
+  "tags": [
+    "plane"
+  ],
+  "tagsKo": [
+    "보내기",
+    "전송"
+  ],
+  "categories": [
+    "social"
+  ]
+}

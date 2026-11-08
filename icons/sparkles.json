@@ -1,0 +1,23 @@
+{
+  "description": "New item badge, buff, special effect",
+  "aliases": [
+    "new",
+    "shine",
+    "buff",
+    "magic-effect",
+    "auto-awesome",
+    "wand-stars"
+  ],
+  "tags": [
+    "rare"
+  ],
+  "tagsKo": [
+    "반짝임",
+    "새것",
+    "버프",
+    "NEW"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

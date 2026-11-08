@@ -1,0 +1,22 @@
+{
+  "description": "Delete, remove a save or item",
+  "aliases": [
+    "trash",
+    "delete",
+    "bin",
+    "discard",
+    "trash-can",
+    "delete-forever",
+    "trash-alt"
+  ],
+  "tags": [
+    "remove"
+  ],
+  "tagsKo": [
+    "삭제",
+    "휴지통"
+  ],
+  "categories": [
+    "control"
+  ]
+}

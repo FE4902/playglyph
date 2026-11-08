@@ -1,0 +1,22 @@
+{
+  "description": "Crafting menu, forge, gear upgrade",
+  "aliases": [
+    "craft",
+    "crafting",
+    "forge",
+    "smith",
+    "upgrade-gear"
+  ],
+  "tags": [
+    "blacksmith"
+  ],
+  "tagsKo": [
+    "모루",
+    "제작",
+    "대장간",
+    "강화"
+  ],
+  "categories": [
+    "menu"
+  ]
+}

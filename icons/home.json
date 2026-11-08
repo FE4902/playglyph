@@ -1,0 +1,22 @@
+{
+  "description": "Home, main menu, lobby",
+  "aliases": [
+    "house",
+    "main-menu",
+    "lobby",
+    "title-screen",
+    "home-filled"
+  ],
+  "tags": [
+    "menu"
+  ],
+  "tagsKo": [
+    "홈",
+    "메인 메뉴",
+    "로비",
+    "처음으로"
+  ],
+  "categories": [
+    "control"
+  ]
+}

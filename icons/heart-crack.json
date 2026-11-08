@@ -1,0 +1,21 @@
+{
+  "description": "Lose a life, broken heart, game over",
+  "aliases": [
+    "lose-life",
+    "broken-heart",
+    "life-lost",
+    "heartbreak",
+    "heart-broken"
+  ],
+  "tags": [
+    "damage"
+  ],
+  "tagsKo": [
+    "목숨 잃음",
+    "깨진 하트",
+    "실패"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

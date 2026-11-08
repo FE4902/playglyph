@@ -1,0 +1,20 @@
+{
+  "description": "Rewind, slow down, go back in time",
+  "aliases": [
+    "fast-backward",
+    "slow-down",
+    "rewind-time",
+    "backward",
+    "fast-rewind"
+  ],
+  "tags": [
+    "backward"
+  ],
+  "tagsKo": [
+    "되감기",
+    "느리게"
+  ],
+  "categories": [
+    "control"
+  ]
+}

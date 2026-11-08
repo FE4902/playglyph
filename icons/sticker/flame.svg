@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="lava">
+  <path d="M12.00 1.78C12.00 1.78 5.52 7.62 5.52 13.88A6.48 6.48 0 0 0 18.48 13.88C18.48 10.42 16.54 8.05 15.24 6.97C15.02 9.13 13.94 10.42 12.65 10.86C13.51 7.83 12.00 3.73 12.00 1.78z" fill="#2a0807" data-fill="outline" stroke="#2a0807" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M12.00 1.78C12.00 1.78 5.52 7.62 5.52 13.88A6.48 6.48 0 0 0 18.48 13.88C18.48 10.42 16.54 8.05 15.24 6.97C15.02 9.13 13.94 10.42 12.65 10.86C13.51 7.83 12.00 3.73 12.00 1.78z" fill="#8f1d0e" data-fill="shadow"/>
+  <path d="M12.00 1.78C12.00 1.78 5.52 7.62 5.52 13.88A6.48 6.48 0 0 0 18.48 13.88C18.48 10.42 16.54 8.05 15.24 6.97C15.02 9.13 13.94 10.42 12.65 10.86C13.51 7.83 12.00 3.73 12.00 1.78z" fill="#e8531a" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M12 12.9L13.73 14.84L14.38 17L13.62 18.94L12 19.59L10.38 18.94L9.62 17L10.27 14.84z" fill="#ffa23a" data-fill="light" transform="translate(-0.5 -0.6)"/>
+  <path d="M7.8 12.4a5.4 5.4 0 0 1 1.3 -2.8" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#fff2a8" data-stroke="shine"/>
+</svg>

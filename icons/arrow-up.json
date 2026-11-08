@@ -1,0 +1,21 @@
+{
+  "description": "Up, move up, scroll up",
+  "aliases": [
+    "up",
+    "move-up",
+    "scroll-up",
+    "chevron-up",
+    "caret-up",
+    "arrow-upward"
+  ],
+  "tags": [
+    "north"
+  ],
+  "tagsKo": [
+    "위로",
+    "위"
+  ],
+  "categories": [
+    "control"
+  ]
+}

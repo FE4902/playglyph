@@ -1,0 +1,25 @@
+{
+  "description": "Ticket, pass, event entry or gacha ticket",
+  "aliases": [
+    "pass",
+    "coupon",
+    "event-ticket",
+    "raffle",
+    "gacha-ticket",
+    "confirmation-number",
+    "local-activity"
+  ],
+  "tags": [
+    "admission",
+    "voucher"
+  ],
+  "tagsKo": [
+    "티켓",
+    "이용권",
+    "뽑기권",
+    "쿠폰"
+  ],
+  "categories": [
+    "currency"
+  ]
+}

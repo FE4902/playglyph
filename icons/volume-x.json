@@ -1,0 +1,24 @@
+{
+  "description": "Muted, sound off toggle",
+  "aliases": [
+    "mute",
+    "muted",
+    "sound-off",
+    "volume-off",
+    "no-sound",
+    "volume-xmark",
+    "volume-mute",
+    "speaker-off"
+  ],
+  "tags": [
+    "silent"
+  ],
+  "tagsKo": [
+    "음소거",
+    "소리 끔",
+    "무음"
+  ],
+  "categories": [
+    "system"
+  ]
+}

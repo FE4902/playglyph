@@ -1,0 +1,19 @@
+{
+  "description": "Luck, lucky bonus",
+  "aliases": [
+    "lucky",
+    "four-leaf",
+    "fortune",
+    "luck-bonus"
+  ],
+  "tags": [
+    "shamrock"
+  ],
+  "tagsKo": [
+    "행운",
+    "네잎클로버"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

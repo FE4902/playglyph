@@ -1,0 +1,20 @@
+{
+  "description": "Day, light mode, brightness",
+  "aliases": [
+    "day",
+    "light-mode",
+    "brightness",
+    "daytime"
+  ],
+  "tags": [
+    "sunny"
+  ],
+  "tagsKo": [
+    "낮",
+    "밝기",
+    "해"
+  ],
+  "categories": [
+    "system"
+  ]
+}

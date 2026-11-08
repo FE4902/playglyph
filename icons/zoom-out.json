@@ -1,0 +1,18 @@
+{
+  "description": "Zoom out of the map or view",
+  "aliases": [
+    "shrink-view",
+    "zoom-back",
+    "magnifying-glass-minus",
+    "search-minus"
+  ],
+  "tags": [
+    "farther"
+  ],
+  "tagsKo": [
+    "축소"
+  ],
+  "categories": [
+    "control"
+  ]
+}

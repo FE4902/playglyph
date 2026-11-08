@@ -1,0 +1,24 @@
+{
+  "description": "Done, completed, success",
+  "aliases": [
+    "complete",
+    "completed",
+    "success",
+    "check-circle",
+    "cleared",
+    "check-circle-fill",
+    "task-alt",
+    "verified"
+  ],
+  "tags": [
+    "passed"
+  ],
+  "tagsKo": [
+    "완료",
+    "성공",
+    "클리어"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

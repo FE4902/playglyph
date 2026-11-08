@@ -1,0 +1,21 @@
+{
+  "description": "Empty heart, a lost life slot in the health bar",
+  "aliases": [
+    "empty-heart",
+    "heart-outline",
+    "life-empty",
+    "no-life",
+    "empty-life"
+  ],
+  "tags": [
+    "container"
+  ],
+  "tagsKo": [
+    "빈 하트",
+    "잃은 목숨",
+    "빈 체력"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

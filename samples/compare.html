@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Style Samples</title>
+<style>
+  :root { --bg: #14161d; --panel: #1c1f29; --line: #2b2f3d; --text: #e7e9f0; --muted: #8b90a3; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, sans-serif; padding: 20px 16px 60px; }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  p.lead { color: var(--muted); margin: 0 0 20px; }
+  table { border-collapse: separate; border-spacing: 8px; }
+  th { color: var(--muted); font-weight: 500; font-size: 12px; text-align: center; padding: 0 4px; }
+  th.row { text-align: left; color: var(--text); font-size: 13px; }
+  td { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; text-align: center; vertical-align: middle; color: #e7e9f0; }
+  td.new { border-color: #4b6b52; }
+  .mats { display: flex; gap: 6px; justify-content: center; margin-top: 8px; }
+  .hud { display: flex; align-items: center; gap: 18px; padding: 10px 14px; border-radius: 10px; margin: 6px 0 0; }
+  .hud .grp { display: flex; align-items: center; gap: 6px; font-weight: 700; }
+  .hud .tag { font-size: 11px; color: var(--muted); width: 110px; font-weight: 500; }
+  .wrap { overflow-x: auto; }
+  h2 { font-size: 15px; margin: 28px 0 8px; }
+  img.px, svg.px { image-rendering: pixelated; }
+</style>
+</head>
+<body>
+<h1>스타일 샘플 비교</h1>
+<p class="lead">왼쪽 두 칸은 지금 버전, 초록 테두리 세 칸이 새 후보입니다. 아래쪽은 실제 게임 HUD 크기(24~32px)에서 본 모습입니다.</p>
+<div class="wrap"><table id="big"></table></div>
+<h2>실제 HUD 크기</h2>
+<div id="huds"></div>
+
+<script type="module">
+  import { palettes, filled, sticker, pixel } from './style-samples.js';
+  import { icon } from '../dist/lookup.js';
+
+  const fillTpl = (tpl, p) => tpl.replace(/\{o\}/g, p[0]).replace(/\{s\}/g, p[1]).replace(/\{b\}/g, p[2]).replace(/\{l\}/g, p[3]).replace(/\{h\}/g, p[4]);
+  const svgFilled = (n, size, color = '#e7e9f0') => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" style="color:${color}">${filled[n]}</svg>`;
+  const svgSticker = (n, size, p) => `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="-1 -1 26 26">${fillTpl(sticker[n], p)}</svg>`;
+  const svgPixel = (n, size, p) => {
+    const rows = pixel[n].rows;
+    let rects = '';
+    rows.forEach((row, y) => {
+      for (let x = 0; x < row.length; x++) {
+        const ch = row[x];
+        if (ch === '.') continue;
+        rects += `<rect x="${x}" y="${y}" width="1" height="1" fill="${p[Number(ch) - 1]}"/>`;
+      }
+    });
+    return `<svg class="px" xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 32 32" shape-rendering="crispEdges">${rects}</svg>`;
+  };
+
+  const ICONS = [
+    { n: 'settings', label: '설정', mats: ['steel', 'gold', 'wood', 'stone', 'arcane'] },
+    { n: 'heart', label: '하트 (고유색)', mats: ['heart'] },
+    { n: 'coin', label: '동전', mats: ['gold', 'steel', 'wood', 'lava', 'arcane'] },
+  ];
+
+  const head = `<tr><th></th><th>지금: 단색 선</th><th>지금: 도트 16</th><th>A. 채운 단색</th><th>B. 컬러 스티커</th><th>C. 도트 32 (손질)</th></tr>`;
+  $big: {
+    const rows = ICONS.map(({ n, label, mats }) => {
+      const p0 = palettes[mats[0]];
+      const others = (fn) => mats.length > 1 ? `<div class="mats">${mats.map((m) => fn(palettes[m])).join('')}</div>` : '';
+      return `<tr><th class="row">${label}</th>
+        <td>${icon(n, { size: 96 })}</td>
+        <td>${icon(n, { style: 'pixel', size: 96 })}</td>
+        <td class="new">${svgFilled(n, 96)}</td>
+        <td class="new">${svgSticker(n, 96, p0)}${others((p) => svgSticker(n, 32, p))}</td>
+        <td class="new">${svgPixel(n, 96, p0)}${others((p) => svgPixel(n, 32, p))}</td></tr>`;
+    });
+    document.getElementById('big').innerHTML = head + rows.join('');
+  }
+
+  const hud = (bg, tag, render) => `<div class="hud" style="background:${bg}"><span class="tag">${tag}</span>
+    <span class="grp">${render('heart', 0)} 3</span><span class="grp">${render('coin', 1)} 1,250</span><span style="flex:1"></span>${render('settings', 2)}</div>`;
+  const sizes = [24, 32];
+  let html = '';
+  for (const bg of ['#1d2030', '#3b5f3a']) {
+    html += hud(bg, '단색 도트 32px', (n) => icon(n, { style: 'pixel', shading: 'mono', color: '#e7e9f0', size: 32 }));
+  }
+  for (const s of sizes) {
+    for (const bg of ['#1d2030', '#3b5f3a']) {
+      html += hud(bg, `지금 (단색 선) ${s}px`, (n) => icon(n, { size: s, color: '#e7e9f0' }));
+      html += hud(bg, `지금 (도트 16) ${s}px`, (n) => icon(n, { style: 'pixel', size: s }));
+      html += hud(bg, `A 채운 단색 ${s}px`, (n) => svgFilled(n, s));
+      html += hud(bg, `B 스티커 ${s}px`, (n) => svgSticker(n, s, palettes[n === 'heart' ? 'heart' : n === 'coin' ? 'gold' : 'steel']));
+      html += hud(bg, `C 도트 32 · ${s}px`, (n) => svgPixel(n, s, palettes[n === 'heart' ? 'heart' : n === 'coin' ? 'gold' : 'steel']));
+    }
+  }
+  document.getElementById('huds').innerHTML = html;
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "description": "Checkpoint, save point, respawn",
+  "aliases": [
+    "checkpoint",
+    "save-point",
+    "respawn"
+  ],
+  "tags": [
+    "goal"
+  ],
+  "tagsKo": [
+    "깃발",
+    "체크포인트",
+    "저장 지점"
+  ],
+  "categories": [
+    "hud"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "A flag hangs its cloth from the top of the pole; it is centered by its outline."
+  }
+}

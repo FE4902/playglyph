@@ -1,0 +1,20 @@
+{
+  "description": "Vibration or haptics on/off",
+  "aliases": [
+    "vibration",
+    "haptic",
+    "haptics",
+    "rumble"
+  ],
+  "tags": [
+    "phone",
+    "buzz"
+  ],
+  "tagsKo": [
+    "진동",
+    "햅틱"
+  ],
+  "categories": [
+    "system"
+  ]
+}

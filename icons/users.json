@@ -1,0 +1,27 @@
+{
+  "description": "Friends, party members, team",
+  "aliases": [
+    "friends",
+    "friend-list",
+    "party",
+    "team",
+    "members",
+    "group",
+    "user-group",
+    "people",
+    "group-users"
+  ],
+  "tags": [
+    "people",
+    "social"
+  ],
+  "tagsKo": [
+    "친구",
+    "파티",
+    "팀",
+    "멤버"
+  ],
+  "categories": [
+    "social"
+  ]
+}

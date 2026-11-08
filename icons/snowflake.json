@@ -1,0 +1,23 @@
+{
+  "description": "Freeze or slow status effect",
+  "aliases": [
+    "ice",
+    "freeze",
+    "frozen",
+    "cold",
+    "slow",
+    "ac-unit"
+  ],
+  "tags": [
+    "frost"
+  ],
+  "tagsKo": [
+    "얼음",
+    "빙결",
+    "슬로우",
+    "눈"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

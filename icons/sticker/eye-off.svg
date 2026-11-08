@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <path d="M2.2 12C4.8 7.4 8.2 5.4 12 5.4S19.2 7.4 21.8 12C19.2 16.6 15.8 18.6 12 18.6S4.8 16.6 2.2 12z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M2.2 12C4.8 7.4 8.2 5.4 12 5.4S19.2 7.4 21.8 12C19.2 16.6 15.8 18.6 12 18.6S4.8 16.6 2.2 12z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M2.2 12C4.8 7.4 8.2 5.4 12 5.4S19.2 7.4 21.8 12C19.2 16.6 15.8 18.6 12 18.6S4.8 16.6 2.2 12z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M7.6 12a4.4 4.4 0 1 0 8.8 0a4.4 4.4 0 1 0 -8.8 0z" fill="#1b1f33" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.4 12a2.6 2.6 0 1 0 5.2 0a2.6 2.6 0 1 0 -5.2 0z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M3.4 3.4L20.6 20.6" fill="none" stroke="#4a1029" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M3.4 3.4L20.6 20.6" fill="none" stroke="#a3203f" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M3.4 3.4L20.6 20.6" fill="none" stroke="#e33e4a" stroke-width="1.8" stroke-linecap="round" transform="translate(-0.3 -0.3)"/>
+  <path d="M5.6 10.4a8 8 0 0 1 2 -2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

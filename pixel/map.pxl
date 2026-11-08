@@ -1,0 +1,22 @@
+# map — 16x16 pixel icon
+@materials wood gold
+@P #dfc98f
+@H #fff0b5
+@S #b89a62
+@R #ba5557
+................
+.........11.....
+..111...1H11....
+..1HH111HHH111..
+..1HHP1HHP1PS1..
+..1HPP1HPP1PS1..
+..1HPP1HPP1PS1..
+..1HPR1PRP1PS1..
+..1HPP1RRP1PS1..
+..1HPR1PRP1PS1..
+..1HPP1HPP1PS1..
+..1HPP1HPP1PS1..
+..111P1HPP1SS1..
+.....111PP1111..
+........111.....
+................

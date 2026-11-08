@@ -1,0 +1,23 @@
+{
+  "description": "View, show, visibility, spectate",
+  "aliases": [
+    "view",
+    "show",
+    "visible",
+    "visibility",
+    "spectate",
+    "watch",
+    "remove-red-eye"
+  ],
+  "tags": [
+    "look"
+  ],
+  "tagsKo": [
+    "보기",
+    "보이기",
+    "관전"
+  ],
+  "categories": [
+    "control"
+  ]
+}

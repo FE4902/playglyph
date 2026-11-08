@@ -1,0 +1,21 @@
+{
+  "description": "Hammer booster, smash a tile, break",
+  "aliases": [
+    "smash",
+    "break",
+    "hammer-booster",
+    "mallet",
+    "smash-tile"
+  ],
+  "tags": [
+    "tool"
+  ],
+  "tagsKo": [
+    "망치",
+    "부수기",
+    "부스터"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

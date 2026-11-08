@@ -1,0 +1,18 @@
+{
+  "description": "Vibration or haptics off",
+  "aliases": [
+    "vibration-off",
+    "haptic-off",
+    "haptics-off",
+    "rumble-off"
+  ],
+  "tags": [
+    "silent"
+  ],
+  "tagsKo": [
+    "진동 끔"
+  ],
+  "categories": [
+    "system"
+  ]
+}

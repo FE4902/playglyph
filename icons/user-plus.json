@@ -1,0 +1,19 @@
+{
+  "description": "Add friend, invite a player",
+  "aliases": [
+    "add-friend",
+    "invite",
+    "add-user",
+    "friend-request"
+  ],
+  "tags": [
+    "recruit"
+  ],
+  "tagsKo": [
+    "친구 추가",
+    "초대"
+  ],
+  "categories": [
+    "social"
+  ]
+}

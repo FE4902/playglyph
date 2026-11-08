@@ -1,0 +1,20 @@
+{
+  "description": "Locked content, not yet available",
+  "aliases": [
+    "locked",
+    "padlock",
+    "lock-closed"
+  ],
+  "tags": [
+    "secure",
+    "closed"
+  ],
+  "tagsKo": [
+    "잠김",
+    "자물쇠",
+    "잠금"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

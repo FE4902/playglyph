@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="gold">
+  <path d="M3.07 16.53a4.4 4.4 0 1 0 8.8 0a4.4 4.4 0 1 0 -8.8 0z" fill="#3d1e10" data-fill="outline" stroke="#3d1e10" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M9.17 12.85L18.36 3.66L21.9 7.19L19.78 9.31L18.22 7.76L17.09 8.89L19.07 10.87L17.52 12.42L15.54 10.44L11.15 14.83z" fill="#3d1e10" data-fill="outline" stroke="#3d1e10" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M3.07 16.53a4.4 4.4 0 1 0 8.8 0a4.4 4.4 0 1 0 -8.8 0z" fill="#a3531c" data-fill="shadow"/>
+  <path d="M9.17 12.85L18.36 3.66L21.9 7.19L19.78 9.31L18.22 7.76L17.09 8.89L19.07 10.87L17.52 12.42L15.54 10.44L11.15 14.83z" fill="#a3531c" data-fill="shadow"/>
+  <path d="M3.07 16.53a4.4 4.4 0 1 0 8.8 0a4.4 4.4 0 1 0 -8.8 0z" fill="#e39a2b" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M9.17 12.85L18.36 3.66L21.9 7.19L19.78 9.31L18.22 7.76L17.09 8.89L19.07 10.87L17.52 12.42L15.54 10.44L11.15 14.83z" fill="#e39a2b" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.57 16.53a1.9 1.9 0 1 0 3.8 0a1.9 1.9 0 1 0 -3.8 0z" fill="#3d1e10" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M4.56 17.59A3.1 3.1 0 0 1 4.94 14.75" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#fff7d6" data-stroke="shine"/>
+</svg>

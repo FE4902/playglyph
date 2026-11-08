@@ -1,0 +1,31 @@
+{
+  "description": "Leaderboard, rankings, high scores",
+  "aliases": [
+    "podium",
+    "ranking",
+    "rankings",
+    "highscore",
+    "scores",
+    "leaderboards",
+    "podium-places",
+    "emoji-podium"
+  ],
+  "tags": [
+    "winner"
+  ],
+  "tagsKo": [
+    "순위표",
+    "랭킹",
+    "리더보드",
+    "최고 점수"
+  ],
+  "categories": [
+    "social"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "A podium is bottom-heavy by nature; the star above is as large as the edge margin allows."
+  }
+}

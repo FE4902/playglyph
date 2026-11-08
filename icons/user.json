@@ -1,0 +1,32 @@
+{
+  "description": "Character or player profile",
+  "aliases": [
+    "character",
+    "profile",
+    "avatar",
+    "player",
+    "account",
+    "hero",
+    "person",
+    "account-circle",
+    "face"
+  ],
+  "tags": [
+    "person"
+  ],
+  "tagsKo": [
+    "캐릭터",
+    "프로필",
+    "내 정보",
+    "플레이어"
+  ],
+  "categories": [
+    "menu"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "A head-and-shoulders silhouette is bottom-heavy by nature; it is centered by its outline instead."
+  }
+}

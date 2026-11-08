@@ -1,0 +1,20 @@
+{
+  "description": "Hint, tip, idea",
+  "aliases": [
+    "hint",
+    "tip",
+    "idea",
+    "clue"
+  ],
+  "tags": [
+    "bulb"
+  ],
+  "tagsKo": [
+    "힌트",
+    "전구",
+    "팁"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

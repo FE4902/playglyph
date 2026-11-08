@@ -1,0 +1,21 @@
+{
+  "description": "Defend action, armor or defense stat",
+  "aliases": [
+    "defend",
+    "defense",
+    "guard",
+    "block",
+    "armor"
+  ],
+  "tags": [
+    "protection"
+  ],
+  "tagsKo": [
+    "방패",
+    "방어",
+    "방어력"
+  ],
+  "categories": [
+    "combat"
+  ]
+}

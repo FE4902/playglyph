@@ -1,0 +1,29 @@
+{
+  "description": "Confirm, OK, done",
+  "aliases": [
+    "confirm",
+    "ok",
+    "done",
+    "yes",
+    "accept",
+    "tick"
+  ],
+  "tags": [
+    "success",
+    "complete"
+  ],
+  "tagsKo": [
+    "확인",
+    "완료",
+    "체크"
+  ],
+  "categories": [
+    "control"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "light"
+    ],
+    "why": "A checkmark is a short line; it keeps the 2.8 weight of close so OK/Cancel match."
+  }
+}

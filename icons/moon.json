@@ -1,0 +1,20 @@
+{
+  "description": "Night, dark mode, sleep",
+  "aliases": [
+    "night",
+    "dark-mode",
+    "sleep",
+    "nighttime"
+  ],
+  "tags": [
+    "moon-phase"
+  ],
+  "tagsKo": [
+    "밤",
+    "다크 모드",
+    "달"
+  ],
+  "categories": [
+    "system"
+  ]
+}

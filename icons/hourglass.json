@@ -1,0 +1,25 @@
+{
+  "description": "Timer, cooldown, waiting",
+  "aliases": [
+    "timer",
+    "time",
+    "cooldown",
+    "wait",
+    "hourglass-empty",
+    "hourglass-top",
+    "hourglass-bottom",
+    "hourglass-full"
+  ],
+  "tags": [
+    "countdown"
+  ],
+  "tagsKo": [
+    "모래시계",
+    "타이머",
+    "쿨다운",
+    "대기"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

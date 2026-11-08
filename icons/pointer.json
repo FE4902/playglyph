@@ -1,0 +1,28 @@
+{
+  "description": "Tap or click here, touch to start",
+  "aliases": [
+    "tap",
+    "touch",
+    "hand-pointer",
+    "click",
+    "finger",
+    "tap-to-start",
+    "touch-app",
+    "hand-point-up",
+    "hand-pointer-up",
+    "hand",
+    "point",
+    "tap-here"
+  ],
+  "tags": [
+    "hand"
+  ],
+  "tagsKo": [
+    "탭",
+    "터치",
+    "클릭"
+  ],
+  "categories": [
+    "input"
+  ]
+}

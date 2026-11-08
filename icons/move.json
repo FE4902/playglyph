@@ -1,0 +1,23 @@
+{
+  "description": "Move, drag, pan the view",
+  "aliases": [
+    "drag",
+    "pan",
+    "move-all",
+    "reposition",
+    "arrows-up-down-left-right",
+    "open-with",
+    "arrows-move",
+    "drag-pan"
+  ],
+  "tags": [
+    "arrows"
+  ],
+  "tagsKo": [
+    "이동",
+    "드래그"
+  ],
+  "categories": [
+    "control"
+  ]
+}

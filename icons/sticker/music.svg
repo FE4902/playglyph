@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
+  <ellipse cx="7.69" cy="18.55" rx="3.96" ry="3.3" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M10.89 18.55V3.69" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="6.2"/>
+  <path d="M11.54 3.03c0.88 2.86 7.26 3.74 7.26 9.46 0 0.66 -0.66 0.88 -1.1 0.33 -1.54 -2.42 -3.74 -2.97 -6.16 -3.3z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <ellipse cx="7.69" cy="18.55" rx="3.96" ry="3.3" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M10.89 18.55V3.69" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.8"/>
+  <path d="M11.54 3.03c0.88 2.86 7.26 3.74 7.26 9.46 0 0.66 -0.66 0.88 -1.1 0.33 -1.54 -2.42 -3.74 -2.97 -6.16 -3.3z" fill="#4d5a7c" data-fill="shadow"/>
+  <ellipse cx="7.69" cy="18.55" rx="3.96" ry="3.3" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.89 18.55V3.69" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.8" transform="translate(-0.5 -0.6)"/>
+  <path d="M11.54 3.03c0.88 2.86 7.26 3.74 7.26 9.46 0 0.66 -0.66 0.88 -1.1 0.33 -1.54 -2.42 -3.74 -2.97 -6.16 -3.3z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M5.38 17.33a2.64 2.2 0 0 1 1.76 -1.1" fill="none" stroke-linecap="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+</svg>

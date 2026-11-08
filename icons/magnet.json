@@ -1,0 +1,18 @@
+{
+  "description": "Magnet power-up, attract coins",
+  "aliases": [
+    "attract",
+    "coin-magnet",
+    "pickup-magnet"
+  ],
+  "tags": [
+    "pull"
+  ],
+  "tagsKo": [
+    "자석",
+    "끌어당기기"
+  ],
+  "categories": [
+    "hud"
+  ]
+}
