@@ -1,22 +1,43 @@
 # map — 16x16 pixel icon
+# roles: . empty | 1-5 primary (outline shadow base light shine) | a-e secondary | A-Z fixed
+# paper keeps its own color in every material, like the heart's red
 @materials wood gold
-@P #dfc98f
 @H #fff0b5
+@P #dfc98f
 @S #b89a62
-@R #ba5557
+@T #94784a
+@R #d84d52
 ................
-.........11.....
-..111...1H11....
-..1HH111HHH111..
-..1HHP1HHP1PS1..
-..1HPP1HPP1PS1..
-..1HPP1HPP1PS1..
-..1HPR1PRP1PS1..
-..1HPP1RRP1PS1..
-..1HPR1PRP1PS1..
-..1HPP1HPP1PS1..
-..1HPP1HPP1PS1..
-..111P1HPP1SS1..
-.....111PP1111..
-........111.....
+.11111....11111.
+.1HHP11111HPPS1.
+.1HPP1STSS1PPS1.
+.1HRP1STSS1PPS1.
+.1HPP1RTSS1PPS1.
+.1HPP1SRSS1PPS1.
+.1HPP1STRS1PPS1.
+.1HPP1STSS1RPR1.
+.1HPP1STSS1PRS1.
+.1HPP1STSS1RPR1.
+.1HPP1STSS1PPS1.
+.1PSS1STSS1SSS1.
+.11111STSS11111.
+.....111111.....
+................
+
+@mono
+................
+.1111......1111.
+.11111111111111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.1111.1111.1111.
+.11111111111111.
+.11111111111111.
+......1111......
 ................

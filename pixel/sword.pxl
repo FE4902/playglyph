@@ -1,4 +1,5 @@
 # sword — 16x16 pixel icon
+# roles: . empty | 1-5 primary (outline shadow base light shine) | a-e secondary | A-Z fixed
 @materials steel gold
 ................
 ............111.

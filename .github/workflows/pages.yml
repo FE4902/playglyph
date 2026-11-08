@@ -1,0 +1,76 @@
+name: Deploy site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build dist
+        run: npm run build
+
+      - name: Stage site and release zip
+        shell: bash
+        env:
+          SITE_DIR: ${{ runner.temp }}/site
+          ZIP_WORK: ${{ runner.temp }}/zipwork
+        run: |
+          set -euo pipefail
+          VERSION="$(node -p "require('./package.json').version")"
+          NAME="playglyph-${VERSION}"
+          echo "Packaging ${NAME}"
+
+          # Release zip with a single top-level folder playglyph-<version>/
+          rm -rf "$ZIP_WORK" && mkdir -p "$ZIP_WORK/$NAME"
+          cp -R dist icons pixel LICENSE README.md package.json "$ZIP_WORK/$NAME/"
+          (cd "$ZIP_WORK" && zip -qr -X "${NAME}.zip" "$NAME")
+
+          # Static site served from the repo root layout
+          rm -rf "$SITE_DIR" && mkdir -p "$SITE_DIR"
+          cp -R index.html site preview examples samples dist icons pixel \
+                LICENSE README.md package.json "$SITE_DIR/"
+          cp "$ZIP_WORK/${NAME}.zip" "$SITE_DIR/"
+          touch "$SITE_DIR/.nojekyll"
+
+          test -f "$SITE_DIR/dist/lookup.js"
+          test -f "$SITE_DIR/${NAME}.zip"
+          du -sh "$SITE_DIR"
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

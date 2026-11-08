@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pixel Board</title>
+<style>
+  :root { --bg: #14161d; --panel: #1c1f29; --line: #2b2f3d; --text: #e7e9f0; --muted: #8b90a3; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 12px/1.4 system-ui, sans-serif; padding: 12px; }
+  table { border-collapse: collapse; }
+  th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: center; vertical-align: middle; }
+  th { color: var(--muted); font-weight: 500; position: sticky; top: 0; background: var(--bg); }
+  td.name { text-align: left; white-space: nowrap; }
+  td.new .n { color: #ffd45a; }
+  td.light { background: #eef0f4; }
+  td.hud { background: #3b4a2f; }
+  .sizes { display: flex; gap: 6px; align-items: flex-end; justify-content: center; }
+  svg { image-rendering: pixelated; display: block; }
+</style>
+</head>
+<body>
+<p>도트 아이콘 세트 비교 · 노란 이름 = 검토 대상 · 16·32·48px · 어두운/밝은/게임 배경 · 단색(mono) · 재질</p>
+<table id="t"></table>
+<script type="module">
+  const v = Date.now();
+  const { icon, getIcon } = await import(`../dist/lookup.js?v=${v}`);
+  const { names } = await import(`../dist/catalog.js?v=${v}`);
+  const q = new URLSearchParams(location.search);
+  const focus = (q.get('new') ?? 'gem,sword,shield,potion,map,gift').split(',');
+  // Pixel is hidden from meta.json, so ask the lookup which names have pixel art.
+  const pixelNames = names.filter((n) => getIcon(n, 'pixel'));
+  const all = (q.get('icons')?.split(',') ?? pixelNames);
+  const order = [...all.filter((n) => !focus.includes(n)), ...all.filter((n) => focus.includes(n))];
+  const px = (n, o) => icon(n, { style: 'pixel', ...o });
+  const sizes = (n, o) => `<div class="sizes">${[16, 32, 48].map((s) => px(n, { ...o, size: s })).join('')}</div>`;
+  let html = '<tr><th>이름</th><th>스티커 48</th><th>도트 · 어두운</th><th>도트 · 밝은</th><th>도트 · 게임 HUD</th><th>단색 · 흰</th><th>단색 · 밝은</th><th>gold</th><th>wood</th><th>arcane</th></tr>';
+  for (const n of order) {
+    html += `<tr><td class="name ${focus.includes(n) ? 'new' : ''}"><span class="n">${n}</span></td>
+      <td>${icon(n, { style: 'sticker', size: 48 })}</td>
+      <td>${sizes(n, {})}</td><td class="light">${sizes(n, {})}</td><td class="hud">${sizes(n, {})}</td>
+      <td>${sizes(n, { shading: 'mono' })}</td><td class="light">${sizes(n, { shading: 'mono', color: '#2a2d38' })}</td>
+      <td>${px(n, { material: 'gold', size: 32 })}</td><td>${px(n, { material: 'wood', size: 32 })}</td><td>${px(n, { material: 'arcane', size: 32 })}</td></tr>`;
+  }
+  document.getElementById('t').innerHTML = html;
+</script>
+</body>
+</html>

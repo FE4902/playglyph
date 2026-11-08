@@ -250,6 +250,9 @@ ${m.aliases.length ? `// 별칭도 됨: ${m.aliases.slice(0, 3).join(', ')}` : '
     $('theme').textContent = light ? 'Dark' : 'Light';
   };
   document.addEventListener('keydown', (e) => { if (e.key === '/' && document.activeElement !== $('q')) { e.preventDefault(); $('q').focus(); } });
+  // The intro page's search box links here as ?q=coin
+  const initialQ = new URLSearchParams(location.search).get('q');
+  if (initialQ) { $('q').value = initialQ; state.q = initialQ; }
   render();
 </script>
 </body>
