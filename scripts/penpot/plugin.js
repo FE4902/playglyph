@@ -85,6 +85,25 @@ const pg = {
     return done;
   },
 
+  // Swap an existing component's drawing for a new SVG (e.g. after a redraw in scripts/draw-batch-*.mjs).
+  // Layers are moved one by one: moving the imported group does not carry its children along.
+  replace(board, style, svg) {
+    [...board.children].forEach((c) => c.remove());
+    const g = penpot.createShapeFromSvg(style === 'sticker' ? svg : svg.replaceAll('currentColor', INK));
+    const bg = g.children.find((c) => c.name === 'base-background');
+    const dx = board.x - bg.x, dy = board.y - bg.y;
+    bg.remove();
+    const attrs = [...svg.replace(COMMENT, '').matchAll(ELEMENT)].map((m) => dataAttrs(m[2]));
+    [...g.children].forEach((k, i) => {
+      const a = attrs[i] ?? {};
+      k.name = a['data-fill'] || a['data-stroke'] || a['data-layer'] || `layer-${i + 1}`;
+      k.setPluginData('src', JSON.stringify(a));
+      board.appendChild(k);
+      k.x += dx; k.y += dy;
+    });
+    board.setPluginData('root', JSON.stringify(dataAttrs(svg.match(/<svg\b([^>]*)>/)[1])));
+  },
+
   payload(b) {
     const shapes = {};
     const walk = (s) => { for (const c of s.children ?? []) { const src = c.getPluginData('src'); shapes[c.id] = { name: c.name, src: src ? JSON.parse(src) : null }; walk(c); } };

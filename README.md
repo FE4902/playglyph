@@ -7,7 +7,7 @@
 - **AI 친화:** Lucide·Font Awesome·Material 이름이 별칭으로 그대로 통합니다(`trash-2`, `xmark`, `floppy-disk`, `play_arrow`). 대소문자·구분자는 무시하고, 없는 이름은 "?" 아이콘과 비슷한 이름 제안으로 처리해서 화면이 깨지지 않습니다. `llms.txt` 포함
 - **게임 엔진용 도구:** 캔버스·Phaser·Pixi에 넣을 이미지로 바꾸는 `toImage` / `toCanvas`, 비활성·잠김 상태 표현
 
-> 현재 134종 모두 채운 단색과 스티커로 그려져 있습니다. 이전 선 스타일(`icons/line/`)은 새 아이콘이 아직 그려지지 않았을 때의 대체용으로만 남아 있습니다.
+> 현재 134종 모두 채운 단색과 스티커로 그려져 있습니다.
 >
 > 아이콘은 `scripts/draw-batch-*.mjs`로 그립니다(공통 규칙은 `scripts/draw-lib.mjs`). 고친 뒤에는 해당 스크립트를 다시 실행하고 `npm run build`로 검사합니다.
 
@@ -93,7 +93,6 @@ el.innerHTML = renderPixel(Heart, { shading: 'mono', color: '#54e0ba', size: 32 
 icons/<name>.json          메타데이터: description, aliases, tags, tagsKo, categories
 icons/filled/<name>.svg    채운 단색 (주 스타일)
 icons/sticker/<name>.svg   컬러 스티커
-icons/line/<name>.svg      이전 선 스타일 — filled가 그려지기 전까지 대체용
 pixel/<name>.pxl           도트 (실험적, 갤러리와 llms.txt에는 노출 안 함)
 src/                       런타임 (core, sticker, lookup, materials, pixel, react)
 scripts/build.mjs          검사 + dist 생성
@@ -102,7 +101,7 @@ scripts/penpot/            Penpot에서 고친 도안을 icons/로 되돌리는 
 
 ### Penpot에서 고치기
 
-Penpot 파일에 스타일마다 페이지가 있고(Filled, Sticker, Line), 아이콘 하나가 24×24 컴포넌트 하나입니다. 레이어 순서는 SVG 원소 순서와 같습니다.
+Penpot 파일에 스타일마다 페이지가 있고(Filled, Sticker), 아이콘 하나가 24×24 컴포넌트 하나입니다. 레이어 순서는 SVG 원소 순서와 같습니다.
 
 1. `node scripts/penpot/bridge.mjs`를 실행하고 Penpot MCP 플러그인을 연결합니다. 플러그인 탭이 가려지면 연결이 끊기니 Penpot 창을 화면에 둡니다.
 2. `scripts/penpot/plugin.js`의 내용을 MCP `execute_code`로 한 번 실행합니다. 그다음 고친 아이콘을 `await storage.pg.stage('edit-1', ['coin'])`로 보냅니다(이름을 빼면 현재 페이지 전체).
@@ -112,6 +111,7 @@ Penpot 파일에 스타일마다 페이지가 있고(Filled, Sticker, Line), 아
 - 획은 가운데 정렬, 단색만 씁니다. 그림자·블러·그라디언트는 원본 형식에 담을 수 없어 동기화가 거부합니다.
 - `scripts/draw-batch-*.mjs`로 만든 아이콘이면 같은 수정을 스크립트에도 옮깁니다. 그러지 않으면 스크립트를 다시 실행할 때 수정이 덮어써집니다.
 - 처음 가져올 때는 `storage.pg.importStyle('filled')`로 페이지를 만들고 `stage('baseline')`을 보낸 뒤 `node scripts/penpot/sync.mjs --init`을 실행합니다.
+- 생성 스크립트로 다시 그린 아이콘은 `icons/`에 쓴 뒤 `storage.pg.replace(board, style, svg)`로 Penpot 컴포넌트를 바꿉니다. 그다음 `stage('baseline', [이름])`을 보내고 `sync.mjs --init`으로 기준을 맞춥니다.
 
 ## 그리기 규칙
 

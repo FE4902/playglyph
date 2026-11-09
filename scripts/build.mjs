@@ -3,7 +3,6 @@
 //   icons/<name>.json          metadata (description, aliases, tags, tagsKo, categories)
 //   icons/filled/<name>.svg    filled mono style (main style)
 //   icons/sticker/<name>.svg   color sticker style (roles via data-fill / data-stroke)
-//   icons/line/<name>.svg      legacy line style — fallback until an icon gets its filled version
 //   pixel/<name>.pxl           experimental pixel style
 //
 //   node scripts/build.mjs          → validate + build
@@ -26,11 +25,6 @@ const NAME_RE = /^[a-z][a-z0-9]*(-[a-z0-9]+)*$/;
 const TONES = ['outline', 'shadow', 'base', 'light', 'shine'];
 const ROLES = new Set([...TONES, ...TONES.map((t) => `alt-${t}`)]);
 const HEX_RE = /^#[0-9a-f]{6}$/i;
-const LINE_ROOT = {
-  xmlns: 'http://www.w3.org/2000/svg', width: '24', height: '24', viewBox: '0 0 24 24', fill: 'none',
-  stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round',
-};
-const LINE_BAKE = { fill: 'none', stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
 
 const toPascalCase = (s) => s.replace(/(^|-)([a-z0-9])/g, (_, __, ch) => ch.toUpperCase());
 const parseAttrs = (s) => Object.fromEntries([...s.matchAll(/([\w:-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
@@ -119,17 +113,6 @@ for (const file of styleFiles('sticker')) {
   byName.get(name).sticker = { materials: mats, nodes };
 }
 
-// ── line (legacy fallback) ──────────────────────────────────────────────────
-for (const file of styleFiles('line')) {
-  const name = file.slice(0, -4);
-  const fail = (msg) => errors.push(`icons/line/${file}: ${msg}`);
-  if (!byName.has(name)) { fail(`no icons/${name}.json`); continue; }
-  const svg = parseSvg(join(ICONS, 'line', file), fail);
-  if (!svg) continue;
-  for (const [k, v] of Object.entries(LINE_ROOT)) if (svg.root[k] !== v) fail(`root ${k} must be "${v}"`);
-  byName.get(name).line = svg.children.map(([tag, a]) => [tag, { ...LINE_BAKE, ...a }]);
-}
-
 // ── pixel (experimental) ────────────────────────────────────────────────────
 const ROLE_RE = /^[.1-5a-eA-Z]$/;
 if (existsSync(PIXEL)) {
@@ -169,9 +152,9 @@ if (existsSync(PIXEL)) {
 }
 
 for (const i of icons) {
-  if (!i.filled && !i.line) errors.push(`icons/${i.name}.json: no art — add icons/filled/${i.name}.svg`);
-  i.mono = i.filled ?? i.line;
-  i.styles = [i.filled && 'filled', i.sticker && 'sticker', !i.filled && i.line && 'line'].filter(Boolean);
+  if (!i.filled) errors.push(`icons/${i.name}.json: no art — add icons/filled/${i.name}.svg`);
+  i.mono = i.filled;
+  i.styles = [i.filled && 'filled', i.sticker && 'sticker'].filter(Boolean);
 }
 
 // Every canonical name and alias must be unique — they all become exports.
@@ -191,7 +174,7 @@ if (errors.length) {
   process.exit(1);
 }
 const count = (k) => icons.filter((i) => i[k]).length;
-console.log(`✔ ${icons.length} icons valid — filled ${count('filled')}, sticker ${count('sticker')}, line fallback ${icons.length - count('filled')}, pixel (experimental) ${count('pixel')}; ${icons.reduce((n, i) => n + i.aliases.length, 0)} aliases`);
+console.log(`✔ ${icons.length} icons valid — filled ${count('filled')}, sticker ${count('sticker')}, pixel (experimental) ${count('pixel')}; ${icons.reduce((n, i) => n + i.aliases.length, 0)} aliases`);
 
 // Visual size: warn (don't fail) when a filled icon looks bigger, smaller, lighter or heavier than the set.
 // Full table: node scripts/size-check.mjs
@@ -229,7 +212,6 @@ const reexports = (list, from) => list.map((i) => `export { ${aliasExports(i).jo
 const MATERIAL_EXPORTS = `export { ${Object.keys(materials).join(', ')}, materials } from './materials.js';\n`;
 
 write('icons.js', dataModule(icons, 'mono'));
-write('line-icons.js', dataModule(withStyle('line'), 'line'));
 write('sticker-icons.js', dataModule(withStyle('sticker'), 'sticker'));
 write('pixel-icons.js', dataModule(withStyle('pixel'), 'pixel'));
 write('catalog.js', banner +
@@ -241,7 +223,6 @@ write('index.js', banner + `export * from './icons.js';\nexport * as icons from 
   `export { defaultAttributes, resolveAttributes, toSvg, createElement, createIcons, toDataURL, toImage, toCanvas, svgToDataURL, svgToImage, toKebabCase, toPascalCase } from './core.js';\n` + MATERIAL_EXPORTS);
 write('sticker.js', banner + `export * from './sticker-icons.js';\nexport * as stickerIcons from './sticker-icons.js';\n` + reexports(withStyle('sticker'), 'sticker-icons.js') +
   `export { renderSticker, stickerToDataURL, stickerToImage, stickerToCanvas, stickerPalette } from './sticker-render.js';\n` + MATERIAL_EXPORTS);
-write('line.js', banner + `export * from './line-icons.js';\nexport * as lineIcons from './line-icons.js';\n` + reexports(withStyle('line'), 'line-icons.js'));
 write('pixel.js', banner + `export * from './pixel-icons.js';\nexport * as pixelIcons from './pixel-icons.js';\n` + reexports(withStyle('pixel'), 'pixel-icons.js') +
   `export { renderPixel, drawPixel, pixelToCanvas, pixelToDataURL, pixelPalette } from './pixel-render.js';\n` + MATERIAL_EXPORTS);
 write('react.js', readFileSync(join(ROOT, 'src/react.js'), 'utf8') + `\n${banner}import * as nodes from './icons.js';\n` +
@@ -291,7 +272,6 @@ ${materialDecls}
 export declare const stickerIcons: Record<string, StickerIcon>;
 ${decl(withStyle('sticker'), 'StickerIcon')}
 `);
-write('line.d.ts', `${banner}import type { IconNode } from './index.js';\nexport declare const lineIcons: Record<string, IconNode>;\n${decl(withStyle('line'), 'IconNode')}\n`);
 write('pixel.d.ts', `${banner}import type { PixelIcon, Material, MaterialName } from './index.js';
 export interface PixelOptions { material?: Material | MaterialName; secondary?: Material | MaterialName; scale?: number; size?: number; shading?: 'mono' | 'flat' | 'cel' | 'full' | 'gloss'; color?: string; state?: 'disabled' | 'locked'; className?: string }
 export declare function renderPixel(icon: PixelIcon, options?: PixelOptions): string;
@@ -305,12 +285,12 @@ ${decl(withStyle('pixel'), 'PixelIcon')}
 write('materials.d.ts', `${banner}import type { Material, MaterialName } from './index.js';\nexport type { Material, MaterialName };\n${materialDecls}\nexport declare function resolveMaterial(m: Material | MaterialName | null | undefined, fallback?: Material): Material;\n`);
 write('lookup.d.ts', `${banner}import type { IconNode, StickerIcon, PixelIcon, IconName, Material, MaterialName } from './index.js';
 import type { PixelOptions } from './pixel.js';
-export type IconStyle = 'filled' | 'sticker' | 'line' | 'pixel' | 'mono' | 'color';
+export type IconStyle = 'filled' | 'sticker' | 'pixel' | 'mono' | 'color';
 export interface LookupOptions { style?: IconStyle; material?: Material | MaterialName; secondary?: Material | MaterialName; size?: number | string; color?: string; shading?: PixelOptions['shading']; state?: 'disabled' | 'locked'; class?: string }
 export declare const placeholder: IconNode;
 export declare function resolveName(name: IconName | (string & {})): string | null;
 export declare function suggest(name: string, limit?: number): string[];
-export declare function getIcon(name: IconName | (string & {}), style?: 'filled' | 'line' | 'mono'): IconNode | null;
+export declare function getIcon(name: IconName | (string & {}), style?: 'filled' | 'mono'): IconNode | null;
 export declare function getIcon(name: IconName | (string & {}), style: 'sticker' | 'color'): StickerIcon | null;
 export declare function getIcon(name: IconName | (string & {}), style: 'pixel'): PixelIcon | null;
 export declare function icon(name: IconName | (string & {}), options?: LookupOptions): string;
@@ -342,7 +322,6 @@ write('playglyph.js',
     asModule('pixel-render', read('pixel.js')),
     asModule('sticker-render', read('sticker.js')),
     `const __icons = ${dataObj(icons, 'mono')};`,
-    `const __line_icons = ${dataObj(withStyle('line'), 'line')};`,
     `const __sticker_icons = ${dataObj(withStyle('sticker'), 'sticker')};`,
     `const __pixel_icons = ${dataObj(withStyle('pixel'), 'pixel')};`,
     `const __catalog = { names: ${json(icons.map((i) => i.name))}, aliases: ${json(Object.fromEntries(icons.flatMap((i) => i.aliases.map((a) => [a, i.name]))))} };`,

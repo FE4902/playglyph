@@ -162,12 +162,6 @@ function serialize(style, name, root, els) {
       delete o['fill-opacity']; delete o['stroke-opacity'];
       return `  <${tag}${attr(o)}/>`;
     }
-    if (style === 'line') {
-      for (const k of ['fill', 'stroke']) if (o[k] && o[k] !== 'none') { if (o[k] !== INK) throw new Error(`${name}: line icons are one color; found ${o[k]}`); o[k] = 'currentColor'; }
-      const BAKE = { fill: 'none', stroke: 'currentColor', 'stroke-width': '2', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' };
-      for (const [k, v] of Object.entries(BAKE)) if (o[k] === v) delete o[k];
-      return `  <${tag}${attr(o)} />`;
-    }
     // sticker: fill, data-fill, stroke, data-stroke ordering like the generator
     const out = {};
     for (const [k, v] of Object.entries(o)) {
@@ -179,7 +173,6 @@ function serialize(style, name, root, els) {
     return `  <${tag}${attr(out)}/>`;
   }
   const body = lines.map((l) => l.line).join('\n');
-  if (style === 'line') return { lines, svg: `<svg\n  xmlns="http://www.w3.org/2000/svg"\n  width="24"\n  height="24"\n  viewBox="0 0 24 24"\n  fill="none"\n  stroke="currentColor"\n  stroke-width="2"\n  stroke-linecap="round"\n  stroke-linejoin="round"\n>\n${body}\n</svg>\n` };
   const rootExtra = style === 'filled' ? ' fill="currentColor"' : attr(root);
   return { lines, svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"${rootExtra}>\n${body}\n</svg>\n` };
 }
@@ -188,7 +181,7 @@ function serialize(style, name, root, els) {
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop())) {
   const [rawDir, outDir] = process.argv.slice(2);
   let n = 0; const warns = [], errs = [];
-  for (const style of ['filled', 'sticker', 'line']) {
+  for (const style of ['filled', 'sticker']) {
     const dir = join(rawDir, style);
     if (!existsSync(dir)) continue;
     mkdirSync(join(outDir, style), { recursive: true });

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Local bridge between the Penpot MCP plugin and this repo (127.0.0.1 only).
-//   GET  /       → every icon's source SVGs (filled, sticker, line) + category, for import into Penpot
+//   GET  /       → every icon's source SVGs (filled, sticker) + category, for import into Penpot
 //   POST /stage  → { set, items: [{ style, name, markup, root, shapes }] } from plugin.js `stage()`;
 //                  written to .penpot-sync/staged/<set>/<style>/<name>.json — never into icons/ directly.
 //                  `node scripts/penpot/sync.mjs <set> --apply` is what writes icons/.
@@ -15,7 +15,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ICONS = join(ROOT, 'icons');
 const STATE = join(ROOT, '.penpot-sync');
 const PORT = Number(process.argv[2] ?? 5199);
-const STYLES = ['filled', 'sticker', 'line'];
+const STYLES = ['filled', 'sticker'];
 const SAFE = /^[a-z0-9][a-z0-9._-]*$/i;
 
 function bundle() {

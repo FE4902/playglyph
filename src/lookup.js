@@ -1,7 +1,6 @@
 // Name-based access for code that does not know the exact icon names (AI-written games, HTML-only pages).
 // Pulls in every icon, so it is NOT tree-shaken. Bundled apps should import icons by name instead.
 import * as mono from './icons.js';
-import * as lineIcons from './line-icons.js';
 import * as stickerIcons from './sticker-icons.js';
 import * as pixelIcons from './pixel-icons.js';
 import { names, aliases } from './catalog.js';
@@ -18,7 +17,6 @@ export const placeholder = [
 const STYLE_ALIASES = {
   filled: 'filled', fill: 'filled', mono: 'filled', solid: 'filled', glyph: 'filled',
   sticker: 'sticker', color: 'sticker', colour: 'sticker', colored: 'sticker', cartoon: 'sticker',
-  line: 'line', outline: 'line', stroke: 'line',
   pixel: 'pixel', 'pixel-art': 'pixel', retro: 'pixel',
 };
 const normalizeStyle = (s) => STYLE_ALIASES[String(s ?? 'filled').toLowerCase()] ?? 'filled';
@@ -92,7 +90,7 @@ const warned = new Set();
 const warnOnce = (key, msg) => { if (!warned.has(key)) { warned.add(key); console.warn(msg); } };
 
 /**
- * Icon data by any name. style: 'filled' (default) | 'sticker' | 'line' | 'pixel'. Returns null when
+ * Icon data by any name. style: 'filled' (default) | 'sticker' | 'pixel'. Returns null when
  * that name or that style does not exist (no fallback here — see icon() for fallbacks).
  */
 export function getIcon(name, style = 'filled') {
@@ -100,7 +98,7 @@ export function getIcon(name, style = 'filled') {
   if (!k) return null;
   const key = toPascalCase(k);
   const s = normalizeStyle(style);
-  const set = s === 'sticker' ? stickerIcons : s === 'pixel' ? pixelIcons : s === 'line' ? lineIcons : mono;
+  const set = s === 'sticker' ? stickerIcons : s === 'pixel' ? pixelIcons : mono;
   return set[key] ?? null;
 }
 
@@ -129,7 +127,7 @@ export function icon(name, options = {}) {
     if (px) return renderPixel(px, { material, secondary, className: classes, ...rest });
     warnOnce(`style:${canonical}:pixel`, `playglyph: "${canonical}" has no pixel version, using filled.`);
   }
-  const node = (style === 'line' && getIcon(canonical, 'line')) || getIcon(canonical, 'filled');
+  const node = getIcon(canonical, 'filled');
   const color = material ? resolveMaterial(material).mono : rest.color;
   return toSvg(node, { ...rest, ...(color ? { color } : {}), class: classes });
 }

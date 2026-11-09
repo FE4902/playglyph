@@ -28,10 +28,6 @@
       "types": "./dist/sticker.d.ts",
       "default": "./dist/sticker.js"
     },
-    "./line": {
-      "types": "./dist/line.d.ts",
-      "default": "./dist/line.js"
-    },
     "./pixel": {
       "types": "./dist/pixel.d.ts",
       "default": "./dist/pixel.js"

@@ -64,8 +64,12 @@ icons.crown = {
   icons['treasure-chest'] = {
     materials: 'gold',
     parts: [
-      { solid: 'M3.8 10.4V8.6a4.6 4.6 0 0 1 4.6 -4.6H15.6a4.6 4.6 0 0 1 4.6 4.6V10.4z' },
-      { solid: rrect(3.8, 12.6, 16.4, 7.6, 1.4), cut: (g) => [rrect(6.6 - g, 12.6, 1.2 + 2 * g, 7.6, 0.01), rrect(16.2 - g, 12.6, 1.2 + 2 * g, 7.6, 0.01)] },
+      // filled: lid and body stop short of the lock plate (0.6 visible gap after the soft stroke), so the plate
+      // stands apart and the chest reads as a locked chest at 16–24px; the straps stay sticker-only (they'd leave slivers).
+      { solid: 'M3.8 10.4V8.6a4.6 4.6 0 0 1 4.6 -4.6H15.6a4.6 4.6 0 0 1 4.6 4.6V10.4z', stickerOnly: true },
+      { solid: 'M3.8 10.4V8.6a4.6 4.6 0 0 1 4.6 -4.6H15.6a4.6 4.6 0 0 1 4.6 4.6V10.4H16V10.2a3 3 0 0 0 -3 -3H11a3 3 0 0 0 -3 3V10.4z', filledOnly: true },
+      { solid: rrect(3.8, 12.6, 16.4, 7.6, 1.4), cut: (g) => [rrect(6.6 - g, 12.6, 1.2 + 2 * g, 7.6, 0.01), rrect(16.2 - g, 12.6, 1.2 + 2 * g, 7.6, 0.01)], stickerOnly: true },
+      { solid: 'M5.2 12.6H8V13.2a3 3 0 0 0 3 3H13a3 3 0 0 0 3 -3V12.6H18.8a1.4 1.4 0 0 1 1.4 1.4V18.8a1.4 1.4 0 0 1 -1.4 1.4H5.2a1.4 1.4 0 0 1 -1.4 -1.4V14a1.4 1.4 0 0 1 1.4 -1.4z', filledOnly: true },
       { solid: plate, cut: (g) => [circle(12, 11.5, 0.9 + g)], filledOnly: true },
     ],
     detail: () => [groove('M7.2 13.2V19.6M16.8 13.2V19.6', 1.2), recess(plate, 'light'), recess(circle(12, 11.5, 0.9), 'outline')],

@@ -17,7 +17,7 @@ import { convert } from './penpot-to-svg.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const STATE = join(ROOT, '.penpot-sync');
-const STYLES = ['filled', 'sticker', 'line'];
+const STYLES = ['filled', 'sticker'];
 const EL = /^\s*<(path|circle|rect|line|polyline|polygon|ellipse)\b[\s\S]*?\/>\s*$/;
 const args = process.argv.slice(2);
 

@@ -5,19 +5,21 @@
 //   node scripts/draw-batch-6.mjs <outDir>   → writes <outDir>/… (for trying changes)
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { P, circle, rrect, poly, star, rotate, rectPts, offsetPoly, raised, recess, groove, writeIcons } from './draw-lib.mjs';
+import { P, circle, rrect, poly, star, rotate, rectPts, offsetPoly, raised, recess, groove, slashed, SOFT, writeIcons } from './draw-lib.mjs';
 
 const OUT = process.argv[2] ?? join(dirname(fileURLToPath(import.meta.url)), '..', 'icons');
 const icons = {};
 
 // ── sword parts, drawn pointing up, then scaled/rotated about (cx, cy) ──
 // long: a longer blade and shorter hilt (for crossed swords, so they cross mid-blade and stay clear)
-function swordParts(deg, { k = 1, cx = 12, cy = 12.25, dx = 0, dy = 0, alt = false, long = false } = {}) {
+function swordParts(deg, { k = 1, cx = 12, cy = 12.25, dx = 0, dy = 0, alt = false, long = false, axis = null } = {}) {
   const T = (pts) => rotate(pts.map(([x, y]) => [cx + k * (x - cx), cy + k * (y - cy)]), deg, cx, cy).map(([x, y]) => [x + dx, y + dy]);
-  const L = long ? { tip: 1.4, end: 15.2, guard: 15.6, gw: 7.4, grip: 17.8, gripH: 2.6, pom: 21.6, pomR: 1.3 } : { tip: 2, end: 13.6, guard: 14, gw: 10.4, grip: 16.4, gripH: 3.6, pom: 21, pomR: 1.5 };
+  // long (crossed swords): slimmer blade (3.2 wide) so two of them still read as two at 16–24px
+  const L = long ? { tip: 1.4, bw: 1.6, end: 15.2, guard: 15.6, gw: 7.4, grip: 17.8, gripH: 2.6, pom: 21.6, pomR: 1.3 } : { tip: 2, bw: 2, end: 13.6, guard: 14, gw: 10.4, grip: 16.4, gripH: 3.6, pom: 21, pomR: 1.5 };
   const [px, py] = T([[12, L.pom]])[0];
+  if (axis) axis.push(...T([[12, L.tip], [12, L.pom]]), L.bw * k);
   return [
-    { solid: poly(T([[12, L.tip], [14, L.tip + 2.4], [14, L.end], [10, L.end], [10, L.tip + 2.4]])), alt },
+    { solid: poly(T([[12, L.tip], [12 + L.bw, L.tip + 2.4], [12 + L.bw, L.end], [12 - L.bw, L.end], [12 - L.bw, L.tip + 2.4]])), alt },
     { solid: poly(T(rectPts(12 - L.gw / 2, L.guard, L.gw, 2.2, 1.1))), alt },
     { solid: poly(T(rectPts(10.9, L.grip, 2.2, L.gripH))), alt },
     { solid: circle(px, py, L.pomR * k), alt },
@@ -32,24 +34,37 @@ icons.sword = {
 };
 
 // ── swords: battle / PvP (filled: one X silhouette; sticker: the front sword sits on the back one) ──
-icons.swords = {
-  materials: 'steel',
-  stack: true,
-  parts: [...swordParts(-45, { k: 1, cy: 10.6, dy: 1.2, long: true }), ...swordParts(45, { k: 1, cy: 10.6, dy: 1.2, long: true })],
-  shine: 'M15.4 5.6l-1.6 1.6',
-};
+// Filled: the back blade is cut around the front one (like the off-slash gap), so the X reads as two swords.
+{
+  const front = [];
+  const back = swordParts(-45, { k: 1, cy: 10.6, dy: 0.6, long: true }); // dy 0.6: the cut back blade moves the weight down; this re-centres it
+  const fore = swordParts(45, { k: 1, cy: 10.6, dy: 0.6, long: true, axis: front });
+  const [a, b, bw] = front;
+  icons.swords = {
+    materials: 'steel',
+    stack: true,
+    parts: [
+      ...back.map((p, i) => (i === 0 ? { ...p, stickerOnly: true } : p)),
+      { solid: slashed(back[0].solid, { a, b, half: bw + 1 + SOFT }), filledOnly: true },
+      ...fore,
+    ],
+    shine: 'M15.6 4.8l-1.6 1.6',
+  };
+}
 
 // ── bow-arrow: ranged attack. The bow's belly faces the target and the arrow points away from the string. ──
+// The bow sits 0.8 further left and the head starts at x 18, so the bow's apex (outer edge x 16.5) and the
+// arrowhead's base keep a ~0.8 gap instead of touching.
 icons['bow-arrow'] = {
   materials: 'steel',
   parts: [
-    { line: 'M9.2 3Q22.6 12 9.2 21' },
-    { line: 'M9.2 3V21', w: 1.4 },
-    { line: 'M5.2 12H17.4' },
-    { solid: poly([[16.2, 8], [21.6, 12], [16.2, 16]]) },
+    { line: 'M8.4 3Q21.8 12 8.4 21' },
+    { line: 'M8.4 3V21', w: 1.4 },
+    { line: 'M4.6 12H18.6' },
+    { solid: poly([[18, 8.6], [22, 12], [18, 15.4]]) },
     { line: 'M3.2 9.6 5 12 3.2 14.4', w: 2 },
   ],
-  shine: 'M10.6 4.4 12.4 5.8',
+  shine: 'M9.8 4.4 11.6 5.8',
 };
 
 // ── ammo: three bullets ──
