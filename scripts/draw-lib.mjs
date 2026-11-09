@@ -67,7 +67,9 @@ export function slashed(d, { a = [3.4, 3.4], b = [20.6, 20.6], half }) {
   const pieces = [];
   for (const { pts } of pathToPolys(d)) for (const keep of [(v) => v - half, (v) => -v - half]) {
     const c = clip(pts, keep);
-    if (c.length > 2) pieces.push(poly(c));
+    // drop crumbs the slash leaves at a shape's tip — they render as a stray speck at 16–24px
+    const area = Math.abs(c.reduce((s, [x, y], i) => s + x * c[(i + 1) % c.length][1] - c[(i + 1) % c.length][0] * y, 0)) / 2;
+    if (c.length > 2 && area >= 0.5) pieces.push(poly(c));
   }
   return pieces.join(' ');
 }

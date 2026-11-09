@@ -97,7 +97,21 @@ icons/line/<name>.svg      이전 선 스타일 — filled가 그려지기 전�
 pixel/<name>.pxl           도트 (실험적, 갤러리와 llms.txt에는 노출 안 함)
 src/                       런타임 (core, sticker, lookup, materials, pixel, react)
 scripts/build.mjs          검사 + dist 생성
+scripts/penpot/            Penpot에서 고친 도안을 icons/로 되돌리는 도구
 ```
+
+### Penpot에서 고치기
+
+Penpot 파일에 스타일마다 페이지가 있고(Filled, Sticker, Line), 아이콘 하나가 24×24 컴포넌트 하나입니다. 레이어 순서는 SVG 원소 순서와 같습니다.
+
+1. `node scripts/penpot/bridge.mjs`를 실행하고 Penpot MCP 플러그인을 연결합니다. 플러그인 탭이 가려지면 연결이 끊기니 Penpot 창을 화면에 둡니다.
+2. `scripts/penpot/plugin.js`의 내용을 MCP `execute_code`로 한 번 실행합니다. 그다음 고친 아이콘을 `await storage.pg.stage('edit-1', ['coin'])`로 보냅니다(이름을 빼면 현재 페이지 전체).
+3. `node scripts/penpot/sync.mjs edit-1`로 바뀐 아이콘을 확인하고, `--apply`로 `icons/`에 씁니다. 손대지 않은 레이어는 원본 줄을 그대로 두므로 git diff에는 고친 줄만 나옵니다. 마지막으로 `npm run build`로 검사합니다.
+
+- 스티커 색 역할은 레이어에 붙어 따라갑니다. 새로 그린 레이어는 이름(`outline`, `shadow`, `base`, `light`, `shine`, `alt-*`)으로 역할을 정합니다.
+- 획은 가운데 정렬, 단색만 씁니다. 그림자·블러·그라디언트는 원본 형식에 담을 수 없어 동기화가 거부합니다.
+- `scripts/draw-batch-*.mjs`로 만든 아이콘이면 같은 수정을 스크립트에도 옮깁니다. 그러지 않으면 스크립트를 다시 실행할 때 수정이 덮어써집니다.
+- 처음 가져올 때는 `storage.pg.importStyle('filled')`로 페이지를 만들고 `stage('baseline')`을 보낸 뒤 `node scripts/penpot/sync.mjs --init`을 실행합니다.
 
 ## 그리기 규칙
 
@@ -111,6 +125,7 @@ scripts/build.mjs          검사 + dist 생성
 검사하지 않지만 지킬 것:
 
 - 스티커는 외곽선 → 그림자 → 위·왼쪽으로 0.5 옮긴 본면 → 흰 하이라이트 순서. 빛은 좌상단에서
+- 꺼짐(`*-off`) 스티커는 하이라이트를 빨간 사선 아래에 그리고, 사선 중심선에서 2.6 이상 떨어뜨립니다. 사선에 닿으면 사선에 흰 흠집이 난 것처럼 보입니다
 - 스티커 외곽선(3.4)까지 24×24 안에 들어오게
 - 24px에서 실루엣만 보고도 무엇인지 알 수 있게
 - 컬러 도안을 한 색으로 채웠을 때 형태가 뭉개지면 `.pxl` 끝에 `@mono`를 추가하고 같은 크기의 단색 도안을 그립니다. `1`은 채움, `.`은 투명입니다.

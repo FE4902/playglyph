@@ -51,7 +51,7 @@ icons['log-in'] = {
       { line: 'M3.4 3.4L20.6 20.6', filledOnly: true },
     ],
     detail: offSlash,
-    shine: toD(arcPts(cx, cy, 10.2, 236, 252, 4)),
+    shine: 'M4.3 9.9C4.7 9.6 5.1 9.3 5.5 9.1', // on the outer arc's left piece, clear of the slash
   };
 }
 

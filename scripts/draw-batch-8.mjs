@@ -30,7 +30,8 @@ function offIcon(shapes, { shine } = {}) {
 // bell (same geometry as bell in batch 3)
 const BELL = 'M12 3.4C8.6 3.4 6.2 6 6.2 9.4V12.6L4.6 15.2A1 1 0 0 0 5.4 16.8H18.6A1 1 0 0 0 19.4 15.2L17.8 12.6V9.4C17.8 6 15.4 3.4 12 3.4z';
 const CLAPPER = 'M9.8 19.2a2.2 2.2 0 0 0 4.4 0z';
-icons['bell-off'] = offIcon([{ solid: BELL }, { solid: CLAPPER }], { shine: 'M8.6 8.6a3.8 3.8 0 0 1 1.6 -2.4' });
+// shine sits on the dome right of the slash so it never touches the red line (moved in Penpot, 2026-11-09)
+icons['bell-off'] = offIcon([{ solid: BELL }, { solid: CLAPPER }], { shine: 'M9.9 5.6C10.4 5.1 11 4.8 11.7 4.7' });
 
 // vibrate (same geometry as vibrate in batch 2)
 const zig = (x0, x1) => `M${x0} 7.8L${x1} 10L${x0} 12.2L${x1} 14.4L${x0} 16.6`;
@@ -49,7 +50,7 @@ const zig = (x0, x1) => `M${x0} 7.8L${x1} 10L${x0} 12.2L${x1} 14.4L${x0} 16.6`;
 {
   const almond = 'M2.2 12C4.8 7.4 8.2 5.4 12 5.4S19.2 7.4 21.8 12C19.2 16.6 15.8 18.6 12 18.6S4.8 16.6 2.2 12z';
   const g = SOFT / 2;
-  icons['eye-off'] = offIcon([{ solid: almond, whole: `${almond} ${circle(12, 12, 4.4 + g)} ${circle(12, 12, 2.6 - g)}`, evenodd: true }], { shine: 'M5.6 10.4a8 8 0 0 1 2 -2' });
+  icons['eye-off'] = offIcon([{ solid: almond, whole: `${almond} ${circle(12, 12, 4.4 + g)} ${circle(12, 12, 2.6 - g)}`, evenodd: true }], { shine: 'M3.9 10.9C4.4 10.3 4.9 9.8 5.5 9.4' }); // shine kept left of the slash
   icons['eye-off'].detail = () => [recess(circle(12, 12, 4.4), 'outline'), recess(circle(12, 12, 2.6), 'base'), ...offSlash()];
 }
 
