@@ -1,12 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="steel">
-  <path d="M6.4 14.4h11.2a2 2 0 0 1 2 2v1.4a2 2 0 0 1 -2 2h-11.2a2 2 0 0 1 -2 -2v-1.4a2 2 0 0 1 2 -2z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
-  <path d="M12 14.4V8.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="6.2"/>
-  <path d="M7.8 5.9a4.2 4.2 0 1 0 8.4 0a4.2 4.2 0 1 0 -8.4 0z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
-  <path d="M6.4 14.4h11.2a2 2 0 0 1 2 2v1.4a2 2 0 0 1 -2 2h-11.2a2 2 0 0 1 -2 -2v-1.4a2 2 0 0 1 2 -2z" fill="#4d5a7c" data-fill="shadow"/>
-  <path d="M12 14.4V8.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.8"/>
-  <path d="M7.8 5.9a4.2 4.2 0 1 0 8.4 0a4.2 4.2 0 1 0 -8.4 0z" fill="#4d5a7c" data-fill="shadow"/>
-  <path d="M6.4 14.4h11.2a2 2 0 0 1 2 2v1.4a2 2 0 0 1 -2 2h-11.2a2 2 0 0 1 -2 -2v-1.4a2 2 0 0 1 2 -2z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
-  <path d="M12 14.4V8.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.8" transform="translate(-0.5 -0.6)"/>
-  <path d="M7.8 5.9a4.2 4.2 0 1 0 8.4 0a4.2 4.2 0 1 0 -8.4 0z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
-  <path d="M9.37 4.94A2.8 2.8 0 0 1 11.04 3.27" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
+  <path d="M5.5 16.5h11.8a1.5 1.5 0 0 1 1.5 1.5v0.4a1.5 1.5 0 0 1 -1.5 1.5h-11.8a1.5 1.5 0 0 1 -1.5 -1.5v-0.4a1.5 1.5 0 0 1 1.5 -1.5z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M8.6 13.7h4a1.2 1.2 0 0 1 1.2 1.2v0.6a1.2 1.2 0 0 1 -1.2 1.2h-4a1.2 1.2 0 0 1 -1.2 -1.2v-0.6a1.2 1.2 0 0 1 1.2 -1.2z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M10.6 13.7L13.1 7.7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1b1f33" data-stroke="outline" stroke-width="5.6"/>
+  <path d="M10.1 5.3a3.9 3.9 0 1 0 7.8 0a3.9 3.9 0 1 0 -7.8 0z" fill="#1b1f33" data-fill="outline" stroke="#1b1f33" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M5.5 16.5h11.8a1.5 1.5 0 0 1 1.5 1.5v0.4a1.5 1.5 0 0 1 -1.5 1.5h-11.8a1.5 1.5 0 0 1 -1.5 -1.5v-0.4a1.5 1.5 0 0 1 1.5 -1.5z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M8.6 13.7h4a1.2 1.2 0 0 1 1.2 1.2v0.6a1.2 1.2 0 0 1 -1.2 1.2h-4a1.2 1.2 0 0 1 -1.2 -1.2v-0.6a1.2 1.2 0 0 1 1.2 -1.2z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M10.6 13.7L13.1 7.7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#4d5a7c" data-stroke="shadow" stroke-width="2.2"/>
+  <path d="M10.1 5.3a3.9 3.9 0 1 0 7.8 0a3.9 3.9 0 1 0 -7.8 0z" fill="#4d5a7c" data-fill="shadow"/>
+  <path d="M5.5 16.5h11.8a1.5 1.5 0 0 1 1.5 1.5v0.4a1.5 1.5 0 0 1 -1.5 1.5h-11.8a1.5 1.5 0 0 1 -1.5 -1.5v-0.4a1.5 1.5 0 0 1 1.5 -1.5z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M8.6 13.7h4a1.2 1.2 0 0 1 1.2 1.2v0.6a1.2 1.2 0 0 1 -1.2 1.2h-4a1.2 1.2 0 0 1 -1.2 -1.2v-0.6a1.2 1.2 0 0 1 1.2 -1.2z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.6 13.7L13.1 7.7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#8b9dba" data-stroke="base" stroke-width="2.2" transform="translate(-0.5 -0.6)"/>
+  <path d="M10.1 5.3a3.9 3.9 0 1 0 7.8 0a3.9 3.9 0 1 0 -7.8 0z" fill="#8b9dba" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M11.65 4.44A2.5 2.5 0 0 1 13.14 2.95" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#f6fbff" data-stroke="shine"/>
 </svg>

@@ -148,11 +148,17 @@ icons.flag = {
   };
 }
 
-// ── joystick: arcade stick ──
+// ── joystick: arcade stick, tilted ──
+// A thin tilted stick on a collar and a low base. Upright with a thick stick it read as a rubber stamp.
 icons.joystick = {
   materials: 'steel',
-  parts: [{ solid: rrect(4.4, 14.4, 15.2, 5.4, 2) }, { line: 'M12 14.4V8.4' }, { solid: circle(12, 5.9, 4.2), sharp: true }],
-  shine: `M${P(12, 5.9, 2.8, 200)}A2.8 2.8 0 0 1 ${P(12, 5.9, 2.8, 250)}`,
+  parts: [
+    { solid: rrect(4, 16.5, 14.8, 3.4, 1.5) },
+    { solid: rrect(7.4, 13.7, 6.4, 3, 1.2) },
+    { line: 'M10.6 13.7L13.1 7.7', w: 2.2 },
+    { solid: circle(14, 5.3, 3.9), sharp: true }, // a big ball and a low base keep the weight near the middle
+  ],
+  shine: `M${P(14, 5.3, 2.5, 200)}A2.5 2.5 0 0 1 ${P(14, 5.3, 2.5, 250)}`,
 };
 
 // ── dpad: directional pad ──
@@ -179,7 +185,7 @@ icons.joystick = {
     materials: 'steel',
     parts: keys.map(([x, y], i) => ({ solid: rrect(x, y, 6.2, 6.2, 1.5), cut: [arrow(x, y, dirs[i])], sharp: true })),
     detail: () => [recess(keys.map(([x, y], i) => arrow(x, y, dirs[i])).join(' '), 'outline')],
-    shine: 'M10.3 6.6v1.6',
+    shine: 'M9.6 6.3v0.9', // left edge of the top key, clear of its arrow
   };
 }
 

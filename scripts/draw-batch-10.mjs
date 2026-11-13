@@ -94,7 +94,7 @@ icons.infinity = {
       { solid: poly(R(bodyPts)), cut: (g) => [circle(...R([[12, 8.6]])[0], 1.9 + g)] },
       { solid: poly(R([[8.2, 11.4], [4.8, 14.8], [5.2, 18.2], [8.4, 15.8]])) },
       { solid: poly(R([[15.8, 11.4], [19.2, 14.8], [18.8, 18.2], [15.6, 15.8]])) },
-      { solid: poly(R([[9.8, 18.2], [14.2, 18.2], [12, 22.2]])), alt: true },
+      { solid: poly(R([[9.4, 18.2], [14.6, 18.2], [12, 22.8]])), alt: true }, // wide enough that the flame's face shows inside its outline
     ],
     detail: () => [recess(circle(...R([[12, 8.6]])[0], 1.9), 'outline')],
     shine: (() => { const [a, b] = R([[10.2, 6], [9.6, 10]]); return toD([a, b]); })(),

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Set Review Board</title>
+<!-- 세트 검토 보드. ?page=1..n (쪽당 per개), ?icons=a,b,c (지정한 순서대로), ?bg=light, ?per=36, ?big=96 (큰 크기) -->
+<style>
+  body { margin: 0; background: #14161d; color: #e7e9f0; font: 11px/1.3 system-ui, sans-serif; padding: 10px; }
+  body.light { background: #eef0f4; color: #2a2d38; }
+  #out { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--w, 196px), 1fr)); gap: 6px; }
+  .cell { border: 1px solid #2b2f3d; border-radius: 6px; padding: 6px 6px 4px; }
+  body.light .cell { border-color: #cfd3dc; }
+  .row { display: flex; gap: 6px; align-items: flex-end; }
+  .lab { color: #8b90a3; margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+</style>
+</head>
+<body>
+<div id="out"></div>
+<script type="module">
+  const q = new URLSearchParams(location.search);
+  if (q.get('bg') === 'light') document.body.classList.add('light');
+  const meta = await (await fetch('../dist/meta.json?t=' + Date.now())).json();
+  const big = +(q.get('big') ?? 48);
+  document.body.style.setProperty('--w', big * 2 + 100 + 'px');
+  const per = +(q.get('per') ?? 36), page = +(q.get('page') ?? 1);
+  const names = q.get('icons') ? q.get('icons').split(',') : meta.map((m) => m.name).slice((page - 1) * per, page * per);
+  const load = async (style, n) => { const r = await fetch(`../dist/svg/${style}/${n}.svg?t=${Date.now()}`); return r.ok ? r.text() : ''; };
+  const sized = (svg, s) => svg.replace(/width="24" height="24"/, `width="${s}" height="${s}"`);
+  let html = '';
+  for (const n of names) {
+    const fi = await load('filled', n), st = await load('sticker', n);
+    html += `<div class="cell"><div class="row">${sized(fi, big)}${sized(st, big)}${sized(fi, 24)}${sized(st, 24)}${sized(fi, 16)}${sized(st, 16)}</div><div class="lab">${n}</div></div>`;
+  }
+  document.getElementById('out').innerHTML = html;
+</script>
+</body>
+</html>

@@ -50,19 +50,21 @@ const growRect = (x, y, w, h, r) => (g) => rrect(x - g, y - g, w + 2 * g, h + 2 
   };
 }
 
-// ── trophy: cup + handles + stem + base, star on the cup ──
+// ── trophy: cup + loop handles + stem + base, star on the cup ──
+// Handles are thin loops (1.8) that stand off the cup, so the hole in each stays open in the filled style.
+// The star is small enough to leave room for the shine at the rim's left.
 {
-  const cup = 'M6.6 3.6H17.4V9.2a5.4 5.4 0 0 1 -10.8 0z';
+  const cup = 'M6.8 3.8H17.2V9.2a5.2 5.2 0 0 1 -10.4 0z';
   icons.trophy = {
     parts: [
-      { solid: cup, cut: (g) => [star(12, 8.7, 3.0 + 1.5 * g, 1.35 + 0.8 * g)] },
-      { line: 'M6.4 5.4H4.4V7.4a3.6 3.6 0 0 0 3.6 3.6' },
-      { line: 'M17.6 5.4H19.6V7.4a3.6 3.6 0 0 1 -3.6 3.6' },
-      { solid: rrect(10.8, 14, 2.4, 3.8, 0.4) },
-      { solid: rrect(7.2, 17.4, 9.6, 3.2, 1.2) },
+      { solid: cup, cut: (g) => [star(12, 9.2, 2.6 + 1.5 * g, 1.2 + 0.8 * g)] },
+      { line: 'M6.8 5.4H3.7V7.2a4 4 0 0 0 3.7 4', w: 1.8 },
+      { line: 'M17.2 5.4H20.3V7.2a4 4 0 0 1 -3.7 4', w: 1.8 },
+      { solid: rrect(10.9, 14, 2.2, 4.2, 0.4) },
+      { solid: rrect(7.4, 18, 9.2, 3, 1.2) },
     ],
-    detail: [...raised(star(12, 8.7, 3.0, 1.35))],
-    shine: 'M8.6 5.4v2.6',
+    detail: [...raised(star(12, 9.2, 2.6, 1.2))],
+    shine: 'M8.3 5.3v1.2',
   };
 }
 
@@ -77,7 +79,7 @@ const growRect = (x, y, w, h, r) => (g) => rrect(x - g, y - g, w + 2 * g, h + 2 
       { solid: rrect(15.6, 14.6, 5.6, 5.6, 1), sharp: true },
     ],
     detail: [...raised(one)],
-    shine: 'M10.4 11v2',
+    shine: 'M4.4 14.6v2', // on the left step: the middle one carries the raised 1
   };
 }
 

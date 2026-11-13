@@ -76,9 +76,14 @@ const icons = {};
   const lat = (y) => {
     const dy = Math.abs(y - c), half = 0.65;
     const xo = (rx) => rx * Math.sqrt(1 - (dy / R) ** 2);
-    const edge = Math.sqrt(R * R - dy * dy) + 0.5;
     const o = xo(4.3), i = xo(3.0);
-    return [rrect(c - edge, y - half, edge - o, 2 * half, 0.01), rrect(c + o, y - half, edge - o, 2 * half, 0.01), rrect(c - i, y - half, 2 * i, 2 * half, 0.01)];
+    // the outer pieces end on the globe's own edge: a cut that runs past it would be filled back in by evenodd
+    const outer = (s) => {
+      const pts = [];
+      for (let k = 0; k <= 6; k++) { const yy = y - half + (k / 6) * 2 * half; pts.push([c + s * Math.sqrt(R * R - (yy - c) ** 2), yy]); }
+      return 'M' + [...pts, [c + s * o, y + half], [c + s * o, y - half]].map(([px, py]) => `${f(px)} ${f(py)}`).join('L') + 'z';
+    };
+    return [outer(-1), outer(1), rrect(c - i, y - half, 2 * i, 2 * half, 0.01)];
   };
   const cuts = [...lens, ...lat(7.6), ...lat(16.4)];
   icons.languages = {

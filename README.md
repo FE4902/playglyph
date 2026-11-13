@@ -1,79 +1,127 @@
+<p align="center">
+  <a href="https://fe4902.github.io/playglyph/">
+    <img src=".github/assets/banner.svg" alt="Playglyph: 웹게임용 게임 UI 아이콘" width="820">
+  </a>
+</p>
+
+<p align="center">
+  <b>웹게임 UI 전용 SVG 아이콘 라이브러리.</b><br>
+  HUD, 재화, 인벤토리, 메뉴, 조작 버튼에 쓰는 아이콘 134종을 AI와 함께 웹게임을 만드는 사람이 바로 쓰도록 만들었습니다.
+</p>
+
+<p align="center">
+  <a href="https://fe4902.github.io/playglyph/">사이트</a>
+  ·
+  <a href="https://fe4902.github.io/playglyph/preview/">아이콘 갤러리</a>
+  ·
+  <a href="https://fe4902.github.io/playglyph/docs/">문서</a>
+  ·
+  <a href="https://fe4902.github.io/playglyph/dist/llms.txt">llms.txt</a>
+  ·
+  <a href="LICENSE">ISC 라이선스</a>
+</p>
+
+<p align="center"><b>한국어</b> · <a href="README.en.md">English</a></p>
+
 # Playglyph
 
-**웹게임용 게임 UI 아이콘 라이브러리**입니다. AI가 웹게임을 만들 때 그대로 가져다 쓰도록 만들었습니다. Lucide나 Font Awesome 같은 앱 아이콘 세트에는 없는 체력 하트(꽉 찬·반·빈·깨진 하트), 동전, 보석, 에너지, 물약, 보상, 출석, 광고 보기, 잠긴 스테이지 같은 게임 화면 아이콘이 중심이고, 설정·소리·일시정지·메뉴 같은 기본 아이콘도 함께 들어 있습니다.
+Lucide나 Font Awesome 같은 앱 아이콘 세트에는 게임 화면에 필요한 아이콘이 없습니다. Playglyph는 체력 하트(꽉 찬·반·빈·깨진 하트), 동전, 보석, 물약, 보상 상자, 출석, 광고 보기, 잠긴 스테이지 같은 게임 UI 아이콘이 중심이고, 설정·소리·일시정지·메뉴 같은 기본 아이콘도 함께 들어 있습니다.
 
-- **바로 게임처럼 보이는 스티커 스타일:** `sticker`는 두꺼운 외곽선과 명암이 있는 컬러 아이콘입니다. `filled`(꽉 채운 단색)도 있습니다.
-- **재질로 테마 맞추기:** 아이콘 세트 전체를 게임 분위기에 맞춰 다시 칠합니다. wood, stone, steel, gold, bronze, silver, lava, poison, arcane, holy (뒤의 네 개는 빛남)
-- **AI 친화:** Lucide·Font Awesome·Material 이름이 별칭으로 그대로 통합니다(`trash-2`, `xmark`, `floppy-disk`, `play_arrow`). 대소문자·구분자는 무시하고, 없는 이름은 "?" 아이콘과 비슷한 이름 제안으로 처리해서 화면이 깨지지 않습니다. `llms.txt` 포함
-- **게임 엔진용 도구:** 캔버스·Phaser·Pixi에 넣을 이미지로 바꾸는 `toImage` / `toCanvas`, 비활성·잠김 상태 표현
+<p align="center">
+  <img src=".github/assets/preview.svg" alt="쓰임새별 아이콘: HUD, 재화와 보상, 전투, 조작, 메뉴" width="820">
+</p>
 
-> 현재 134종 모두 채운 단색과 스티커로 그려져 있습니다.
->
-> 아이콘은 `scripts/draw-batch-*.mjs`로 그립니다(공통 규칙은 `scripts/draw-lib.mjs`). 고친 뒤에는 해당 스크립트를 다시 실행하고 `npm run build`로 검사합니다.
+## 게임용으로 만든 점
 
-## 빠르게 보기
+<p align="center">
+  <img src=".github/assets/styles.svg" alt="filled와 sticker 스타일, 재질 10종" width="820">
+</p>
 
-```bash
-npm run preview
+- **스타일 두 가지.** `filled`는 원하는 색으로 칠하는 단색 아이콘이고, `sticker`는 두꺼운 외곽선과 명암이 있는 컬러 아이콘입니다. 134종 모두 두 스타일로 그려져 있습니다.
+- **재질 10종.** `wood`, `stone`, `steel`, `gold`, `bronze`, `silver`, `lava`, `poison`, `arcane`, `holy`. 재질 하나로 세트 전체를 게임 분위기에 맞춰 다시 칠합니다. 뒤의 네 개는 빛이 납니다.
+- **별칭 814개.** Lucide·Font Awesome·Material 이름(`trash-2`, `xmark`, `floppy-disk`, `play_arrow`)과 게임 용어(`mana`, `xp`, `inventory`, `bgm`)가 그대로 통합니다. 대소문자와 구분자는 무시합니다. 없는 이름은 "?" 아이콘으로 그리고 콘솔에 비슷한 이름을 알려 주므로 화면이 깨지지 않습니다.
+- **AI 코딩용 `llms.txt`.** 아이콘 이름, 쓰임새, 별칭과 짧은 사용 예가 한 파일에 들어 있습니다.
+- **캔버스와 게임 엔진.** 아이콘을 이미지나 캔버스로 바꿔 Phaser, Pixi, 일반 canvas에 그립니다. 비활성·잠김 상태도 표현합니다.
+- **도트 스타일 (실험적).** 16×16 `pixel` 아이콘이 16종 있습니다.
+
+외부 의존성은 없습니다. React는 선택적 peer dependency입니다.
+
+## 설치
+
+아직 npm에 올라가지 않았습니다(0.1.0). 지금은 스크립트 한 줄을 넣거나 ZIP을 받아서 씁니다.
+
+```html
+<script src="https://fe4902.github.io/playglyph/dist/playglyph.js"></script>
 ```
 
-- 메인 · 2D 게임 아이콘 비교: `http://127.0.0.1:5178/`
-- 갤러리: `http://127.0.0.1:5178/preview/`
-- 문서: `http://localhost:5178/docs/`
-- 스타일 비교 샘플: `http://localhost:5178/samples/compare.html`
+- ZIP: [playglyph-0.1.0.zip](https://fe4902.github.io/playglyph/playglyph-0.1.0.zip) (SVG 원본, ES 모듈, 전역 스크립트, React 컴포넌트, 스프라이트, llms.txt)
+- npm 공개 후: `npm install playglyph`
 
 ## 사용법
 
-### HTML 한 파일 (빌드 없음)
+### HTML (빌드 없음)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/playglyph/dist/playglyph.js"></script>
-
-<i data-pg="settings"></i>
+<i data-pg="heart" data-style="sticker" data-size="32"></i>
 <i data-pg="coin" data-style="sticker" data-size="32"></i>
-<i data-pg="settings" data-style="sticker" data-material="wood" data-border="#fff"></i>
+<i data-pg="pause" data-color="#ffffff" data-size="32"></i>
+<i data-pg="settings" data-style="sticker" data-material="wood"></i>
 ```
 
-페이지가 로드되면 `data-pg`가 붙은 요소가 SVG로 바뀝니다. 나중에 요소를 추가했다면 `playglyph.createIcons()`를 다시 부르세요.
+`data-pg`가 붙은 요소가 SVG로 바뀝니다. 나중에 추가한 요소도 자동으로 그려집니다.
 
-요소별 옵션: `data-style`(filled | sticker), `data-material`, `data-secondary`, `data-size`, `data-color`, `data-state`(disabled | locked), `data-border`(스티커 테두리 색)
+옵션: `data-style`(filled | sticker), `data-material`, `data-secondary`, `data-size`, `data-color`, `data-state`(disabled | locked), `data-border`(스티커 테두리 색)
 
-자바스크립트 없이 이미지로: `<img src=".../dist/svg/sticker/gold/coin.svg">`
+자바스크립트 없이 이미지로도 씁니다.
 
-### ES 모듈 (트리셰이킹)
+```html
+<img src="https://fe4902.github.io/playglyph/dist/svg/sticker/coin.svg" width="32" height="32" alt="코인">
+<img src="https://fe4902.github.io/playglyph/dist/svg/sticker/gold/settings.svg" width="32" height="32" alt="설정">
+```
+
+### ES 모듈
 
 ```js
-import { Settings, Pause, toSvg } from 'playglyph';          // filled
-import { Coin, renderSticker } from 'playglyph/sticker';     // sticker
-import { wood, gold } from 'playglyph/materials';
+import { Pause, toSvg } from 'playglyph';                  // filled
+import { Coin, renderSticker } from 'playglyph/sticker';   // sticker
+import { gold } from 'playglyph/materials';
+import { icon } from 'playglyph/lookup';                   // 이름으로 찾기 (트리셰이킹 안 됨)
 
 el.innerHTML = toSvg(Pause, { size: 24, color: '#fff' });
-el.innerHTML = renderSticker(Coin, { material: gold, size: 48, border: '#fff' });
+el.innerHTML = renderSticker(Coin, { material: gold, size: 48 });
+el.innerHTML = icon('mana', { style: 'sticker', size: 32 });
 ```
 
-이름으로 찾기(트리셰이킹 안 됨): `import { icon } from 'playglyph/lookup'` → `icon('gear', { style: 'sticker' })`
+npm 공개 전에는 ZIP의 `dist/` 파일을 경로로 불러옵니다(`./playglyph-0.1.0/dist/index.js`, `dist/sticker.js`, `dist/materials.js`, `dist/lookup.js`).
 
 ### React
 
 ```jsx
-import { Settings, Gear, PauseIcon } from 'playglyph/react';   // filled
-<Settings size={24} color="white" />
+import { Heart, Settings, PauseIcon } from 'playglyph/react';   // filled
+
+<Heart size={24} color="tomato" />
 ```
 
 ### Canvas / 게임 엔진
 
+로딩 때 한 번 이미지로 만들고, 매 프레임에는 `drawImage`만 부릅니다.
+
 ```js
-// 로딩 때 한 번 이미지로 만들고, 매 프레임에는 drawImage만
-const coin = await playglyph.stickerToImage(playglyph.getIcon('coin', 'sticker'), { size: 64 });
+import { Pause, toCanvas } from 'playglyph';
+import { Coin, stickerToImage } from 'playglyph/sticker';
+
+const coin = await stickerToImage(Coin, { size: 64 });
 ctx.drawImage(coin, x, y, 32, 32);
 
-const pause = await toCanvas(Pause, { size: 32, color: '#fff' });   // filled
-this.textures.addCanvas('pause', pause);                            // Phaser
+const pause = await toCanvas(Pause, { size: 32, color: '#fff' });
+this.textures.addCanvas('pause', pause);   // Phaser
 ```
 
-### 단색 도트
+스크립트 태그로 불러왔다면 `playglyph.stickerToImage(playglyph.getIcon('coin', 'sticker'), { size: 64 })`처럼 씁니다.
 
-도트 아이콘은 기본으로 재질 색을 사용합니다. `shading: 'mono'`를 지정하면 한 색으로 그립니다. 하트나 코인처럼 단색에서 형태가 뭉개지는 아이콘은 전용 도안을 사용합니다. 기본색은 흰색이며, 아래와 같이 원하는 색을 지정할 수 있습니다. 16×16 도안은 32px, 48px처럼 정수 배율에서 또렷하게 보입니다.
+### 도트 (실험적)
+
+도트 아이콘은 기본으로 재질 색을 사용합니다. `shading: 'mono'`를 지정하면 한 색으로 그립니다(기본색은 흰색). 하트나 코인처럼 단색에서 형태가 뭉개지는 아이콘은 전용 도안을 사용합니다. 16×16 도안은 32px, 48px처럼 정수 배율에서 또렷하게 보입니다.
 
 ```html
 <i data-pg="heart" data-style="pixel" data-shading="mono" data-color="#54e0ba" data-size="32"></i>
@@ -87,61 +135,24 @@ el.innerHTML = renderPixel(Heart, { shading: 'mono', color: '#54e0ba', size: 32 
 
 같은 `shading`과 `color` 옵션을 `drawPixel()`과 `pixelToCanvas()`에도 쓸 수 있습니다.
 
-## 원본 구조
+## AI와 함께 쓰기
 
-```
-icons/<name>.json          메타데이터: description, aliases, tags, tagsKo, categories
-icons/filled/<name>.svg    채운 단색 (주 스타일)
-icons/sticker/<name>.svg   컬러 스티커
-pixel/<name>.pxl           도트 (실험적, 갤러리와 llms.txt에는 노출 안 함)
-src/                       런타임 (core, sticker, lookup, materials, pixel, react)
-scripts/build.mjs          검사 + dist 생성
-scripts/penpot/            Penpot에서 고친 도안을 icons/로 되돌리는 도구
+프롬프트에 아래 두 줄을 넣으면 됩니다.
+
+```text
+Use Playglyph for the game UI icons (hearts, coins, settings, pause).
+Icon names and usage: https://fe4902.github.io/playglyph/dist/llms.txt
 ```
 
-### Penpot에서 고치기
+이름 규칙은 AI가 맞히기 쉽게 정했습니다. Lucide와 겹치는 개념은 Lucide 이름을 따르고(`settings`, `volume-2`, `pause`), 켬/끔은 `-off` 접미사로 짝을 이룹니다(`music` / `music-off`).
 
-Penpot 파일에 스타일마다 페이지가 있고(Filled, Sticker), 아이콘 하나가 24×24 컴포넌트 하나입니다. 레이어 순서는 SVG 원소 순서와 같습니다.
+## 더 보기
 
-1. `node scripts/penpot/bridge.mjs`를 실행하고 Penpot MCP 플러그인을 연결합니다. 플러그인 탭이 가려지면 연결이 끊기니 Penpot 창을 화면에 둡니다.
-2. `scripts/penpot/plugin.js`의 내용을 MCP `execute_code`로 한 번 실행합니다. 그다음 고친 아이콘을 `await storage.pg.stage('edit-1', ['coin'])`로 보냅니다(이름을 빼면 현재 페이지 전체).
-3. `node scripts/penpot/sync.mjs edit-1`로 바뀐 아이콘을 확인하고, `--apply`로 `icons/`에 씁니다. 손대지 않은 레이어는 원본 줄을 그대로 두므로 git diff에는 고친 줄만 나옵니다. 마지막으로 `npm run build`로 검사합니다.
+- [문서](https://fe4902.github.io/playglyph/docs/): 설치, 옵션, 전체 API
+- [아이콘 갤러리](https://fe4902.github.io/playglyph/preview/): 134종을 스타일·재질별로 보기
+- [CONTRIBUTING.md](CONTRIBUTING.md): 저장소 구조, 로컬 미리보기, 그리기 규칙, Penpot에서 고치기
+- [ROADMAP.md](ROADMAP.md): 다음에 그릴 아이콘
 
-- 스티커 색 역할은 레이어에 붙어 따라갑니다. 새로 그린 레이어는 이름(`outline`, `shadow`, `base`, `light`, `shine`, `alt-*`)으로 역할을 정합니다.
-- 획은 가운데 정렬, 단색만 씁니다. 그림자·블러·그라디언트는 원본 형식에 담을 수 없어 동기화가 거부합니다.
-- `scripts/draw-batch-*.mjs`로 만든 아이콘이면 같은 수정을 스크립트에도 옮깁니다. 그러지 않으면 스크립트를 다시 실행할 때 수정이 덮어써집니다.
-- 처음 가져올 때는 `storage.pg.importStyle('filled')`로 페이지를 만들고 `stage('baseline')`을 보낸 뒤 `node scripts/penpot/sync.mjs --init`을 실행합니다.
-- 생성 스크립트로 다시 그린 아이콘은 `icons/`에 쓴 뒤 `storage.pg.replace(board, style, svg)`로 Penpot 컴포넌트를 바꿉니다. 그다음 `stage('baseline', [이름])`을 보내고 `sync.mjs --init`으로 기준을 맞춥니다.
+## 라이선스
 
-## 그리기 규칙
-
-빌드(`npm run check`)가 검사하는 것:
-
-- **filled:** `viewBox="0 0 24 24"`, 루트 `fill="currentColor"`. 자식의 fill·stroke는 `currentColor` 또는 `none`만. `transform`·`style`·`class`·`id` 금지
-- **sticker:** `viewBox="0 0 24 24"`. 색은 역할로 지정합니다. `data-fill` / `data-stroke`에 `outline | shadow | base | light | shine` (보조 재질은 `alt-` 접두사). 역할이 없는 색은 고정색(`#rrggbb`)으로 남습니다. 루트의 `data-materials="steel gold"`가 기본 재질
-- **메타:** `description` 필수(80자 이하, "언제 쓰는지"), 카테고리 1개, 이름·별칭은 전체에서 겹치면 안 됨
-- **크기 (경고만):** 채운 아이콘의 크기 상자, 칠해진 면적, 무게중심을 재서 세트에서 튀는 아이콘을 알려 줍니다. 빌드는 멈추지 않습니다. 전체 표는 `node scripts/size-check.mjs`로 봅니다.
-
-검사하지 않지만 지킬 것:
-
-- 스티커는 외곽선 → 그림자 → 위·왼쪽으로 0.5 옮긴 본면 → 흰 하이라이트 순서. 빛은 좌상단에서
-- 꺼짐(`*-off`) 스티커는 하이라이트를 빨간 사선 아래에 그리고, 사선 중심선에서 2.6 이상 떨어뜨립니다. 사선에 닿으면 사선에 흰 흠집이 난 것처럼 보입니다
-- 스티커 외곽선(3.4)까지 24×24 안에 들어오게
-- 24px에서 실루엣만 보고도 무엇인지 알 수 있게
-- 컬러 도안을 한 색으로 채웠을 때 형태가 뭉개지면 `.pxl` 끝에 `@mono`를 추가하고 같은 크기의 단색 도안을 그립니다. `1`은 채움, `.`은 투명입니다.
-- 24×24 정사각형 안에서 실제 크기로 보고 시각적 중심을 맞추기. 재생처럼 비대칭인 도형은 좌우 여백과 면적을 함께 보고 위치를 보정
-
-### 같은 카테고리의 아이콘 맞추기
-
-- 같은 테마와 카테고리에서 함께 쓰는 아이콘은 하나의 스타일로 그립니다. 선 굵기, 모서리의 둥근 정도, 체감 크기, 디테일 밀도를 맞춥니다.
-- 컬러 아이콘은 빛의 방향, 그림자 깊이, 명암 단계와 하이라이트 강도를 맞춥니다. 같은 금속이라면 같은 팔레트를 쓰고, 다른 재질이나 상태를 구분하는 데 필요한 색은 유지합니다.
-- 켬·끔처럼 짝을 이루는 아이콘은 기본 도형의 크기와 위치를 공유합니다. 상태 표식을 추가한 뒤에도 두 아이콘을 번갈아 봤을 때 중심이 움직여 보이지 않게 조정합니다.
-- 갤러리에서 같은 카테고리, 스타일, 재질을 선택해 24px로 나란히 비교합니다. 대체 표시되는 아이콘은 해당 스타일의 아트가 채워질 때까지 별도로 표시합니다.
-
-## 이름 규칙 (AI가 맞히기 쉽게)
-
-- Lucide와 겹치는 개념은 Lucide 이름을 따릅니다 (`settings`, `volume-2`, `volume-x`, `pause`)
-- 켬/끔은 `-off` 접미사 쌍 (`music` / `music-off`)
-- 흔히 쓰는 다른 이름은 별칭으로 (`mute`, `retry`, `inventory`, `bgm`)
-
-외부 의존성은 없습니다 (React는 선택적 peer dependency).
+[ISC](LICENSE)
