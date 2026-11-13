@@ -12,8 +12,8 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SVG_DIR = join(root, 'dist', 'svg');
 const OUT_DIR = join(root, '.github', 'assets');
 
-// Icons that are being redrawn. They stay out of the README images until they settle.
-const HOLD = new Set(['trophy', 'joystick', 'leaderboard', 'rocket', 'languages', 'arrow-keys']);
+// Icons that are being redrawn. Name them here to keep them out of the README images until they settle.
+const HOLD = new Set([]);
 
 const W = 960;
 const PANEL = '#171a2b';
@@ -89,9 +89,9 @@ const GRID_X = 262, SIZE = 44, GAP = 24; // 10 columns: 262 .. 918
 function preview() {
   const groups = [
     ['HUD', 'health, status, timers', ['heart', 'heart-half', 'heart-empty', 'heart-crack', 'star', 'zap', 'flame', 'skull', 'crown', 'clock']],
-    ['Currency &amp; rewards', 'shop, daily login, ads', ['coin', 'gem', 'key', 'ticket', 'gift', 'treasure-chest', 'calendar-check', 'monitor-play', 'badge-percent', 'medal']],
+    ['Currency &amp; rewards', 'shop, daily login, ads', ['coin', 'gem', 'key', 'ticket', 'gift', 'treasure-chest', 'calendar-check', 'monitor-play', 'trophy', 'medal']],
     ['Combat', 'weapons, skills, items', ['sword', 'swords', 'shield', 'bow-arrow', 'magic-wand', 'potion', 'crosshair', 'ammo', 'target', 'heart-plus']],
-    ['Controls', 'buttons and input', ['play', 'pause', 'restart', 'home', 'close', 'check', 'dpad', 'gamepad', 'keyboard', 'mouse']],
+    ['Controls', 'buttons and input', ['play', 'pause', 'restart', 'home', 'close', 'check', 'dpad', 'gamepad', 'joystick', 'keyboard']],
     ['Menu', 'screens and settings', ['settings', 'backpack', 'map', 'quest', 'store', 'user', 'volume-2', 'music', 'bell', 'menu']],
   ];
   const top = 44, step = 84;

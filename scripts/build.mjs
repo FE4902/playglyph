@@ -259,7 +259,7 @@ ${materialDecls}
 export declare const icons: Record<string, IconNode>;
 ${decl(icons, 'IconNode')}
 `);
-const stickerOptions = `export interface StickerOptions { material?: Material | MaterialName; secondary?: Material | MaterialName; size?: number; state?: 'disabled' | 'locked'; className?: string }`;
+const stickerOptions = `export interface StickerOptions { material?: Material | MaterialName; secondary?: Material | MaterialName; size?: number; state?: 'disabled' | 'locked'; border?: string; className?: string }`;
 write('sticker.d.ts', `${banner}import type { StickerIcon, Material, MaterialName } from './index.js';
 export type { StickerIcon, Material, MaterialName };
 ${stickerOptions}
@@ -286,7 +286,7 @@ write('materials.d.ts', `${banner}import type { Material, MaterialName } from '.
 write('lookup.d.ts', `${banner}import type { IconNode, StickerIcon, PixelIcon, IconName, Material, MaterialName } from './index.js';
 import type { PixelOptions } from './pixel.js';
 export type IconStyle = 'filled' | 'sticker' | 'pixel' | 'mono' | 'color';
-export interface LookupOptions { style?: IconStyle; material?: Material | MaterialName; secondary?: Material | MaterialName; size?: number | string; color?: string; shading?: PixelOptions['shading']; state?: 'disabled' | 'locked'; class?: string }
+export interface LookupOptions { style?: IconStyle; material?: Material | MaterialName; secondary?: Material | MaterialName; size?: number | string; color?: string; shading?: PixelOptions['shading']; state?: 'disabled' | 'locked'; border?: string; class?: string }
 export declare const placeholder: IconNode;
 export declare function resolveName(name: IconName | (string & {})): string | null;
 export declare function suggest(name: string, limit?: number): string[];
@@ -370,7 +370,10 @@ write('meta.json', JSON.stringify(icons.map((i) => ({
   tags: i.tags, tagsKo: i.tagsKo, styles: i.styles, materials: i.sticker?.materials ?? [],
 })), null, 2) + '\n');
 
-const cdn = `https://cdn.jsdelivr.net/npm/${PKG.name}@${PKG.version}`;
+// Where the built files are served from. The package is not on npm yet, so jsdelivr/unpkg URLs do not resolve;
+// GitHub Pages serves dist/. After the npm release switch to `https://cdn.jsdelivr.net/npm/${PKG.name}@${PKG.version}`
+// (site/main.js and preview/index.html carry the same URL).
+const cdn = 'https://fe4902.github.io/playglyph';
 const catalogLines = CATEGORIES.flatMap((cat) => {
   const list = icons.filter((i) => i.category === cat);
   if (!list.length) return [];

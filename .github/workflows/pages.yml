@@ -42,7 +42,9 @@ jobs:
 
           # Release zip with a single top-level folder playglyph-<version>/
           rm -rf "$ZIP_WORK" && mkdir -p "$ZIP_WORK/$NAME"
-          cp -R dist icons pixel LICENSE README.md package.json "$ZIP_WORK/$NAME/"
+          cp -R dist icons pixel LICENSE README.md README.en.md CONTRIBUTING.md package.json "$ZIP_WORK/$NAME/"
+          # the READMEs show images from .github/assets by relative path
+          mkdir -p "$ZIP_WORK/$NAME/.github" && cp -R .github/assets "$ZIP_WORK/$NAME/.github/"
           (cd "$ZIP_WORK" && zip -qr -X "${NAME}.zip" "$NAME")
 
           # Static site served from the repo root layout
