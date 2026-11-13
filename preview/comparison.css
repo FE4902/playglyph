@@ -2,8 +2,6 @@
 main .hero { column-gap: 48px; row-gap: 32px; padding: 48px 0 40px; }
 .hero .hero-description > p { margin-top: 0; max-width: 46ch; }
 .game-comparison { grid-column: 1 / -1; min-width: 0; margin: 0; }
-.comparison-heading { margin-bottom: 14px; }
-.comparison-heading h2 { margin: 0; font-size: 18px; letter-spacing: -.025em; }
 .comparison-scene { position: relative; isolation: isolate; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #263d39; color: #fff; user-select: none; touch-action: pan-y; cursor: ew-resize; container-type: inline-size; }
 .game-background, .game-shade, .game-hud { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .game-background { object-fit: cover; }

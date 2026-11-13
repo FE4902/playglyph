@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="site-header"><div class="bar">
-  <a class="brand" href="./" aria-label="Playglyph 메인" data-i18n-attr="aria-label=brand.aria"><i data-pg="gamepad" data-style="sticker" data-size="26"></i> Playglyph</a>
+  <a class="brand" href="./" aria-label="Playglyph 메인" data-i18n-attr="aria-label=brand.aria"><svg class="mark" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="6" fill="#0f3a22"/><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.6" fill="#2f9e5a"/><rect x="3.6" y="3.6" width="16.8" height="15.2" rx="4.6" fill="#7cf29c"/><path d="M10 7.9v6.6l5.6-3.3z" fill="#0f3a22" stroke="#0f3a22" stroke-width="1.6" stroke-linejoin="round"/><path d="M6.6 6.4h2.4" fill="none" stroke="#f1fff5" stroke-width="1.2" stroke-linecap="round"/></svg> Playglyph</a>
   <nav aria-label="메인 메뉴" data-i18n-attr="aria-label=nav.aria">
     <a href="./preview/" data-i18n="nav.icons">아이콘</a>
     <a href="./docs/" data-i18n="nav.docs">문서</a>
@@ -25,8 +25,8 @@
 <main>
   <section class="hero" aria-labelledby="intro-title">
     <div class="hero-copy">
-      <p class="badge-row"><span class="badge">v<span data-version>0.1.0</span></span><span class="badge soft" data-i18n="hero.free">무료 · ISC 라이선스</span></p>
       <h1 id="intro-title" data-i18n="hero.title">웹게임을 위한<br />UI 아이콘</h1>
+      <p class="lede" data-i18n="hero.lede">체력 하트, 코인, 장비, 보상처럼 게임 화면에 쓰는 아이콘을 단색과 컬러 스티커로 그렸습니다</p>
       <form class="search" action="./preview/" role="search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
         <input name="q" type="search" aria-label="아이콘 검색" data-i18n-attr="aria-label=search.aria" placeholder="134개 아이콘 검색 — heart, 코인, 설정" autocomplete="off" />
@@ -35,7 +35,6 @@
       <div class="cta">
         <a class="btn primary" href="./preview/" data-i18n="cta.browse">아이콘 둘러보기</a>
         <a class="btn" href="./docs/" data-i18n="cta.docs">문서</a>
-        <a class="btn" href="#download" data-i18n="cta.download">다운로드</a>
       </div>
       <p class="hero-facts" data-i18n="hero.facts">아이콘 <b data-stat="icons">134</b>종 · 스타일 <b>3</b>가지 · 재질 <b data-stat="materials">10</b>가지 · 의존성 <b>0</b></p>
     </div>
@@ -47,8 +46,9 @@
 
   <section class="section demo" aria-labelledby="comparison-title">
     <figure class="game-comparison" aria-labelledby="comparison-title">
-      <figcaption class="comparison-heading">
-        <h2 id="comparison-title" data-i18n="cmp.title">아이콘 비교</h2>
+      <figcaption class="section-head">
+        <h2 id="comparison-title" data-i18n="cmp.title">같은 화면, 다른 아이콘</h2>
+        <p data-i18n="cmp.desc">가운데 손잡이를 끌면 Lucide와 Playglyph가 바뀝니다</p>
       </figcaption>
       <div class="comparison-scene" id="comparison-scene" style="--split: 50%">
         <img class="game-background" src="./site/pixel-rpg-village.png" width="1672" height="941" alt="가을 마을의 돌길에 모험가가 서 있고 옆으로 강과 나무다리가 보이는 도트 RPG 화면" data-i18n-attr="alt=cmp.alt" fetchpriority="high" draggable="false" />
@@ -69,7 +69,7 @@
   <section class="section" aria-labelledby="play-title">
     <div class="section-head">
       <h2 id="play-title" data-i18n="play.title">스타일과 재질</h2>
-      <p data-i18n="play.desc">아이콘을 누르면 HTML이 복사됩니다.</p>
+      <p data-i18n="play.desc">아이콘을 누르면 HTML이 복사됩니다</p>
     </div>
     <div class="playground">
       <div class="controls" role="group" aria-label="미리보기 설정" data-i18n-attr="aria-label=play.controls">
@@ -90,12 +90,12 @@
     <div class="section-head">
       <h2 id="features-title" data-i18n="feat.title">라이브러리 구성</h2>
     </div>
-    <ul class="features">
-      <li><i data-pg="heart" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.icons.t"><span data-stat="icons">134</span>종 게임 UI 아이콘</strong><p data-i18n="feat.icons.d">체력, 재화, 장비, 보상, 메뉴</p></div></li>
-      <li><i data-pg="gem" data-style="sticker" data-material="arcane" data-size="36"></i><div><strong data-i18n="feat.materials.t"><span data-stat="materials">10</span>가지 재질 테마</strong><p>wood, stone, steel, gold, bronze, silver, lava, poison, arcane, holy</p></div></li>
-      <li><i data-pg="search" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.names.t">별칭 <span data-stat="aliases">814</span>개</strong><p>Lucide · Font Awesome · Material</p></div></li>
-      <li><i data-pg="joystick" data-style="sticker" data-size="36"></i><div><strong>Canvas · Phaser · Pixi</strong><p><code>toImage</code> · <code>toCanvas</code></p></div></li>
-    </ul>
+    <dl class="specs">
+      <div><dt data-i18n="feat.icons.t">게임 UI 아이콘 <span data-stat="icons">134</span>종</dt><dd data-i18n="feat.icons.d">체력, 재화, 장비, 보상, 메뉴</dd></div>
+      <div><dt data-i18n="feat.materials.t">재질 <span data-stat="materials">10</span>가지</dt><dd>wood, stone, steel, gold, bronze, silver, lava, poison, arcane, holy</dd></div>
+      <div><dt data-i18n="feat.names.t">별칭 <span data-stat="aliases">814</span>개</dt><dd data-i18n="feat.names.d">Lucide, Font Awesome, Material 이름 그대로</dd></div>
+      <div><dt data-i18n="feat.canvas.t">캔버스와 엔진</dt><dd>Canvas, Phaser, Pixi · <code>toImage</code>, <code>toCanvas</code></dd></div>
+    </dl>
   </section>
 
   <section class="section quick" id="start" aria-labelledby="start-title">

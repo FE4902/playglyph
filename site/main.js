@@ -158,7 +158,7 @@ if (lib) {
     const tint = { shield: 'wood', crown: 'gold', gem: 'arcane' };
     sheet.innerHTML = cover
       .filter((n) => resolveName(n))
-      .map((n) => `<span class="cover-cell">${icon(n, { style: 'sticker', size: 48, ...(tint[n] ? { material: tint[n] } : {}) })}</span>`)
+      .map((n, i) => `<span class="cover-cell${i === 0 ? ' is-selected' : ''}">${icon(n, { style: 'sticker', size: 48, ...(tint[n] ? { material: tint[n] } : {}) })}</span>`)
       .join('');
   });
 

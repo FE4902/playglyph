@@ -17,20 +17,20 @@ pgI18n.add({
     'cat.hud': 'Status & HUD', 'cat.currency': 'Currency & rewards', 'cat.combat': 'Combat & actions', 'cat.menu': 'Menu', 'cat.system': 'System',
     'cat.control': 'Flow control', 'cat.input': 'Input', 'cat.social': 'Social', 'cat.misc': 'Misc',
 
-    'hero.free': 'Free · ISC license',
     'hero.title': 'UI icons<br />for web games',
+    'hero.lede': 'Health hearts, coins, gear and rewards for game screens, drawn as single-color glyphs and color stickers',
     'cta.browse': 'Browse icons',
     'cta.docs': 'Docs',
-    'cta.download': 'Download',
     'hero.facts': '<b data-stat="icons">134</b> icons · <b>3</b> styles · <b data-stat="materials">10</b> materials · <b>0</b> dependencies',
 
-    'cmp.title': 'Icon comparison',
+    'cmp.title': 'Same screen, different icons',
+    'cmp.desc': 'Drag the handle to switch between Lucide and Playglyph',
     'cmp.alt': 'A pixel RPG adventurer stands on a cobblestone path in an autumn village beside a river and wooden bridge',
     'cmp.slider': 'Compare Lucide and Playglyph icons',
     'cmp.sr': 'Compares health, coin, gem and gear icons. Use the left and right arrow keys to adjust. Home shows all Playglyph, End shows all Lucide.',
 
     'play.title': 'Styles and materials',
-    'play.desc': 'Click an icon to copy its HTML.',
+    'play.desc': 'Click an icon to copy its HTML',
     'play.controls': 'Preview settings',
     'play.style': 'Style',
     'play.sticker': 'Sticker',
@@ -44,6 +44,8 @@ pgI18n.add({
     'feat.icons.d': 'Health, currency, gear, rewards, menus',
     'feat.materials.t': '<span data-stat="materials">10</span> material themes',
     'feat.names.t': '<span data-stat="aliases">814</span> aliases',
+    'feat.names.d': 'Lucide, Font Awesome and Material names work as they are',
+    'feat.canvas.t': 'Canvas and engines',
 
     'start.title': 'Get started',
     'start.more': 'ES modules · React · Canvas · AI in the docs →',
