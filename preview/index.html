@@ -3,326 +3,427 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>아이콘 갤러리 — Playglyph</title>
+<title>아이콘 — Playglyph</title>
+<meta name="description" content="Playglyph 아이콘 134종을 이름, 별칭, 한글로 찾고 SVG나 코드로 복사합니다." />
+<link rel="icon" href="../site/favicon.svg" type="image/svg+xml" />
+<script src="../site/i18n.js"></script>
+<script>try { if (localStorage.getItem('pg-theme') === 'light') document.documentElement.dataset.theme = 'light'; } catch (e) {}</script>
+<link rel="stylesheet" href="../site/main.css" />
 <style>
-  :root {
-    --bg: #0f1117; --panel: #171a23; --panel-2: #1e2230; --line: #2a2f40;
-    --text: #e7e9f0; --muted: #8b90a3; --accent: #7cf29c; --accent-ink: #0b2814; --icon: #e7e9f0;
+  /* Gallery layout. Header, color tokens, .seg and .toast come from site/main.css. Spacing sits on a 4px grid. */
+  .g-shell { max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 32px; }
+  .g-side { position: sticky; top: 61px; align-self: start; max-height: calc(100vh - 61px); overflow-y: auto; padding: 24px 0 32px; display: grid; gap: 24px; }
+  .g-group h2 { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--muted); }
+  .g-group h2 output { color: var(--text); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .g-side .seg { display: flex; }
+  .g-side .seg button { flex: 1; }
+  .g-mats { display: grid; grid-template-columns: repeat(6, 28px); gap: 4px; }
+  .g-mat { width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 8px; background: none; display: grid; place-items: center; }
+  .g-mat i { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--o); background: var(--c); }
+  .g-mat.none i { border: 1px dashed var(--muted); background: none; }
+  .g-mat:hover { background: var(--panel-2); }
+  .g-mat[aria-pressed="true"] { border-color: var(--line); background: var(--panel-2); }
+  .g-range { width: 100%; margin: 4px 0 0; accent-color: var(--text); }
+  .g-cats { display: grid; gap: 2px; }
+  .g-cat { display: flex; align-items: center; justify-content: space-between; height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: none; color: var(--muted); font-size: 14px; text-align: left; transition: background-color .12s, color .12s; }
+  .g-cat span { font: 12px ui-monospace, "SF Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
+  .g-cat:hover { color: var(--text); }
+  .g-cat[aria-pressed="true"] { background: var(--panel-2); color: var(--text); }
+
+  .g-main { min-width: 0; max-width: none; width: 100%; margin: 0; padding: 24px 0 96px; }
+  .g-main.has-detail { padding-bottom: 344px; }
+  .g-top { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+  .g-search { flex: 1; display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--muted); transition: border-color .12s; }
+  .g-search:focus-within { border-color: var(--muted); }
+  .g-search input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: none; color: var(--text); font: inherit; }
+  .g-search input::-webkit-search-cancel-button { display: none; }
+  .g-search kbd { padding: 0 6px; border: 1px solid var(--line); border-radius: 6px; font-size: 12px; line-height: 20px; }
+  .g-count { color: var(--muted); font: 13px ui-monospace, "SF Mono", Menlo, monospace; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .g-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--tile, 64px), 1fr)); gap: 8px; }
+  .g-tile { position: relative; aspect-ratio: 1; display: grid; place-items: center; padding: 0; border: 0; border-radius: 10px; background: var(--panel); color: var(--text); transition: background-color .12s; }
+  .g-tile:hover { background: var(--panel-2); }
+  /* Signature: the chosen icon sits in a selected inventory slot (corner brackets). */
+  .g-tile[aria-current="true"] { background: var(--panel-2); }
+  .g-tile[aria-current="true"]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; --b: var(--accent); --l: 12px; --w: 2px;
+    background:
+      linear-gradient(var(--b) 0 0) top left / var(--l) var(--w), linear-gradient(var(--b) 0 0) top left / var(--w) var(--l),
+      linear-gradient(var(--b) 0 0) top right / var(--l) var(--w), linear-gradient(var(--b) 0 0) top right / var(--w) var(--l),
+      linear-gradient(var(--b) 0 0) bottom left / var(--l) var(--w), linear-gradient(var(--b) 0 0) bottom left / var(--w) var(--l),
+      linear-gradient(var(--b) 0 0) bottom right / var(--l) var(--w), linear-gradient(var(--b) 0 0) bottom right / var(--w) var(--l);
+    background-repeat: no-repeat; border-radius: 0; inset: 4px; }
+  .g-empty { padding: 48px 0; color: var(--muted); }
+  .g-empty p { margin: 0 0 12px; }
+  .g-empty button { margin-right: 8px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); font: 13px ui-monospace, "SF Mono", Menlo, monospace; }
+  .g-empty button:hover { border-color: var(--muted); }
+
+  /* Detail: a drawer under the grid, so browsing continues while it is open. */
+  .g-detail { position: fixed; z-index: 8; left: 0; right: 0; bottom: 0; pointer-events: none; }
+  .g-detail[hidden] { display: none; }
+  .g-detail-in { max-width: 1440px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px) 16px; display: grid; grid-template-columns: 232px minmax(0, 1fr); gap: 32px; }
+  .g-card { grid-column: 2; pointer-events: auto; display: grid; grid-template-columns: 192px minmax(0, 1fr) minmax(0, 360px); gap: 24px; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--panel); box-shadow: var(--shadow); animation: g-rise .16s ease-out; }
+  @keyframes g-rise { from { opacity: 0; transform: translateY(8px); } }
+  @media (prefers-reduced-motion: reduce) { .g-card { animation: none; } }
+  .g-stage { display: grid; place-items: center; min-height: 192px; border-radius: 12px; color: var(--text); background-color: var(--code); background-image: radial-gradient(var(--grid-dot) 1px, transparent 1px); background-size: 16px 16px; }
+  .g-info { min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 4px 0; }
+  .g-name { display: flex; align-items: baseline; gap: 12px; }
+  .g-name h2 { margin: 0; font: 600 22px/1.2 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: -.01em; }
+  .g-name a { color: var(--muted); font-size: 13px; }
+  .g-name a:hover { color: var(--text); }
+  .g-desc { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+  .g-words { margin: 0; display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 13px; color: var(--muted); max-height: 44px; overflow: hidden; }
+  .g-words .alias { color: var(--text); font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; }
+  .g-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+  .g-btn { display: inline-flex; align-items: center; height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; background: none; color: var(--text); font-size: 13px; font-weight: 600; transition: border-color .12s, background-color .12s; }
+  .g-btn:hover { border-color: var(--muted); }
+  .g-btn.primary { border-color: var(--accent); background: var(--accent); color: var(--accent-ink); }
+  .g-btn:active { transform: scale(.98); }
+  .g-use { min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 4px 0; }
+  .g-row { display: grid; grid-template-columns: repeat(11, minmax(0, 1fr)); gap: 2px; }
+  .g-pick { aspect-ratio: 1; display: grid; place-items: center; padding: 0; border: 1px solid transparent; border-radius: 8px; background: none; color: var(--text); }
+  .g-pick:hover { background: var(--panel-2); }
+  .g-pick[aria-pressed="true"] { border-color: var(--line); background: var(--panel-2); }
+  .g-pick svg { width: 24px; height: 24px; }
+  .g-label { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; color: var(--muted); }
+  .g-label b { color: var(--text); font-weight: 400; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; }
+  .g-code { position: relative; margin-top: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--code); }
+  .g-tabs { display: flex; gap: 4px; padding: 4px 4px 0; }
+  .g-tabs button { height: 28px; padding: 0 8px; border: 0; border-radius: 6px; background: none; color: var(--muted); font-size: 12px; font-weight: 600; }
+  .g-tabs button[aria-selected="true"] { color: var(--text); background: var(--panel-2); }
+  .g-tabs .g-copy { margin-left: auto; }
+  .g-tabs .g-copy:hover { color: var(--text); }
+  .g-code pre { margin: 0; padding: 8px 12px 12px; font-size: 12px; line-height: 1.6; min-height: 80px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .g-close { position: absolute; top: -12px; right: -12px; width: 28px; height: 28px; display: grid; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--panel); color: var(--muted); }
+  .g-close:hover { color: var(--text); }
+  .g-card { position: relative; }
+  .toast { bottom: 24px; }
+
+  @media (max-width: 1180px) {
+    .g-card { grid-template-columns: 144px minmax(0, 1fr); }
+    .g-stage { min-height: 144px; }
+    .g-use { grid-column: 1 / -1; }
+    .g-main.has-detail { padding-bottom: 480px; }
   }
-  :root[data-theme="light"] {
-    --bg: #f5f6f8; --panel: #ffffff; --panel-2: #eef0f4; --line: #dde0e7;
-    --text: #151821; --muted: #626879; --accent: #15803d; --accent-ink: #ffffff; --icon: #151821;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 system-ui, -apple-system, "Pretendard", sans-serif; }
-  header { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
-  .bar { max-width: 1200px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 40px); display: flex; gap: 12px; align-items: center; }
-  .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; margin-right: auto; }
-  .brand small { color: var(--muted); font-weight: 500; }
-  input[type="search"] { background: var(--bg); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 9px 12px; width: 100%; min-width: 0; font: inherit; }
-  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-  .seg button { border: 0; border-radius: 0; background: var(--panel); padding: 6px 12px; }
-  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
-  label.ctl { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
-  label.ctl output { color: var(--text); min-width: 24px; font-variant-numeric: tabular-nums; }
-  select { font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; }
-  button { font: inherit; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; cursor: pointer; }
-  button:hover { border-color: var(--muted); }
-  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
-  .chip { border-radius: 999px; padding: 4px 12px; font-size: 12px; }
-  .chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .chip span { opacity: .7; margin-left: 4px; }
-  main { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px) 80px; }
-  .hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(24px, 6vw, 80px); align-items: center; padding: clamp(32px, 6vw, 76px) 0; }
-  .eyebrow { margin: 0 0 12px; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; }
-  .hero h1 { margin: 0; font-size: clamp(36px, 5.5vw, 68px); line-height: 1.06; letter-spacing: -.05em; }
-  .hero p:not(.eyebrow) { max-width: 40ch; margin: 16px 0 24px; color: var(--muted); font-size: 15px; }
-  .hero a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); text-decoration: none; font-weight: 650; }
-  .hero a.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .hero a:hover { border-color: var(--accent); }
-  .showcase { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
-  .showcase > span { display: grid; place-items: center; min-height: 70px; background: var(--panel-2); border-radius: 8px; }
-  .catalog { border-top: 1px solid var(--line); padding-top: 24px; scroll-margin-top: 76px; }
-  .catalog-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 12px; }
-  .catalog-title h2 { margin: 0; font-size: 22px; letter-spacing: -.03em; }
-  .count { color: var(--muted); font-size: 12px; }
-  .filters { display: grid; gap: 12px; padding: 12px; margin-bottom: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; }
-  .toolbar { display: grid; grid-template-columns: minmax(180px, 1fr) auto; align-items: center; gap: 12px; }
-  .options { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-  #size { width: 86px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 108px), 1fr)); gap: 8px; }
-  .cell { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; cursor: pointer; color: var(--icon); padding: 8px; position: relative; }
-  .cell:hover { border-color: var(--accent); }
-  .cell .nm { color: var(--muted); font-size: 11px; text-align: center; word-break: break-word; }
-  .cell.dim { opacity: .45; }
-  .cell .badge { position: absolute; top: 6px; right: 6px; font-size: 9px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
-  dialog { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 14px; padding: 0; width: min(760px, calc(100vw - 32px)); }
-  dialog::backdrop { background: rgb(0 0 0 / .55); }
-  .dlg { display: grid; grid-template-columns: 220px 1fr; }
-  .stage { background: var(--panel-2); display: grid; place-items: center; border-right: 1px solid var(--line); color: var(--icon); min-height: 220px; }
-  .info { padding: 18px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-  .info h2 { margin: 0; font-size: 18px; }
-  .desc { color: var(--muted); margin: 2px 0 0; }
-  .tags { display: flex; flex-wrap: wrap; gap: 4px; }
-  .tags span { font-size: 11px; color: var(--muted); background: var(--panel-2); border-radius: 6px; padding: 2px 6px; }
-  .tags span.alias { color: var(--text); }
-  .mats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; background: #12141b; border-radius: 8px; padding: 10px; }
-  .mats figure { margin: 0; text-align: center; font-size: 10px; color: #8b90a3; display: grid; justify-items: center; gap: 4px; }
-  pre { margin: 0; background: var(--panel-2); border-radius: 8px; padding: 10px; font-size: 12px; overflow-x: auto; white-space: pre; }
-  .row { display: flex; gap: 8px; flex-wrap: wrap; }
-  .sec { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
-  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px; font-weight: 600; opacity: 0; transition: opacity .2s; pointer-events: none; }
-  .toast.show { opacity: 1; }
-  @media (max-width: 820px) {
-    .toolbar { grid-template-columns: minmax(0, 1fr); }
-  }
-  @media (max-width: 640px) {
-    .hero { grid-template-columns: minmax(0, 1fr); }
-    .showcase { grid-template-columns: repeat(6, minmax(0, 1fr)); padding: 8px; gap: 4px; }
-    .showcase > span { min-height: 44px; }
-    .showcase svg { max-width: 28px; height: auto; }
-    .grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 90px), 1fr)); }
-    .dlg { grid-template-columns: 1fr; }
-    .stage { border-right: 0; border-bottom: 1px solid var(--line); }
-    .mats { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 860px) {
+    .g-shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .g-side { position: static; max-height: none; overflow: visible; padding: 16px 0 0; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+    .g-group.cats { grid-column: 1 / -1; }
+    .g-cats { display: flex; gap: 4px; margin: 0; overflow-x: auto; padding-bottom: 4px; }
+    .g-cat { flex: none; gap: 8px; border: 1px solid var(--line); }
+    .g-mats { grid-template-columns: repeat(auto-fill, 28px); }
+    .g-main { padding: 16px 0 96px; }
+    .g-detail-in { grid-template-columns: minmax(0, 1fr); padding-bottom: 8px; }
+    .g-card { grid-column: 1; grid-template-columns: 96px minmax(0, 1fr); gap: 12px 16px; max-height: 72vh; overflow-y: auto; }
+    .g-stage { min-height: 96px; }
+    .g-stage svg { width: 64px; height: 64px; }
+    .g-close { top: 8px; right: 8px; }
+    .g-name { padding-right: 32px; flex-wrap: wrap; gap: 4px 12px; }
+    .g-name h2 { font-size: 18px; }
+    .g-actions { grid-column: 1 / -1; }
+    .g-info { display: contents; }
+    .g-stage { grid-row: span 2; align-self: start; }
+    .g-info > .g-name, .g-info > .g-desc { grid-column: 2; }
+    .g-info > .g-name { align-self: end; }
+    .g-words { display: none; }
+    .g-group.g-size { display: none; }
+    .g-main.has-detail { padding-bottom: 440px; }
+    .site-header nav { display: none; }
   }
 </style>
 </head>
 <body>
-<header>
-  <div class="bar">
-    <a class="brand" href="../" style="color:inherit;text-decoration:none" aria-label="Playglyph 메인" data-i18n-aria="home"><i data-pg="gamepad"></i> Playglyph <small id="ver"></small></a>
-    <div class="seg" id="lang" role="group" aria-label="언어" data-i18n-aria="language">
-      <button type="button" data-lang="ko" aria-pressed="true">KO</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+<header class="site-header"><div class="bar">
+  <a class="brand" href="../" aria-label="Playglyph 메인" data-i18n-attr="aria-label=brand.aria"><i data-pg="gamepad" data-style="sticker" data-size="26"></i> Playglyph</a>
+  <nav aria-label="메인 메뉴" data-i18n-attr="aria-label=nav.aria">
+    <a href="./" aria-current="page" data-i18n="nav.icons">아이콘</a>
+    <a href="../docs/" data-i18n="nav.docs">문서</a>
+  </nav>
+  <div class="lang-switch" data-lang-switch></div>
+  <a class="icon-link" href="https://github.com/FE4902/playglyph" aria-label="GitHub 저장소" data-i18n-attr="aria-label=nav.github" title="GitHub"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.26 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
+  <button id="theme" class="icon-link" type="button" aria-label="밝은 테마로 전환" title="밝은 테마로 전환"><svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.2 12a4.8 4.8 0 1 0 9.6 0a4.8 4.8 0 1 0 -9.6 0z"/><path d="M18.6 13.7L21.6 12L18.6 10.3z M15.46 17.87L18.79 18.79L17.87 15.46z M10.3 18.6L12 21.6L13.7 18.6z M6.13 15.46L5.21 18.79L8.54 17.87z M5.4 10.3L2.4 12L5.4 13.7z M8.54 6.13L5.21 5.21L6.13 8.54z M13.7 5.4L12 2.4L10.3 5.4z M17.87 8.54L18.79 5.21L15.46 6.13z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg><svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.26 2.4A8.8 8.8 0 1 0 21.85 12.79A7 7 0 0 1 13.26 2.4z"/></svg></button>
+</div></header>
+
+<div class="g-shell">
+  <aside class="g-side" aria-label="보기 설정" data-i18n-attr="aria-label=g.side">
+    <div class="g-group">
+      <h2 data-i18n="g.style">스타일</h2>
+      <div class="seg" id="style" role="group" aria-label="스타일" data-i18n-attr="aria-label=g.style">
+        <button type="button" data-v="sticker" aria-pressed="true" data-i18n="g.sticker">스티커</button>
+        <button type="button" data-v="filled" aria-pressed="false" data-i18n="g.filled">단색</button>
+      </div>
     </div>
-    <button id="theme" type="button">Light</button>
-  </div>
-</header>
-<main>
-  <section class="catalog" id="catalog" aria-labelledby="catalog-title">
-    <div class="catalog-title">
-      <h2 id="catalog-title" data-i18n="galleryTitle">아이콘 갤러리</h2>
-      <span class="count" id="count" role="status"></span>
+    <div class="g-group">
+      <h2><span data-i18n="g.material">재질</span> · <output id="matOut"></output></h2>
+      <div class="g-mats" id="mats" role="group" aria-label="재질" data-i18n-attr="aria-label=g.material"></div>
     </div>
-    <div class="filters">
-      <div class="toolbar">
-        <input id="q" type="search" aria-label="아이콘 검색" data-i18n-aria="searchLabel" placeholder="이름, 별칭, 한글로 검색" data-i18n-placeholder="searchPlaceholder" autocomplete="off" />
-        <div class="options">
-          <div class="seg" id="style" role="group" aria-label="아이콘 스타일" data-i18n-aria="styleLabel">
-            <button data-v="sticker" aria-pressed="true" data-i18n="styleColor">컬러</button>
-            <button data-v="filled" aria-pressed="false" data-i18n="styleMono">단색</button>
-          </div>
-          <label class="ctl"><span data-i18n="material">재질</span> <select id="material"><option value="" data-i18n="materialDefault">기본</option></select></label>
-          <label class="ctl"><span data-i18n="size">크기</span> <input id="size" type="range" min="16" max="64" step="8" value="32" /><output id="sizeOut">32</output></label>
+    <div class="g-group g-size">
+      <h2><label for="size" data-i18n="g.size">크기</label> · <output id="sizeOut" for="size">32px</output></h2>
+      <input class="g-range" id="size" type="range" min="16" max="64" step="8" value="32" />
+    </div>
+    <div class="g-group cats">
+      <h2 data-i18n="g.categories">카테고리</h2>
+      <div class="g-cats" id="cats"></div>
+    </div>
+  </aside>
+
+  <main class="g-main" id="main">
+    <div class="g-top">
+      <label class="g-search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg>
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="이름, 별칭, 한글로 찾기" aria-label="아이콘 찾기" data-i18n-attr="placeholder=g.searchPh, aria-label=g.searchAria" />
+        <kbd aria-hidden="true">/</kbd>
+      </label>
+      <span class="g-count" id="count" role="status"></span>
+    </div>
+    <div class="g-grid" id="grid"></div>
+    <div class="g-empty" id="empty" hidden></div>
+  </main>
+</div>
+
+<div class="g-detail" id="detail" hidden>
+  <div class="g-detail-in">
+    <section class="g-card" aria-labelledby="dName">
+      <div class="g-stage" id="dStage"></div>
+      <div class="g-info">
+        <div class="g-name"><h2 id="dName"></h2><a id="dCat" href="#"></a></div>
+        <p class="g-desc" id="dDesc"></p>
+        <p class="g-words" id="dWords"></p>
+        <div class="g-actions">
+          <button type="button" class="g-btn primary" data-copy="svg" data-i18n="g.copySvg">SVG 복사</button>
+          <button type="button" class="g-btn" data-copy="name" data-i18n="g.copyName">이름 복사</button>
+          <a class="g-btn" id="dFile" download data-i18n="g.download">SVG 파일</a>
         </div>
       </div>
-      <div class="chips" id="chips" role="group" aria-label="카테고리" data-i18n-aria="categories"></div>
-    </div>
-    <div class="grid" id="grid"></div>
-  </section>
-</main>
-
-<dialog id="dlg">
-  <div class="dlg">
-    <div class="stage" id="big"></div>
-    <div class="info">
-      <div>
-        <h2 id="dName"></h2>
-        <p class="desc" id="dDesc"></p>
+      <div class="g-use">
+        <div class="g-label"><span data-i18n="g.material">재질</span><b id="dMat"></b></div>
+        <div class="g-row" id="dMats" role="group" aria-label="재질" data-i18n-attr="aria-label=g.material"></div>
+        <div class="g-code">
+          <div class="g-tabs" role="tablist" id="dTabs">
+            <button type="button" role="tab" data-tab="html" aria-selected="true">HTML</button>
+            <button type="button" role="tab" data-tab="js" aria-selected="false">JS</button>
+            <button type="button" role="tab" data-tab="react" aria-selected="false">React</button>
+            <button type="button" class="g-copy" data-copy="code" data-i18n="copy.button">복사</button>
+          </div>
+          <pre><code id="dCode"></code></pre>
+        </div>
       </div>
-      <div><div class="sec" data-i18n="secTags">이름 · 별칭 · 태그</div><div class="tags" id="dTags"></div></div>
-      <div><div class="sec" data-i18n="material">재질</div><div class="mats" id="dMats"></div></div>
-      <div><div class="sec" data-i18n="secUsage">사용법</div><pre id="dCode"></pre></div>
-      <div class="row">
-        <button data-copy="svg" data-i18n="copySvg">SVG 복사</button>
-        <button data-copy="html" data-i18n="copyHtml">HTML 복사</button>
-        <button data-copy="name" data-i18n="copyName">이름 복사</button>
-        <button id="close" style="margin-left:auto" data-i18n="close">닫기</button>
-      </div>
-    </div>
+      <button type="button" class="g-close" id="dClose" aria-label="닫기" data-i18n-attr="aria-label=g.close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </section>
   </div>
-</dialog>
-<div class="toast" id="toast"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
 
 <script type="module">
-  import { icon, createIcons } from '../dist/lookup.js';
+  import { icon, createIcons, suggest } from '../dist/lookup.js';
   import { materials } from '../dist/materials.js';
 
-  const meta = await fetch('../dist/meta.json').then((r) => r.json());
-  const $ = (id) => document.getElementById(id);
-  const CATS = ['all', 'system', 'control', 'menu', 'currency', 'hud', 'combat', 'social', 'input', 'misc'];
-  const I18N = {
+  const I = window.pgI18n;
+  I.add({
     ko: {
-      pageTitle: '아이콘 갤러리 — Playglyph', home: 'Playglyph 메인', language: '언어',
-      galleryTitle: '아이콘 갤러리', count: '{n}종',
-      searchLabel: '아이콘 검색', searchPlaceholder: '이름, 별칭, 한글로 검색',
-      styleLabel: '아이콘 스타일', styleColor: '컬러', styleMono: '단색',
-      material: '재질', materialDefault: '기본', size: '크기', categories: '카테고리',
-      legacyNote: '흐린 아이콘은 이전 스타일', legacyBadge: '이전',
-      secTags: '이름 · 별칭 · 태그', secUsage: '사용법',
-      copySvg: 'SVG 복사', copyHtml: 'HTML 복사', copyName: '이름 복사', close: '닫기', copied: '복사됨',
-      codeHtml: 'HTML 한 파일', codeEsm: 'ES 모듈', codeAliases: '별칭도 됨',
+      'g.count': '{n}종', 'g.countOf': '{n} / {all}종', 'g.default': '기본',
+      'g.empty': '“{q}”에 맞는 아이콘이 없어요', 'g.tryThese': '비슷한 이름',
+      'g.reactNote': 'React 컴포넌트는 단색 스타일만 있어요',
       'cat.all': '전체', 'cat.system': '시스템', 'cat.control': '진행 제어', 'cat.menu': '메뉴', 'cat.currency': '재화·보상',
       'cat.hud': '상태·HUD', 'cat.combat': '전투·행동', 'cat.social': '소셜', 'cat.input': '입력', 'cat.misc': '기타',
     },
     en: {
-      pageTitle: 'Icon gallery — Playglyph', home: 'Playglyph home', language: 'Language',
-      galleryTitle: 'Icon gallery', count: '{n} icons',
-      searchLabel: 'Search icons', searchPlaceholder: 'Search by name or alias — heart, coin, settings',
-      styleLabel: 'Icon style', styleColor: 'Color', styleMono: 'Solid',
-      material: 'Material', materialDefault: 'Default', size: 'Size', categories: 'Categories',
-      legacyNote: 'faded icons use the old style', legacyBadge: 'Old',
-      secTags: 'Name · aliases · tags', secUsage: 'Usage',
-      copySvg: 'Copy SVG', copyHtml: 'Copy HTML', copyName: 'Copy name', close: 'Close', copied: 'Copied',
-      codeHtml: 'Plain HTML', codeEsm: 'ES module', codeAliases: 'Aliases work too',
+      'page.title': 'Icons — Playglyph',
+      'page.description': 'Find any of the 134 Playglyph icons by name or alias and copy it as SVG or code.',
+      'g.side': 'View settings', 'g.style': 'Style', 'g.sticker': 'Sticker', 'g.filled': 'Filled',
+      'g.material': 'Material', 'g.size': 'Size', 'g.categories': 'Categories',
+      'g.searchPh': 'Find by name or alias', 'g.searchAria': 'Find icons',
+      'g.copySvg': 'Copy SVG', 'g.copyName': 'Copy name', 'g.download': 'SVG file', 'g.close': 'Close',
+      'g.count': '{n} icons', 'g.countOf': '{n} of {all}', 'g.default': 'default',
+      'g.empty': 'No icon matches “{q}”', 'g.tryThese': 'Close names',
+      'g.reactNote': 'React components come in the filled style only',
       'cat.all': 'All', 'cat.system': 'System', 'cat.control': 'Flow control', 'cat.menu': 'Menu', 'cat.currency': 'Currency & rewards',
       'cat.hud': 'Status & HUD', 'cat.combat': 'Combat & actions', 'cat.social': 'Social', 'cat.input': 'Input', 'cat.misc': 'Misc',
     },
-  };
-  const LANGS = ['ko', 'en'];
-  const store = {
-    get: () => { try { return localStorage.getItem('pg-lang'); } catch { return null; } },
-    set: (v) => { try { localStorage.setItem('pg-lang', v); } catch {} },
-  };
-  const resolveLang = () => {
-    const fromUrl = new URLSearchParams(location.search).get('lang');
-    if (LANGS.includes(fromUrl)) { store.set(fromUrl); return fromUrl; }
-    const saved = store.get();
-    if (LANGS.includes(saved)) return saved;
-    return (navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en';
-  };
-  let lang = resolveLang();
-  const t = (key, vars = {}) => (I18N[lang][key] ?? I18N.ko[key] ?? key).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
-  const state = { q: '', cat: 'all', style: 'sticker', material: '', size: 32 };
-
+  });
+  const t = I.t;
+  I.apply();
+  I.mountSwitch();
   createIcons();
-  for (const m of Object.keys(materials)) $('material').append(new Option(m, m));
 
+  const $ = (id) => document.getElementById(id);
+  const meta = await fetch('../dist/meta.json').then((r) => r.json());
+  const byName = new Map(meta.map((m) => [m.name, m]));
+  const CATS = ['all', 'system', 'control', 'menu', 'currency', 'hud', 'combat', 'social', 'input', 'misc'];
+  const MATS = ['', ...Object.keys(materials)];
+  const url = new URL(location.href);
+  const state = {
+    q: url.searchParams.get('q') ?? '',
+    cat: CATS.includes(url.searchParams.get('cat')) ? url.searchParams.get('cat') : 'all',
+    style: url.searchParams.get('style') === 'filled' ? 'filled' : 'sticker',
+    material: MATS.includes(url.searchParams.get('material')) ? url.searchParams.get('material') : '',
+    size: 32, current: byName.get(url.searchParams.get('icon')) ?? null, tab: 'html', list: [],
+  };
+
+  // Shareable address: ?icon=trophy&style=filled&material=gold&cat=hud&q=…
+  function syncUrl() {
+    const u = new URL(location.href);
+    const put = (k, v, d = '') => (v && v !== d ? u.searchParams.set(k, v) : u.searchParams.delete(k));
+    put('q', state.q.trim()); put('cat', state.cat, 'all'); put('style', state.style, 'sticker');
+    put('material', state.material); put('icon', state.current?.name);
+    history.replaceState(null, '', u);
+  }
+
+  const draw = (m, { size = state.size, material = state.material, style = state.style } = {}) =>
+    icon(m.name, { style, size, ...(material ? { material } : {}) });
+
+  // ---- sidebar ----
+  for (const name of MATS) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'g-mat' + (name ? '' : ' none'); b.dataset.m = name;
+    b.title = name || t('g.default'); b.setAttribute('aria-label', b.title);
+    const tones = name ? materials[name].tones : null;
+    b.innerHTML = `<i${tones ? ` style="--c:${tones[2]};--o:${tones[0]}"` : ''}></i>`;
+    $('mats').append(b);
+  }
   const counts = meta.reduce((acc, m) => ((acc[m.category] = (acc[m.category] ?? 0) + 1), acc), {});
   for (const c of CATS) {
     if (c !== 'all' && !counts[c]) continue;
     const b = document.createElement('button');
-    b.className = 'chip';
-    b.dataset.i18n = `cat.${c}`;
-    b.append(document.createElement('b'), document.createElement('span'));
-    b.firstChild.style.fontWeight = 'inherit';
-    b.lastChild.textContent = c === 'all' ? meta.length : counts[c];
-    b.setAttribute('aria-pressed', c === 'all');
-    b.onclick = () => { state.cat = c; [...$('chips').children].forEach((x) => x.setAttribute('aria-pressed', x === b)); render(); };
-    $('chips').append(b);
+    b.type = 'button'; b.className = 'g-cat'; b.dataset.c = c;
+    b.innerHTML = `${t('cat.' + c)}<span>${c === 'all' ? meta.length : counts[c]}</span>`;
+    $('cats').append(b);
+  }
+  function paintControls() {
+    for (const b of $('style').children) b.setAttribute('aria-pressed', b.dataset.v === state.style);
+    for (const b of $('mats').children) b.setAttribute('aria-pressed', b.dataset.m === state.material);
+    for (const b of $('cats').children) b.setAttribute('aria-pressed', b.dataset.c === state.cat);
+    $('matOut').textContent = state.material || t('g.default');
+    $('sizeOut').textContent = state.size + 'px';
   }
 
-  const has = (m, style) => m.styles.includes(style);
-  const render1 = (m, extra = {}) => {
-    const style = extra.style ?? state.style;
-    const material = (extra.material ?? state.material) || undefined;
-    const size = extra.size ?? state.size;
-    if (style === 'sticker' && has(m, 'sticker')) return icon(m.name, { style: 'sticker', material, size });
-    return icon(m.name, { size, ...(material ? { material } : {}) });
-  };
-  const isLegacy = (m) => !has(m, 'filled') || (state.style === 'sticker' && !has(m, 'sticker'));
-
+  // ---- grid ----
   const matches = (m, q) =>
-    !q || m.name.includes(q) || m.aliases.some((a) => a.includes(q)) || m.tags.some((t) => t.includes(q)) || m.tagsKo.some((t) => t.includes(q)) || m.description.toLowerCase().includes(q);
+    !q || m.name.includes(q) || m.aliases.some((a) => a.includes(q)) || m.tags.some((x) => x.includes(q)) || m.tagsKo.some((x) => x.includes(q)) || m.description.toLowerCase().includes(q);
 
-  function render() {
+  function renderGrid() {
     const q = state.q.trim().toLowerCase();
-    const list = meta.filter((m) => (state.cat === 'all' || m.category === state.cat) && matches(m, q));
-    // new art first
-    list.sort((a, b) => Number(isLegacy(a)) - Number(isLegacy(b)));
-    const legacyNote = list.some(isLegacy) ? ` · ${t('legacyNote')}` : '';
-    $('count').textContent = `${list.length} / ${meta.length}${legacyNote}`;
-    $('grid').replaceChildren(...list.map((m) => {
-      const cell = document.createElement('button');
-      cell.className = 'cell' + (isLegacy(m) ? ' dim' : '');
-      cell.title = `${m.name} — ${m.description}`;
-      cell.innerHTML = render1(m) + `<span class="nm">${m.name}</span>` + (!has(m, 'filled') ? `<span class="badge">${t('legacyBadge')}</span>` : '');
-      cell.onclick = () => open(m);
-      return cell;
+    state.list = meta.filter((m) => (state.cat === 'all' || m.category === state.cat) && matches(m, q));
+    const n = state.list.length;
+    $('count').textContent = n === meta.length ? t('g.count', { n }) : t('g.countOf', { n, all: meta.length });
+    $('grid').style.setProperty('--tile', state.size + 32 + 'px');
+    $('grid').replaceChildren(...state.list.map((m) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'g-tile'; b.dataset.name = m.name;
+      b.title = m.name; b.setAttribute('aria-label', `${m.name}: ${m.description}`);
+      if (m === state.current) b.setAttribute('aria-current', 'true');
+      b.innerHTML = draw(m);
+      return b;
     }));
+    $('empty').hidden = n > 0;
+    if (!n) {
+      const near = suggest(q, 5);
+      $('empty').innerHTML = `<p>${t('g.empty', { q: state.q.trim().replace(/[<>&]/g, '') })}</p>` +
+        (near.length ? `<p>${t('g.tryThese')}</p>` + near.map((s) => `<button type="button" data-try="${s}">${s}</button>`).join('') : '');
+    }
   }
 
-  function open(m) {
-    state.current = m;
-    $('dName').textContent = m.name;
-    $('dDesc').textContent = m.description;
-    $('big').innerHTML = render1(m, { size: 140 });
-    $('dTags').replaceChildren(
-      ...m.aliases.map((t) => Object.assign(document.createElement('span'), { textContent: t, className: 'alias' })),
-      ...[...m.tagsKo, ...m.tags].map((t) => Object.assign(document.createElement('span'), { textContent: t })),
-    );
-    $('dMats').replaceChildren(...Object.keys(materials).map((mat) => {
-      const f = document.createElement('figure');
-      f.innerHTML = render1(m, { material: mat, size: 40 }) + `<figcaption>${mat}</figcaption>`;
-      return f;
-    }));
-    const styleAttr = state.style === 'sticker' && has(m, 'sticker') ? ' data-style="sticker"' : '';
-    const matAttr = state.material ? ` data-material="${state.material}"` : '';
-    $('dCode').textContent =
-`<!-- ${t('codeHtml')} -->
-<script src="https://fe4902.github.io/playglyph/dist/playglyph.js"><\/script>
-<i data-pg="${m.name}"${styleAttr}${matAttr}></i>
-
-// ${t('codeEsm')}
-import { ${m.export} } from 'playglyph${styleAttr ? '/sticker' : ''}';
-${m.aliases.length ? `// ${t('codeAliases')}: ${m.aliases.slice(0, 3).join(', ')}` : ''}`;
-    if (!$('dlg').open) $('dlg').showModal();
+  // ---- detail drawer ----
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  function code(m) {
+    const sticker = state.style === 'sticker', mat = state.material;
+    if (state.tab === 'html') return `<i data-pg="${m.name}"${sticker ? ' data-style="sticker"' : ''}${mat ? ` data-material="${mat}"` : ''}></i>`;
+    if (state.tab === 'react') return `import { ${m.export} } from 'playglyph/react';\n\n<${m.export} size={32} />\n// ${t('g.reactNote')}`;
+    return sticker
+      ? `import { ${m.export}, renderSticker } from 'playglyph/sticker';\n\nel.innerHTML = renderSticker(${m.export}, { size: 32${mat ? `, material: '${mat}'` : ''} });`
+      : mat
+        ? `import { icon } from 'playglyph/lookup';\n\nel.innerHTML = icon('${m.name}', { size: 32, material: '${mat}' });`
+        : `import { ${m.export}, toSvg } from 'playglyph';\n\nel.innerHTML = toSvg(${m.export}, { size: 32 });`;
   }
-
-  function toast(msg) { const t = $('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1200); }
-  document.querySelectorAll('[data-copy]').forEach((b) => (b.onclick = async () => {
+  function renderDetail() {
     const m = state.current;
-    const kind = b.dataset.copy;
-    const text = kind === 'svg' ? render1(m, { size: 24 })
-      : kind === 'html' ? `<i data-pg="${m.name}"${state.style === 'sticker' && has(m, 'sticker') ? ' data-style="sticker"' : ''}${state.material ? ` data-material="${state.material}"` : ''}></i>`
-      : m.name;
-    await navigator.clipboard.writeText(text);
-    toast(t('copied'));
-  }));
-
-  $('close').onclick = () => $('dlg').close();
-  $('dlg').addEventListener('click', (e) => { if (e.target === $('dlg')) $('dlg').close(); });
-  $('q').oninput = (e) => { state.q = e.target.value; render(); };
-  $('style').onclick = (e) => {
-    const v = e.target.dataset?.v; if (!v) return;
-    state.style = v;
-    [...$('style').children].forEach((b) => b.setAttribute('aria-pressed', b.dataset.v === v));
-    render();
-  };
-  $('material').onchange = (e) => { state.material = e.target.value; render(); };
-  $('size').oninput = (e) => { state.size = +e.target.value; $('sizeOut').textContent = state.size; render(); };
-  $('theme').onclick = () => {
-    const light = document.documentElement.dataset.theme !== 'light';
-    document.documentElement.dataset.theme = light ? 'light' : 'dark';
-    $('theme').textContent = light ? 'Dark' : 'Light';
-  };
-  document.addEventListener('keydown', (e) => { if (e.key === '/' && document.activeElement !== $('q')) { e.preventDefault(); $('q').focus(); } });
-  // The intro page's search box links here as ?q=coin
-  const initialQ = new URLSearchParams(location.search).get('q');
-  if (initialQ) { $('q').value = initialQ; state.q = initialQ; }
-  function applyLang() {
-    document.documentElement.lang = lang;
-    document.title = t('pageTitle');
-    $('ver').textContent = t('count', { n: meta.length });
-    document.querySelectorAll('[data-i18n]').forEach((el) => {
-      const target = el.classList.contains('chip') ? el.firstChild : el;
-      target.textContent = t(el.dataset.i18n);
-    });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => (el.placeholder = t(el.dataset.i18nPlaceholder)));
-    document.querySelectorAll('[data-i18n-aria]').forEach((el) => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
-    [...$('lang').children].forEach((b) => b.setAttribute('aria-pressed', b.dataset.lang === lang));
-    render();
-    if ($('dlg').open && state.current) open(state.current);
+    $('detail').hidden = !m;
+    $('main').classList.toggle('has-detail', !!m);
+    for (const b of $('grid').children) b.toggleAttribute('aria-current', false);
+    if (!m) return;
+    const tile = $('grid').querySelector(`[data-name="${m.name}"]`);
+    tile?.setAttribute('aria-current', 'true');
+    $('dStage').innerHTML = draw(m, { size: 128 });
+    $('dName').textContent = m.name;
+    $('dCat').textContent = t('cat.' + m.category);
+    $('dDesc').textContent = m.description;
+    $('dWords').replaceChildren(
+      ...m.aliases.map((a) => Object.assign(document.createElement('span'), { textContent: a, className: 'alias' })),
+      ...(I.lang === 'ko' ? m.tagsKo : m.tags).map((x) => Object.assign(document.createElement('span'), { textContent: x })),
+    );
+    $('dMat').textContent = state.material || t('g.default');
+    $('dMats').replaceChildren(...MATS.map((name) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'g-pick'; b.dataset.m = name;
+      b.title = name || t('g.default'); b.setAttribute('aria-label', b.title);
+      b.setAttribute('aria-pressed', name === state.material);
+      b.innerHTML = draw(m, { size: 24, material: name });
+      return b;
+    }));
+    $('dFile').href = `../dist/svg/${state.style}/${state.style === 'sticker' && state.material ? state.material + '/' : ''}${m.name}.svg`;
+    $('dFile').hidden = state.style === 'filled' && !!state.material; // no prebuilt file for a tinted filled icon
+    for (const b of $('dTabs').querySelectorAll('[data-tab]')) b.setAttribute('aria-selected', b.dataset.tab === state.tab);
+    $('dCode').innerHTML = esc(code(m));
   }
-  $('lang').onclick = (e) => {
-    const v = e.target.closest('[data-lang]')?.dataset.lang;
-    if (!v || v === lang) return;
-    lang = v;
-    store.set(v);
-    applyLang();
+  function select(m, { focus = false } = {}) {
+    state.current = m;
+    renderDetail(); syncUrl();
+    if (m) {
+      const tile = $('grid').querySelector(`[data-name="${m.name}"]`);
+      tile?.scrollIntoView({ block: 'nearest' });
+      if (focus) tile?.focus({ preventScroll: true });
+    }
+  }
+  function refresh() { paintControls(); renderGrid(); renderDetail(); syncUrl(); }
+
+  // ---- events ----
+  let toastTimer;
+  function toast(msg) { const el = $('toast'); el.textContent = msg; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 1400); }
+  async function copy(text, name) {
+    try { await navigator.clipboard.writeText(text); toast(name ? t('toast.copiedName', { name }) : t('toast.copied')); }
+    catch { toast(t('toast.copyFailed')); }
+  }
+  $('grid').onclick = (e) => { const b = e.target.closest('.g-tile'); if (b) select(byName.get(b.dataset.name) === state.current ? null : byName.get(b.dataset.name)); };
+  $('empty').onclick = (e) => { const s = e.target.dataset?.try; if (s) { $('q').value = state.q = s; refresh(); } };
+  $('q').value = state.q;
+  $('q').oninput = (e) => { state.q = e.target.value; renderGrid(); syncUrl(); };
+  $('style').onclick = (e) => { const v = e.target.closest('button')?.dataset.v; if (v) { state.style = v; refresh(); } };
+  const pickMaterial = (e) => { const b = e.target.closest('button[data-m]'); if (b) { state.material = b.dataset.m; refresh(); } };
+  $('mats').onclick = pickMaterial;
+  $('dMats').onclick = pickMaterial;
+  $('cats').onclick = (e) => { const b = e.target.closest('button'); if (b) { state.cat = b.dataset.c; refresh(); } };
+  $('dCat').onclick = (e) => { e.preventDefault(); state.cat = state.current.category; state.q = $('q').value = ''; refresh(); };
+  $('size').oninput = (e) => { state.size = +e.target.value; paintControls(); renderGrid(); };
+  $('dTabs').onclick = (e) => { const tab = e.target.closest('[data-tab]')?.dataset.tab; if (tab) { state.tab = tab; renderDetail(); } };
+  $('dClose').onclick = () => select(null);
+  document.querySelectorAll('[data-copy]').forEach((b) => (b.onclick = () => {
+    const m = state.current, kind = b.dataset.copy;
+    if (kind === 'svg') copy(draw(m, { size: 24 }), m.name + '.svg');
+    else if (kind === 'name') copy(m.name, m.name);
+    else copy(code(m));
+  }));
+  document.addEventListener('keydown', (e) => {
+    const typing = document.activeElement === $('q');
+    if (e.key === '/' && !typing) { e.preventDefault(); $('q').focus(); return; }
+    if (e.key === 'Escape') { if (state.current) select(null); else if (typing) $('q').blur(); return; }
+    // Arrow keys walk the grid once an icon is chosen.
+    if (typing || !state.current || !e.key.startsWith('Arrow') || e.target.matches?.('input, select')) return;
+    const i = state.list.indexOf(state.current); if (i < 0) return;
+    const cols = getComputedStyle($('grid')).gridTemplateColumns.split(' ').length;
+    const j = i + ({ ArrowLeft: -1, ArrowRight: 1, ArrowUp: -cols, ArrowDown: cols })[e.key];
+    if (j >= 0 && j < state.list.length) { e.preventDefault(); select(state.list[j], { focus: true }); }
+  });
+
+  const themeBtn = $('theme');
+  const paintTheme = () => { const label = t(document.documentElement.dataset.theme === 'light' ? 'theme.toDark' : 'theme.toLight'); themeBtn.title = label; themeBtn.setAttribute('aria-label', label); };
+  themeBtn.onclick = () => {
+    const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('pg-theme', next); } catch {}
+    paintTheme();
   };
-  applyLang();
+  paintTheme();
+  refresh();
+  if (state.current) $('grid').querySelector('[aria-current]')?.scrollIntoView({ block: 'center' });
 </script>
 </body>
 </html>

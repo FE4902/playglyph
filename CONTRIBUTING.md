@@ -15,7 +15,8 @@ npm run preview
 - 메인 · 2D 게임 아이콘 비교: `http://127.0.0.1:5178/`
 - 갤러리: `http://127.0.0.1:5178/preview/`
 - 문서: `http://localhost:5178/docs/`
-- 스타일 비교 샘플: `http://localhost:5178/samples/compare.html`
+- 세트 검토 보드: `http://localhost:5178/samples/review.html` (`?icons=a,b,c`, `?bg=light`, `?big=96`)
+- 도트 검토 보드: `http://localhost:5178/samples/pixel-board.html`
 
 ## 원본 구조
 
@@ -26,8 +27,12 @@ icons/sticker/<name>.svg   컬러 스티커
 pixel/<name>.pxl           도트 (실험적, 갤러리와 llms.txt에는 노출 안 함)
 src/                       런타임 (core, sticker, lookup, materials, pixel, react)
 scripts/build.mjs          검사 + dist 생성
+scripts/draw-*.mjs         아이콘 생성 스크립트 (공통 규칙은 draw-lib.mjs)
+scripts/size-check.mjs     채운 아이콘의 시각 크기 측정
 scripts/penpot/            Penpot에서 고친 도안을 icons/로 되돌리는 도구
 scripts/readme-assets.mjs  README 이미지(.github/assets/)를 dist/svg에서 다시 만듦
+samples/                   검토 보드 (review.html, pixel-board.html)
+archive/icons/             세트에서 뺀 예전 도안 9종 (ROADMAP 참고)
 ```
 
 README에 들어가는 이미지는 `npm run build` 뒤에 `node scripts/readme-assets.mjs`로 다시 만듭니다.
@@ -69,7 +74,7 @@ Penpot 파일에 스타일마다 페이지가 있고(Filled, Sticker), 아이콘
 - 같은 테마와 카테고리에서 함께 쓰는 아이콘은 하나의 스타일로 그립니다. 선 굵기, 모서리의 둥근 정도, 체감 크기, 디테일 밀도를 맞춥니다.
 - 컬러 아이콘은 빛의 방향, 그림자 깊이, 명암 단계와 하이라이트 강도를 맞춥니다. 같은 금속이라면 같은 팔레트를 쓰고, 다른 재질이나 상태를 구분하는 데 필요한 색은 유지합니다.
 - 켬·끔처럼 짝을 이루는 아이콘은 기본 도형의 크기와 위치를 공유합니다. 상태 표식을 추가한 뒤에도 두 아이콘을 번갈아 봤을 때 중심이 움직여 보이지 않게 조정합니다.
-- 갤러리에서 같은 카테고리, 스타일, 재질을 선택해 24px로 나란히 비교합니다. 대체 표시되는 아이콘은 해당 스타일의 아트가 채워질 때까지 별도로 표시합니다.
+- 갤러리에서 같은 카테고리, 스타일, 재질을 선택해 24px로 나란히 비교합니다. 새 아이콘은 `samples/review.html`에서 기존 아이콘 사이에 섞어 16·24·48px로 봅니다.
 
 ## 이름 규칙 (AI가 맞히기 쉽게)
 

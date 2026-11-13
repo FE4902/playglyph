@@ -4,8 +4,5 @@ dist
 
 # local tool settings (contains absolute paths)
 .claude/
-# unused demo screenshot, third-party license unclear
-preview/assets/luanti-soothing32.jpg
-
 # Penpot sync state (scripts/penpot/sync.mjs)
 .penpot-sync/

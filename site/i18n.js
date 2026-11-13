@@ -8,21 +8,24 @@
 // The choice is shared with the gallery: ?lang=ko|en, then localStorage 'pg-lang', then the browser language.
 (function () {
   var KEY = 'pg-lang';
+  var languages = { ko: '한국어', en: 'English' };
+  var supported = Object.keys(languages);
   function resolve() {
     var q = new URLSearchParams(location.search).get('lang');
-    if (q === 'ko' || q === 'en') {
+    if (supported.includes(q)) {
       try { localStorage.setItem(KEY, q); } catch (e) {}
       return q;
     }
     var saved = null;
     try { saved = localStorage.getItem(KEY); } catch (e) {}
-    if (saved === 'ko' || saved === 'en') return saved;
-    return (navigator.language || '').toLowerCase().indexOf('ko') === 0 ? 'ko' : 'en';
+    if (supported.includes(saved)) return saved;
+    var browserLang = (navigator.language || '').toLowerCase().split('-')[0];
+    return supported.includes(browserLang) ? browserLang : 'en';
   }
 
   var lang = resolve();
   document.documentElement.lang = lang;
-  var dict = { ko: {}, en: {} };
+  var dict = Object.fromEntries(supported.map(function (l) { return [l, {}]; }));
 
   function t(key, vars) {
     var s = dict[lang][key];
@@ -32,27 +35,27 @@
   }
 
   function add(d) {
-    ['ko', 'en'].forEach(function (l) { Object.assign(dict[l], d[l] || {}); });
+    supported.forEach(function (l) { Object.assign(dict[l], d[l] || {}); });
   }
 
   function apply(root) {
     root = root || document;
     if (lang === 'ko') return;
-    var en = dict.en;
+    var translations = dict[lang];
     root.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var v = en[el.dataset.i18n];
+      var v = translations[el.dataset.i18n];
       if (v != null) el.innerHTML = v;
     });
     root.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
       el.dataset.i18nAttr.split(',').forEach(function (pair) {
         var p = pair.split('=');
-        var v = en[(p[1] || '').trim()];
+        var v = translations[(p[1] || '').trim()];
         if (v != null) el.setAttribute(p[0].trim(), v);
       });
     });
-    if (en['page.title']) document.title = en['page.title'];
+    if (translations['page.title']) document.title = translations['page.title'];
     var md = document.querySelector('meta[name="description"]');
-    if (md && en['page.description']) md.setAttribute('content', en['page.description']);
+    if (md && translations['page.description']) md.setAttribute('content', translations['page.description']);
   }
 
   function set(next) {
@@ -62,18 +65,18 @@
     else location.reload();
   }
 
-  // <div data-lang-switch></div> becomes a KO / EN segmented switch.
-  function mountSwitch() {
-    document.querySelectorAll('[data-lang-switch]').forEach(function (g) {
-      g.setAttribute('role', 'group');
-      g.setAttribute('aria-label', t('lang.label'));
-      g.innerHTML = ['ko', 'en'].map(function (l) {
-        return '<button type="button" lang="' + l + '" data-lang="' + l + '" aria-pressed="' + (l === lang) + '">' + l.toUpperCase() + '</button>';
-      }).join('');
-      g.addEventListener('click', function (e) {
-        var b = e.target.closest('button[data-lang]');
-        if (b && b.dataset.lang !== lang) set(b.dataset.lang);
+  function mountSwitch(onChange = set) {
+    document.querySelectorAll('[data-lang-switch]').forEach(function (container) {
+      var select = document.createElement('select');
+      select.setAttribute('aria-label', t('lang.label'));
+      supported.forEach(function (l) {
+        var option = new Option(languages[l], l);
+        option.lang = l;
+        select.add(option);
       });
+      select.value = lang;
+      select.addEventListener('change', function () { onChange(select.value); });
+      container.replaceChildren(select);
     });
   }
 

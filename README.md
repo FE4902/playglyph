@@ -152,6 +152,7 @@ Icon names and usage: https://fe4902.github.io/playglyph/dist/llms.txt
 - [아이콘 갤러리](https://fe4902.github.io/playglyph/preview/): 134종을 스타일·재질별로 보기
 - [CONTRIBUTING.md](CONTRIBUTING.md): 저장소 구조, 로컬 미리보기, 그리기 규칙, Penpot에서 고치기
 - [ROADMAP.md](ROADMAP.md): 다음에 그릴 아이콘
+- [CHANGELOG.md](CHANGELOG.md): 변경 기록
 
 ## 라이선스
 

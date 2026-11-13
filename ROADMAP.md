@@ -1,6 +1,6 @@
 # Playglyph 다음 단계 기획
 
-2026-11-09 작성. 아이콘을 계속 늘릴 때 무엇을 먼저 그리고 무엇을 만들지 정한다. 순서는 웹게임을 만드는 사람(그리고 AI)이 실제로 막히는 지점을 기준으로 정했다.
+2026-11-09 작성, 2026-11-13 갱신. 아이콘을 계속 늘릴 때 무엇을 먼저 그리고 무엇을 만들지 정한다. 순서는 웹게임을 만드는 사람(그리고 AI)이 실제로 막히는 지점을 기준으로 정했다.
 
 ## 1. 지금 상태
 
@@ -10,7 +10,8 @@
 - **별칭:** 814개. Lucide·Font Awesome·Material 이름과 게임 용어가 기존 아이콘으로 연결된다. 그래서 mana, xp, energy, inventory, craft, vip 같은 단어는 이미 그려진다.
 - **Penpot 라이브러리:** Filled·Sticker 페이지에 컴포넌트 268개가 있다. `scripts/penpot/`로 Penpot에서 고친 내용을 `icons/`로 되돌린다.
 - **보관된 아이콘:** `archive/icons/`에 9종(axe, bomb, castle, dice-d20, ghost, mushroom, pickaxe, portal, tree-pine)이 있다. 0.1.0 때부터 세트에서 빠져 있고, 뺀 이유는 기록에 없다.
-- **배포:** npm에는 아직 올리지 않았다. 버전은 0.1.0이다.
+- **배포:** npm에는 아직 올리지 않았다. 버전은 0.1.0이다. 스크립트와 llms.txt의 주소는 GitHub Pages(`https://fe4902.github.io/playglyph/dist/`)를 쓴다.
+- **최근 정리 (2026-11-13):** 134종을 다시 검토해 6종(`trophy`, `joystick`, `leaderboard`, `rocket`, `languages`, `arrow-keys`)을 고쳤다. README를 다시 쓰고 `CONTRIBUTING.md`, `CHANGELOG.md`를 추가했다. 쓰지 않는 데모 자산과 샘플, 갤러리의 이전 스타일 표시 코드를 지웠다. 고친 6종은 아직 Penpot 컴포넌트에 반영하지 않았다.
 
 ## 2. 목표와 원칙
 
@@ -89,8 +90,6 @@
 | 스프라이트 아틀라스 | 빌드할 때 PNG 아틀라스와 Phaser·Pixi용 JSON을 크기별(32·64·128)로 생성 | 엔진에서는 SVG보다 아틀라스가 편하다. `toCanvas`로 하나씩 그리는 것보다 빠르다 |
 | pixel 확대 | 실험 16종 → HUD·재화 중심 40종. 그다음 정식 스타일 여부를 결정 | 도트 게임에서 수요가 있다. 134종 전체를 그리기 전에 반응을 본다 |
 | Penpot 공유 라이브러리 | 지금 파일을 Penpot 공유 라이브러리로 발행하고, 디자이너용 사용법을 문서에 추가 | 디자이너가 화면 시안에 바로 쓰게 한다 |
-| 미리보기 정리 | `preview/index.html`에서 filled가 없는 아이콘을 흐리게 하던 코드 삭제 | line이 없어져서 더 이상 쓰이지 않는다 |
-| 변경 기록 | `CHANGELOG.md` 추가 | line 삭제처럼 호환이 깨지는 변경을 첫 배포 전에 정리한다 |
 
 ## 5. 작업 방식
 
@@ -98,7 +97,7 @@
 
 1. **레퍼런스 확인:** Flaticon(fill), Kenney, RhosGFX에서 같은 의미를 3개 이상 보고, 공통된 형태를 정한다.
 2. **그리기:** 기본은 `scripts/draw-batch-*.mjs`에 `draw-lib` 규칙(외곽선 3.4, 부드러운 모서리 1.4, 하이라이트 한 개)으로 그린다. 형태를 눈으로 맞춰야 하는 미세 조정은 Penpot에서 한다.
-3. **세트 검토:** 새 아이콘을 비슷한 기존 아이콘 사이에 놓고 16·24·48px, 어두운·밝은 배경, filled·sticker에서 확인한다. 문제가 있는 아이콘은 보고하기 전에 고친다.
+3. **세트 검토:** `samples/review.html`에서 새 아이콘을 비슷한 기존 아이콘 사이에 놓고 16·24·48px, 어두운·밝은 배경, filled·sticker에서 확인한다. 문제가 있는 아이콘은 보고하기 전에 고친다.
 4. **동기화와 빌드:** Penpot 컴포넌트를 추가하거나 교체하고(`importStyle`, `replace`), `sync.mjs --init`으로 기준을 맞춘다. `npm run build`의 검사와 크기 검사를 통과해야 끝난다.
 5. **기록:** `ICON-REVIEW.md`에 관찰과 수정 내용을 남긴다.
 

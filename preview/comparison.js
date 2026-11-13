@@ -1,12 +1,10 @@
 import { icon } from '../dist/lookup.js';
 
-const t = (key, fallback) => (window.pgI18n ? window.pgI18n.t(key) : fallback);
-
 const scene = document.getElementById('comparison-scene');
 const slider = document.getElementById('comparison-slider');
 const names = {
   heart: 'heart', coin: 'coins', gem: 'gem', settings: 'settings', pause: 'pause',
-  backpack: 'backpack', sword: 'sword', shield: 'shield', potion: 'flask-conical', map: 'map', gift: 'gift',
+  backpack: 'backpack', sword: 'sword', shield: 'shield', potion: 'flask-conical', map: 'map',
 };
 
 // Vendored, unmodified Lucide SVGs; no CDN or gallery filter dependency.
@@ -26,9 +24,7 @@ function renderHud(style) {
     </div>
     <div class="hud-system"><span class="hud-panel">${glyph('settings')}</span><span class="hud-panel">${glyph('pause')}</span></div>
   </div>
-  <div class="hud-quest hud-panel">${glyph('gift')}<div><strong>${t('hud.quest', '숲속의 작은 모험')}</strong><small>${t('hud.questStep', '숨겨진 보물 찾기 · 2 / 3')}</small></div></div>
-  <div class="hud-hotbar hud-panel">${['sword', 'shield', 'potion', 'map', 'backpack'].map((name, i) => `<span class="hud-slot${i === 0 ? ' is-selected' : ''}"><small>${i + 1}</small>${glyph(name)}</span>`).join('')}</div>
-  <div class="hud-location"><small>EXPLORING</small><strong>${t('hud.location', '고요한 숲')}</strong></div>`;
+  <div class="hud-hotbar hud-panel">${['sword', 'shield', 'potion', 'map', 'backpack'].map((name, i) => `<span class="hud-slot${i === 0 ? ' is-selected' : ''}"><small>${i + 1}</small>${glyph(name)}</span>`).join('')}</div>`;
 }
 
 document.getElementById('hud-lucide').innerHTML = renderHud('lucide');

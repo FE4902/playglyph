@@ -27,7 +27,6 @@
     <div class="hero-copy">
       <p class="badge-row"><span class="badge">v<span data-version>0.1.0</span></span><span class="badge soft" data-i18n="hero.free">무료 · ISC 라이선스</span></p>
       <h1 id="intro-title" data-i18n="hero.title">웹게임을 위한<br />UI 아이콘</h1>
-      <p class="lede" data-i18n="hero.lede">체력 하트, 코인, 보석, 인벤토리부터 설정 메뉴까지. 단색과 컬러 스티커로 제공하고, 게임 분위기에 맞춰 재질을 바꿀 수 있어요.</p>
       <form class="search" action="./preview/" role="search">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
         <input name="q" type="search" aria-label="아이콘 검색" data-i18n-attr="aria-label=search.aria" placeholder="134개 아이콘 검색 — heart, 코인, 설정" autocomplete="off" />
@@ -49,27 +48,19 @@
   <section class="section demo" aria-labelledby="comparison-title">
     <figure class="game-comparison" aria-labelledby="comparison-title">
       <figcaption class="comparison-heading">
-        <h2 id="comparison-title" data-i18n="cmp.title">같은 게임, 다른 아이콘.</h2>
-        <span id="comparison-help" data-i18n="cmp.help">가운데 바를 좌우로 움직여 보세요</span>
+        <h2 id="comparison-title" data-i18n="cmp.title">아이콘 비교</h2>
       </figcaption>
       <div class="comparison-scene" id="comparison-scene" style="--split: 50%">
-        <picture>
-          <source media="(prefers-reduced-motion: reduce)" srcset="./site/pixel-game-still.png" />
-          <img class="game-background" src="./site/pixel-game.gif" width="681" height="381" alt="도트 캐릭터가 걷고 슬라임과 코인이 움직이는 2D 게임 애니메이션" data-i18n-attr="alt=cmp.alt" fetchpriority="high" draggable="false" />
-        </picture>
+        <img class="game-background" src="./site/pixel-rpg-village.png" width="1672" height="941" alt="가을 마을의 돌길에 모험가가 서 있고 옆으로 강과 나무다리가 보이는 도트 RPG 화면" data-i18n-attr="alt=cmp.alt" fetchpriority="high" draggable="false" />
         <div class="game-shade" aria-hidden="true"></div>
         <div class="game-hud game-hud-lucide" id="hud-lucide" aria-hidden="true"></div>
         <div class="game-hud game-hud-playglyph" id="hud-playglyph" aria-hidden="true"></div>
-        <div class="comparison-label label-lucide" aria-hidden="true">Lucide <span data-i18n="cmp.lucideTag">아이콘 적용</span></div>
-        <div class="comparison-label label-playglyph" aria-hidden="true">Playglyph <span data-i18n="cmp.playglyphTag">도트 아이콘 적용</span></div>
+        <div class="comparison-label label-lucide" aria-hidden="true">Lucide</div>
+        <div class="comparison-label label-playglyph" aria-hidden="true">Playglyph</div>
         <div class="comparison-divider" aria-hidden="true"></div>
-        <button class="comparison-handle" id="comparison-slider" type="button" role="slider" aria-label="Lucide와 Playglyph 아이콘 비교" data-i18n-attr="aria-label=cmp.slider" aria-describedby="comparison-help comparison-accessibility" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Lucide 50%, Playglyph 50%" aria-orientation="horizontal">
+        <button class="comparison-handle" id="comparison-slider" type="button" role="slider" aria-label="Lucide와 Playglyph 아이콘 비교" data-i18n-attr="aria-label=cmp.slider" aria-describedby="comparison-accessibility" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Lucide 50%, Playglyph 50%" aria-orientation="horizontal">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M12 6v12" /></svg>
         </button>
-      </div>
-      <div class="comparison-caption">
-        <span data-i18n="cmp.caption">배경과 배치는 그대로. 아이콘만 바꿨어요.</span>
-        <span data-i18n="cmp.source">2D 도트게임 · GIF 데모</span>
       </div>
       <p class="sr-only" id="comparison-accessibility" data-i18n="cmp.sr">체력, 코인, 보석과 장비 아이콘을 비교합니다. 왼쪽·오른쪽 방향키로 조절하고, Home은 Playglyph 전체, End는 Lucide 전체를 표시합니다.</p>
     </figure>
@@ -77,8 +68,8 @@
 
   <section class="section" aria-labelledby="play-title">
     <div class="section-head">
-      <h2 id="play-title" data-i18n="play.title">스타일과 재질을 바꿔 보세요</h2>
-      <p data-i18n="play.desc">같은 아이콘을 단색, 컬러 스티커, 도트로. 재질 하나로 세트 전체를 다시 칠합니다. 아이콘을 누르면 HTML 코드가 복사돼요.</p>
+      <h2 id="play-title" data-i18n="play.title">스타일과 재질</h2>
+      <p data-i18n="play.desc">아이콘을 누르면 HTML이 복사됩니다.</p>
     </div>
     <div class="playground">
       <div class="controls" role="group" aria-label="미리보기 설정" data-i18n-attr="aria-label=play.controls">
@@ -97,20 +88,19 @@
 
   <section class="section" aria-labelledby="features-title">
     <div class="section-head">
-      <h2 id="features-title" data-i18n="feat.title">무엇이 들어 있나요</h2>
+      <h2 id="features-title" data-i18n="feat.title">라이브러리 구성</h2>
     </div>
     <ul class="features">
-      <li><i data-pg="heart" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.icons.t"><span data-stat="icons">134</span>종 게임 UI 아이콘</strong><p data-i18n="feat.icons.d">꽉 찬·반·빈·깨진 하트, 코인, 보석, 물약, 보상, 출석, 잠긴 스테이지까지. 앱 아이콘 세트에 없는 게임 화면 아이콘이 중심입니다.</p></div></li>
-      <li><i data-pg="gem" data-style="sticker" data-material="arcane" data-size="36"></i><div><strong data-i18n="feat.materials.t"><span data-stat="materials">10</span>가지 재질 테마</strong><p data-i18n="feat.materials.d">wood, stone, steel, gold, bronze, silver와 빛나는 lava, poison, arcane, holy. 옵션 하나로 세트 전체를 다시 칠합니다.</p></div></li>
-      <li><i data-pg="search" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.names.t">익숙한 이름 그대로</strong><p data-i18n="feat.names.d">Lucide, Font Awesome, Material 이름 <span data-stat="aliases">814</span>개가 별칭으로 통합니다. 없는 이름은 "?" 아이콘과 비슷한 이름 제안으로 처리돼 화면이 깨지지 않아요.</p></div></li>
-      <li><i data-pg="joystick" data-style="sticker" data-size="36"></i><div><strong>Canvas · Phaser · Pixi</strong><p data-i18n="feat.canvas.d"><code>toImage</code>, <code>toCanvas</code>로 로딩 때 한 번 이미지로 만들고 매 프레임에는 <code>drawImage</code>만.</p></div></li>
+      <li><i data-pg="heart" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.icons.t"><span data-stat="icons">134</span>종 게임 UI 아이콘</strong><p data-i18n="feat.icons.d">체력, 재화, 장비, 보상, 메뉴</p></div></li>
+      <li><i data-pg="gem" data-style="sticker" data-material="arcane" data-size="36"></i><div><strong data-i18n="feat.materials.t"><span data-stat="materials">10</span>가지 재질 테마</strong><p>wood, stone, steel, gold, bronze, silver, lava, poison, arcane, holy</p></div></li>
+      <li><i data-pg="search" data-style="sticker" data-size="36"></i><div><strong data-i18n="feat.names.t">별칭 <span data-stat="aliases">814</span>개</strong><p>Lucide · Font Awesome · Material</p></div></li>
+      <li><i data-pg="joystick" data-style="sticker" data-size="36"></i><div><strong>Canvas · Phaser · Pixi</strong><p><code>toImage</code> · <code>toCanvas</code></p></div></li>
     </ul>
   </section>
 
   <section class="section quick" id="start" aria-labelledby="start-title">
     <div class="section-head">
       <h2 id="start-title" data-i18n="start.title">시작하기</h2>
-      <p data-i18n="start.desc">빌드 없이 스크립트 하나면 돼요. 페이지가 로드되면 <code>data-pg</code>가 붙은 요소가 SVG로 바뀝니다.</p>
     </div>
     <div class="tabpanel">
       <pre><code data-cdn>&lt;script src="{CDN}/playglyph.js"&gt;&lt;/script&gt;
@@ -126,8 +116,7 @@
     <div class="download-card">
       <div>
         <h2 id="dl-title" data-i18n="dl.title">무료로 받기</h2>
-        <p class="dl-meta" data-i18n="dl.meta">v<span data-version>0.1.0</span> · ISC 라이선스 — 상업용 게임에도 무료예요. 저작권 표시만 남겨 주세요.</p>
-        <p class="dl-note" data-i18n="dl.note">SVG 원본, ES 모듈, 전역 스크립트, React 컴포넌트, 스프라이트, llms.txt</p>
+        <p class="dl-meta" data-i18n="dl.meta">v<span data-version>0.1.0</span> · ISC 라이선스</p>
       </div>
       <div class="dl-actions">
         <a class="btn primary" id="dl-zip" href="./playglyph-0.1.0.zip" download><span data-i18n="dl.button">playglyph-<span data-version>0.1.0</span>.zip 받기</span></a>
@@ -139,7 +128,7 @@
 
 <footer>
   <p><a href="https://github.com/FE4902/playglyph">GitHub</a> · <a href="https://github.com/FE4902/playglyph/blob/main/LICENSE" data-i18n="footer.license">ISC 라이선스</a> · <a href="./dist/llms.txt">llms.txt</a></p>
-  <p><span data-i18n="footer.compare">비교 아이콘:</span> <a href="https://lucide.dev/" target="_blank" rel="noreferrer">Lucide</a> · <a href="./preview/assets/lucide/LICENSE" data-i18n="footer.license">ISC 라이선스</a> · lucide-static 0.468.0. <span data-i18n="footer.disclaimer">이 비교 데모는 Playglyph가 제작했으며, Lucide와 제휴하거나 공식 승인을 받은 프로젝트가 아닙니다.</span></p>
+  <p><a href="https://lucide.dev/" target="_blank" rel="noreferrer">Lucide</a> · <a href="./preview/assets/lucide/LICENSE" data-i18n="footer.license">ISC 라이선스</a> · lucide-static 0.468.0</p>
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="./site/home.i18n.js"></script>

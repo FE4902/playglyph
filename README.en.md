@@ -152,6 +152,7 @@ Names are chosen so an AI can guess them. Concepts shared with Lucide use the Lu
 - [Icon gallery](https://fe4902.github.io/playglyph/preview/): all 134 icons by style and material
 - [CONTRIBUTING.md](CONTRIBUTING.md) (Korean): repository layout, local preview, drawing rules, editing in Penpot
 - [ROADMAP.md](ROADMAP.md) (Korean): which icons come next
+- [CHANGELOG.md](CHANGELOG.md): changes (Korean)
 
 ## License
 

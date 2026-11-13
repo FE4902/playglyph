@@ -182,7 +182,7 @@ console.log(`✔ ${icons.length} icons valid — filled ${count('filled')}, stic
   const { measureIcon, sizeWarnings } = await import(pathToFileURL(join(ROOT, 'scripts/size-check.mjs')).href);
   const measured = icons.filter((i) => i.filled).map((i) => ({ name: i.name, allow: i.sizeAllow, ...measureIcon(i.filled) }));
   const { warnings } = sizeWarnings(measured);
-  if (warnings.length) console.warn(`⚠ size: ${warnings.length} icon(s) stand out — compare them on samples/board.html\n  ` + warnings.join('\n  '));
+  if (warnings.length) console.warn(`⚠ size: ${warnings.length} icon(s) stand out — compare them on samples/review.html\n  ` + warnings.join('\n  '));
   else console.log(`✔ size: ${measured.length} filled icons look the same size`);
 }
 if (CHECK_ONLY) process.exit(0);
