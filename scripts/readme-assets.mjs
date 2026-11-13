@@ -71,13 +71,16 @@ function row(names, x, y, size, gap, opts) {
   return names.map((n, i) => place(n, x + i * (size + gap), y, size, typeof opts === 'function' ? opts(n, i) : opts));
 }
 
+const MARK = readFileSync(new URL('../site/favicon.svg', import.meta.url), 'utf8').replace(/<\/?svg[^>]*>/g, '').trim();
 // ---- banner -------------------------------------------------------------------------------------
 function banner() {
   const icons = ['heart', 'coin', 'gem', 'star', 'zap', 'potion', 'sword', 'shield', 'key', 'treasure-chest', 'crown', 'gamepad'];
   const size = 52, gap = 18;
   const x = (W - (icons.length * size + (icons.length - 1) * gap)) / 2;
   return doc(300, 'Playglyph: game UI icons for web games', [
-    text(W / 2, 104, 'Playglyph', { size: 64, weight: 800, fill: INK, anchor: 'middle', spacing: -1 }),
+    // logo mark (same drawing as site/favicon.svg) + wordmark, centered as a pair; 300 is the wordmark's approximate width
+    `<g transform="translate(${(W - 56 - 18 - 300) / 2} 52) scale(${56 / 24})">${MARK}</g>`,
+    text((W - 56 - 18 - 300) / 2 + 56 + 18, 104, 'Playglyph', { size: 64, weight: 800, fill: INK, spacing: -1 }),
     text(W / 2, 146, 'Game UI icons for web games', { size: 21, weight: 500, fill: LABEL, anchor: 'middle' }),
     ...row(icons, x, 196, size, gap),
   ]);
