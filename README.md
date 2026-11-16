@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>웹게임 UI 전용 SVG 아이콘 라이브러리.</b><br>
-  HUD, 재화, 인벤토리, 메뉴, 조작 버튼에 쓰는 아이콘 134종을 AI와 함께 웹게임을 만드는 사람이 바로 쓰도록 만들었습니다.
+  HUD, 재화, 인벤토리, 메뉴, 조작 버튼에 쓰는 아이콘 142종을 AI와 함께 웹게임을 만드는 사람이 바로 쓰도록 만들었습니다.
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@ Lucide나 Font Awesome 같은 앱 아이콘 세트에는 게임 화면에 필요
   <img src=".github/assets/styles.svg" alt="filled와 sticker 스타일, 재질 10종" width="820">
 </p>
 
-- **스타일 두 가지.** `filled`는 원하는 색으로 칠하는 단색 아이콘이고, `sticker`는 두꺼운 외곽선과 명암이 있는 컬러 아이콘입니다. 134종 모두 두 스타일로 그려져 있습니다.
+- **스타일 두 가지.** `filled`는 원하는 색으로 칠하는 단색 아이콘이고, `sticker`는 두꺼운 외곽선과 명암이 있는 컬러 아이콘입니다. 142종 모두 두 스타일로 그려져 있습니다.
 - **재질 10종.** `wood`, `stone`, `steel`, `gold`, `bronze`, `silver`, `lava`, `poison`, `arcane`, `holy`. 재질 하나로 세트 전체를 게임 분위기에 맞춰 다시 칠합니다. 뒤의 네 개는 빛이 납니다.
 - **별칭 814개.** Lucide·Font Awesome·Material 이름(`trash-2`, `xmark`, `floppy-disk`, `play_arrow`)과 게임 용어(`mana`, `xp`, `inventory`, `bgm`)가 그대로 통합니다. 대소문자와 구분자는 무시합니다. 없는 이름은 "?" 아이콘으로 그리고 콘솔에 비슷한 이름을 알려 주므로 화면이 깨지지 않습니다.
 - **AI 코딩용 `llms.txt`.** 아이콘 이름, 쓰임새, 별칭과 짧은 사용 예가 한 파일에 들어 있습니다.
@@ -149,7 +149,7 @@ Icon names and usage: https://fe4902.github.io/playglyph/dist/llms.txt
 ## 더 보기
 
 - [문서](https://fe4902.github.io/playglyph/docs/): 설치, 옵션, 전체 API
-- [아이콘 갤러리](https://fe4902.github.io/playglyph/preview/): 134종을 스타일·재질별로 보기
+- [아이콘 갤러리](https://fe4902.github.io/playglyph/preview/): 142종을 스타일·재질별로 보기
 - [CONTRIBUTING.md](CONTRIBUTING.md): 저장소 구조, 로컬 미리보기, 그리기 규칙, Penpot에서 고치기
 - [ROADMAP.md](ROADMAP.md): 다음에 그릴 아이콘
 - [CHANGELOG.md](CHANGELOG.md): 변경 기록

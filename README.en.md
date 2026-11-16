@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>An SVG icon library made for web game UI.</b><br>
-  134 icons for HUDs, currency, inventory, menus and controls, built for people making web games with AI.
+  142 icons for HUDs, currency, inventory, menus and controls, built for people making web games with AI.
 </p>
 
 <p align="center">
@@ -37,7 +37,7 @@ App icon sets like Lucide and Font Awesome do not have what a game screen needs.
   <img src=".github/assets/styles.svg" alt="The filled and sticker styles, and the ten materials" width="820">
 </p>
 
-- **Two styles.** `filled` is a single-color glyph you can tint any color. `sticker` is a full-color icon with a thick outline and shading. All 134 icons are drawn in both.
+- **Two styles.** `filled` is a single-color glyph you can tint any color. `sticker` is a full-color icon with a thick outline and shading. All 142 icons are drawn in both.
 - **Ten materials.** `wood`, `stone`, `steel`, `gold`, `bronze`, `silver`, `lava`, `poison`, `arcane`, `holy`. One material recolors the whole set to match your game. The last four glow.
 - **814 aliases.** Lucide, Font Awesome and Material names (`trash-2`, `xmark`, `floppy-disk`, `play_arrow`) and game words (`mana`, `xp`, `inventory`, `bgm`) resolve to an icon. Case and separators are ignored. An unknown name renders a "?" icon and logs the closest names, so the page does not break.
 - **`llms.txt` for AI coding.** Icon names, when to use each one, aliases and short usage examples in one file.
@@ -149,7 +149,7 @@ Names are chosen so an AI can guess them. Concepts shared with Lucide use the Lu
 ## More
 
 - [Docs](https://fe4902.github.io/playglyph/docs/): install, options, full API
-- [Icon gallery](https://fe4902.github.io/playglyph/preview/): all 134 icons by style and material
+- [Icon gallery](https://fe4902.github.io/playglyph/preview/): all 142 icons by style and material
 - [CONTRIBUTING.md](CONTRIBUTING.md) (Korean): repository layout, local preview, drawing rules, editing in Penpot
 - [ROADMAP.md](ROADMAP.md) (Korean): which icons come next
 - [CHANGELOG.md](CHANGELOG.md): changes (Korean)

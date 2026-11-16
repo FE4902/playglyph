@@ -1,0 +1,21 @@
+{
+  "description": "Revive, come back to life or continue after losing",
+  "aliases": [
+    "resurrect",
+    "resurrection",
+    "second-chance"
+  ],
+  "tags": [
+    "heart",
+    "respawn",
+    "retry"
+  ],
+  "tagsKo": [
+    "부활",
+    "이어하기",
+    "되살리기"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

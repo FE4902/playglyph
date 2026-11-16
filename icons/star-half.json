@@ -1,0 +1,19 @@
+{
+  "description": "Half star, half a rating point",
+  "aliases": [
+    "half-star",
+    "star-half-stroke",
+    "star-half-alt"
+  ],
+  "tags": [
+    "rating"
+  ],
+  "tagsKo": [
+    "반 별",
+    "별점",
+    "절반"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

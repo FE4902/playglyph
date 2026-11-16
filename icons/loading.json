@@ -1,0 +1,28 @@
+{
+  "description": "Loading or waiting, work in progress",
+  "aliases": [
+    "spinner",
+    "loader",
+    "loader-circle",
+    "progress-activity",
+    "busy"
+  ],
+  "tags": [
+    "wait",
+    "progress"
+  ],
+  "tagsKo": [
+    "로딩",
+    "불러오는 중",
+    "대기"
+  ],
+  "categories": [
+    "system"
+  ],
+  "sizeCheck": {
+    "allow": [
+      "off-center"
+    ],
+    "why": "three quarters of a ring: the open quarter has no weight"
+  }
+}

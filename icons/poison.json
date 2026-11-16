@@ -1,0 +1,22 @@
+{
+  "description": "Poisoned status effect, damage over time",
+  "aliases": [
+    "poisoned",
+    "toxic",
+    "venom",
+    "status-poison"
+  ],
+  "tags": [
+    "status",
+    "debuff",
+    "dot"
+  ],
+  "tagsKo": [
+    "독",
+    "중독",
+    "상태 이상"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

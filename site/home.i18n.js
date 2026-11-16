@@ -9,7 +9,7 @@ pgI18n.add({
   },
   en: {
     'page.title': 'Playglyph — UI icons for web games',
-    'page.description': 'Hearts, coins, gear and settings. 134 free UI icons for web games in solid, color sticker and pixel styles, with 10 materials.',
+    'page.description': 'Hearts, coins, gear and settings. 142 free UI icons for web games in solid, color sticker and pixel styles, with 10 materials.',
     'search.placeholder': 'Search {n} icons — heart, coin, settings',
     'search.aria': 'Search icons',
     'pg.default': 'Default',
@@ -21,7 +21,7 @@ pgI18n.add({
     'hero.lede': 'Health hearts, coins, gear and rewards for game screens, drawn as single-color glyphs and color stickers',
     'cta.browse': 'Browse icons',
     'cta.docs': 'Docs',
-    'hero.facts': '<b data-stat="icons">134</b> icons · <b>3</b> styles · <b data-stat="materials">10</b> materials · <b>0</b> dependencies',
+    'hero.facts': '<b data-stat="icons">142</b> icons · <b>3</b> styles · <b data-stat="materials">10</b> materials · <b>0</b> dependencies',
 
     'cmp.title': 'Same screen, different icons',
     'cmp.desc': 'Drag the handle to switch between Lucide and Playglyph',
@@ -40,7 +40,7 @@ pgI18n.add({
     'play.size': 'Size',
 
     'feat.title': 'Library contents',
-    'feat.icons.t': '<span data-stat="icons">134</span> game UI icons',
+    'feat.icons.t': '<span data-stat="icons">142</span> game UI icons',
     'feat.icons.d': 'Health, currency, gear, rewards, menus',
     'feat.materials.t': '<span data-stat="materials">10</span> material themes',
     'feat.names.t': '<span data-stat="aliases">814</span> aliases',

@@ -1,0 +1,23 @@
+{
+  "description": "Stunned or dizzy status effect, cannot act",
+  "aliases": [
+    "stunned",
+    "dizzy",
+    "daze",
+    "status-stun"
+  ],
+  "tags": [
+    "status",
+    "debuff",
+    "knockout"
+  ],
+  "tagsKo": [
+    "기절",
+    "스턴",
+    "어지러움",
+    "상태 이상"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

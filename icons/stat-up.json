@@ -1,0 +1,22 @@
+{
+  "description": "Buff, a stat raised for a while",
+  "aliases": [
+    "buff",
+    "stat-boost",
+    "attack-up",
+    "chevrons-up",
+    "angles-up"
+  ],
+  "tags": [
+    "status",
+    "increase"
+  ],
+  "tagsKo": [
+    "버프",
+    "능력치 상승",
+    "강화"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

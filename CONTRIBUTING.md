@@ -2,7 +2,7 @@
 
 아이콘을 그리거나 고칠 때 필요한 내용입니다. 사용법은 [README.md](README.md)와 [문서](https://fe4902.github.io/playglyph/docs/)를 보세요.
 
-현재 134종 모두 채운 단색(`filled`)과 스티커(`sticker`)로 그려져 있습니다.
+현재 142종 모두 채운 단색(`filled`)과 스티커(`sticker`)로 그려져 있습니다.
 
 아이콘은 `scripts/draw-batch-*.mjs`로 그립니다(공통 규칙은 `scripts/draw-lib.mjs`). 고친 뒤에는 해당 스크립트를 다시 실행하고 `npm run build`로 검사합니다.
 

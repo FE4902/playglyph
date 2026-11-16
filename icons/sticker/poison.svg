@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" data-materials="poison">
+  <path d="M12 2.6C12 2.6 5 10 5 14.4a7 7 0 0 0 14 0C19 10 12 2.6 12 2.6z" fill="#0f2410" data-fill="outline" stroke="#0f2410" data-stroke="outline" stroke-width="3.4" stroke-linejoin="round"/>
+  <path d="M12 2.6C12 2.6 5 10 5 14.4a7 7 0 0 0 14 0C19 10 12 2.6 12 2.6z" fill="#2f6b1c" data-fill="shadow"/>
+  <path d="M12 2.6C12 2.6 5 10 5 14.4a7 7 0 0 0 14 0C19 10 12 2.6 12 2.6z" fill="#62ad24" data-fill="base" transform="translate(-0.5 -0.6)"/>
+  <path d="M7.55 13.6a1.75 1.75 0 1 0 3.5 0a1.75 1.75 0 1 0 -3.5 0z" fill="#0f2410" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M12.95 13.6a1.75 1.75 0 1 0 3.5 0a1.75 1.75 0 1 0 -3.5 0z" fill="#0f2410" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M12 16.2L13.1 18.3L10.9 18.3z" fill="#0f2410" data-fill="outline" transform="translate(-0.5 -0.6)"/>
+  <path d="M8.2 9.4 9.6 7.4" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" stroke="#ecffc0" data-stroke="shine"/>
+</svg>

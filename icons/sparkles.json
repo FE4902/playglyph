@@ -3,13 +3,13 @@
   "aliases": [
     "new",
     "shine",
-    "buff",
     "magic-effect",
     "auto-awesome",
     "wand-stars"
   ],
   "tags": [
-    "rare"
+    "rare",
+    "buff"
   ],
   "tagsKo": [
     "반짝임",

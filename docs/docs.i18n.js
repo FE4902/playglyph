@@ -55,7 +55,7 @@ pgI18n.add({
     'usage.canvas.p3': 'Pixel icons draw straight onto a canvas with <code>drawPixel</code>. It is synchronous, with no image decoding, so it is safe inside the game loop.',
     'usage.canvas.p4': 'With ES modules, import <code>toCanvas</code> and <code>toImage</code> from <code>playglyph</code>, <code>stickerToImage</code> and <code>stickerToCanvas</code> from <code>playglyph/sticker</code>, and <code>drawPixel</code> and <code>pixelToCanvas</code> from <code>playglyph/pixel</code>.',
     'usage.ai.p1': 'Give your AI coding tool this one line. It points to a document with every icon name, alias and usage example.',
-    'usage.ai.p2': 'llms.txt lists all <span data-stat="icons">134</span> icons with their names, what they are for, their aliases, plus short usage examples. You can also paste this into your prompt.',
+    'usage.ai.p2': 'llms.txt lists all <span data-stat="icons">142</span> icons with their names, what they are for, their aliases, plus short usage examples. You can also paste this into your prompt.',
 
     // Options
     'options.title': 'Options',
@@ -97,7 +97,7 @@ pgI18n.add({
     'styles.filled.title': 'Solid',
     'styles.filled.body': 'The default. 24×24 single-color icons painted with <code>currentColor</code>, so they follow the text color. The same role as Font Awesome solid.',
     'styles.sticker.title': 'Sticker',
-    'styles.sticker.body': '24×24 full-color icons with a thick outline, shadow and highlight. All <span data-stat="icons">134</span> icons have one, and materials repaint them.',
+    'styles.sticker.body': '24×24 full-color icons with a thick outline, shadow and highlight. All <span data-stat="icons">142</span> icons have one, and materials repaint them.',
     'styles.pixel.title': 'Pixel',
     'styles.beta': 'Beta',
     'styles.pixel.body': '16×16 pixel art, crisp at multiples of 16 such as 16, 32 and 48px. Only some icons have it so far.',

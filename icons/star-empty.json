@@ -1,0 +1,22 @@
+{
+  "description": "Empty star, an unearned slot in a stage rating",
+  "aliases": [
+    "empty-star",
+    "star-outline",
+    "star-slot",
+    "star-off",
+    "star-border"
+  ],
+  "tags": [
+    "rating",
+    "slot"
+  ],
+  "tagsKo": [
+    "빈 별",
+    "별점",
+    "못 얻은 별"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

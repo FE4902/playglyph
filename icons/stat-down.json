@@ -1,0 +1,23 @@
+{
+  "description": "Debuff, a stat lowered for a while",
+  "aliases": [
+    "debuff",
+    "weaken",
+    "nerf",
+    "attack-down",
+    "chevrons-down",
+    "angles-down"
+  ],
+  "tags": [
+    "status",
+    "decrease"
+  ],
+  "tagsKo": [
+    "디버프",
+    "능력치 하락",
+    "약화"
+  ],
+  "categories": [
+    "hud"
+  ]
+}

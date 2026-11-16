@@ -1,13 +1,13 @@
 # Playglyph 다음 단계 기획
 
-2026-11-09 작성, 2026-11-13 갱신. 아이콘을 계속 늘릴 때 무엇을 먼저 그리고 무엇을 만들지 정한다. 순서는 웹게임을 만드는 사람(그리고 AI)이 실제로 막히는 지점을 기준으로 정했다.
+2026-11-09 작성, 2026-11-16 갱신(8–11장 추가, 배치 12 완료). 아이콘을 계속 늘릴 때 무엇을 먼저 그리고 무엇을 만들지 정한다. 순서는 웹게임을 만드는 사람(그리고 AI)이 실제로 막히는 지점을 기준으로 정했다.
 
 ## 1. 지금 상태
 
-- **아이콘 134종:** 모두 `filled`(단색)와 `sticker`(컬러) 두 스타일로 그렸다. `pixel`은 16종만 있는 실험 스타일이다. line 스타일은 2026-11-09에 지웠다.
-- **카테고리 분포:** hud 32, control 27, menu 22, system 22, currency 9, input 7, social 7, combat 6, misc 2. 화면 조작과 HUD는 충분하다. 전투·소셜·아이템 쪽은 얇다.
+- **아이콘 142종:** 134종에 배치 12의 8종을 더했다(2026-11-16). 모두 `filled`(단색)와 `sticker`(컬러) 두 스타일로 그렸다. `pixel`은 16종만 있는 실험 스타일이다. line 스타일은 2026-11-09에 지웠다.
+- **카테고리 분포:** hud 39, control 27, menu 22, system 23, currency 9, input 7, social 7, combat 6, misc 2. 화면 조작과 HUD는 충분하다. 전투·소셜·아이템 쪽은 얇다.
 - **재질 10종:** wood, stone, steel, gold, bronze, silver, lava, poison, arcane, holy. 세트 전체를 다시 칠한다.
-- **별칭:** 814개. Lucide·Font Awesome·Material 이름과 게임 용어가 기존 아이콘으로 연결된다. 그래서 mana, xp, energy, inventory, craft, vip 같은 단어는 이미 그려진다.
+- **별칭:** 848개. Lucide·Font Awesome·Material 이름과 게임 용어가 기존 아이콘으로 연결된다. 그래서 mana, xp, energy, inventory, craft, vip 같은 단어는 이미 그려진다.
 - **Penpot 라이브러리:** Filled·Sticker 페이지에 컴포넌트 268개가 있다. `scripts/penpot/`로 Penpot에서 고친 내용을 `icons/`로 되돌린다.
 - **보관된 아이콘:** `archive/icons/`에 9종(axe, bomb, castle, dice-d20, ghost, mushroom, pickaxe, portal, tree-pine)이 있다. 0.1.0 때부터 세트에서 빠져 있고, 뺀 이유는 기록에 없다.
 - **배포:** npm에는 아직 올리지 않았다. 버전은 0.1.0이다. 스크립트와 llms.txt의 주소는 GitHub Pages(`https://fe4902.github.io/playglyph/dist/`)를 쓴다.
@@ -18,7 +18,7 @@
 **목표:** 흔한 웹게임 화면(타이틀, HUD, 인벤토리, 상점, 결과, 설정)을 Playglyph 아이콘만으로 채울 수 있게 한다. 지금은 상태 이상, 장비 슬롯, 별점 결과 화면, 소셜 화면에서 대체할 아이콘이 없다.
 
 **원칙**
-- **새 의미만 추가한다.** 별칭으로 해결되는 단어는 그리지 않는다. 대신 별칭이 게임 맥락에서 틀린 경우는 고친다(7장).
+- **새 의미만 추가한다.** 별칭으로 해결되는 단어는 그리지 않는다. 대신 별칭이 게임 맥락에서 틀린 경우는 고친다(9장).
 - **레퍼런스를 먼저 본다.** Flaticon, Kenney Game Icons, RhosGFX에서 그 의미를 흔히 어떻게 그리는지 확인한 뒤 그린다.
 - **세트로 검토한다.** 배치마다 새 아이콘을 기존 아이콘 사이에 섞어 놓고 네 가지를 본다. 톤, 24px에서 라벨 없이 알아보는지, 관례적인 형태인지, 시각 크기다. 크기는 16·24·48px, 어두운 배경과 밝은 배경에서 본다.
 - **메타데이터도 함께 쓴다.** 아이콘마다 `description`, 별칭, 한국어 태그를 같이 쓴다. AI가 이름을 추측해도 맞도록 하기 위해서다.
@@ -41,7 +41,7 @@
 | `helmet` | 머리 장비 슬롯 | combat | 장비 슬롯 한 벌 |
 | `armor` | 몸 장비 슬롯 | combat | 지금은 `armor → shield`. 갑옷 그림을 따로 둠 |
 | `boots` | 신발 장비 슬롯, 이동 속도 | combat | 장비 슬롯 |
-| `ring` | 반지 장비 슬롯 | combat | 지금은 `ring → bell`(울림). 7장 참고 |
+| `ring` | 반지 장비 슬롯 | combat | 지금 `icon('ring')`은 "?" 자리 표시가 나온다 |
 | `filter` | 인벤토리·목록 필터 | control | 인벤토리 UI |
 | `sort` | 정렬 | control | 인벤토리 UI |
 | `loading` | 로딩, 대기 중 | system | 회전 표시. `hourglass`와 구분 |
@@ -105,18 +105,132 @@
 
 | 단계 | 내용 | 끝났다고 보는 기준 |
 | --- | --- | --- |
-| 1 | 1차 아이콘 16종. 별칭 정리(7장) | 별점 결과 화면, 상태 이상 HUD, 장비 슬롯 4칸, 인벤토리 필터·정렬을 Playglyph만으로 만든 샘플 화면이 있다 |
+| 1 | 1차 아이콘 16종(8장). 별칭 정리(9장) | 별점 결과 화면, 상태 이상 HUD, 장비 슬롯 4칸, 인벤토리 필터·정렬을 Playglyph만으로 만든 샘플 화면이 있다 |
 | 2 | 2차 아이콘 15종. pixel 40종 | 소셜 화면과 모바일 터치 조작 샘플이 있다. pixel 정식화 여부를 결정한다 |
-| 3 | 알림 배지, 쿨다운, 스프라이트 아틀라스 | 데모 게임 화면에서 세 기능을 쓴다. 타입 정의와 문서가 있다 |
+| 3 | 알림 배지, 쿨다운, 로딩 회전, 스프라이트 아틀라스(10장) | 데모 게임 화면에서 세 기능을 쓴다. 타입 정의와 문서가 있다 |
 | 4 | 0.2.0 npm 배포. 3차 아이콘 | CHANGELOG, llms.txt, 문서 사이트가 최신이다. 설치 후 바로 쓰는 예제가 동작한다 |
 
 각 단계의 샘플 화면은 실제 게임 화면 구성으로 아이콘이 충분한지 확인하는 용도다. 단계를 마칠 때 샘플 화면을 보고 다음 단계의 목록을 조정한다.
 
 ## 7. 결정이 필요한 사항과 위험
 
-- **어긋난 별칭:** `ring → bell`은 게임에서 반지 장비로 쓰일 때 종이 그려진다. `armor → shield`, `hand → pointer`, `buff → sparkles`도 새 아이콘이 생기면 그쪽으로 옮겨야 한다. 별칭을 옮기면 기존 코드의 그림이 바뀌므로 0.2.0 변경 기록에 적는다.
+- **어긋난 별칭:** `armor → shield`, `buff → sparkles`, `coins → coin`, `friends → users`, `hand → pointer`는 새 아이콘이 생기면 그쪽으로 옮겨야 한다(9장). 별칭을 옮기면 기존 코드의 그림이 바뀌므로 0.2.0 변경 기록에 적는다. 이전 판에 적었던 `ring → bell`은 틀렸다. `ring`은 `bell`의 검색 태그일 뿐 별칭이 아니다.
+- **`poison` 이름:** 재질 이름 `poison`과 같다. `icon('poison')`과 `material: 'poison'`은 자리가 달라 충돌하지 않지만, AI가 헷갈릴 수 있다. 배치 12에서는 `poison`으로 그리고 `poisoned`를 별칭으로 뒀다. 이름을 바꾸려면 0.2.0 배포 전에 한다.
+- **다른 기획서와 순서가 다르다:** `docs/superpowers/specs/2026-11-09-icon-expansion-design.md`는 전리품·인벤토리 8종(`loot-pickup`, `equip`, `stack-split`, `repair` 등)을 1차로, 상태 효과를 2차 후보로 둔다. 이 문서는 상태 효과와 결과 화면을 먼저 뒀고 배치 12를 그렇게 그렸다. 배치 13을 시작하기 전에 두 문서 중 어느 쪽 목록을 따를지 정한다.
+- **래스터 도구:** 스프라이트 아틀라스를 만들려면 빌드에 SVG → PNG 변환기가 필요하다. 지금 저장소는 의존성이 없다. 개발 의존성(`@resvg/resvg-js` 등)을 하나 받아들일지 정한다.
+- **배지 숫자:** SVG `<text>`는 글꼴에 따라 모양이 달라진다. 숫자 0–9와 `+`를 경로로 직접 그릴지 정한다(10장).
 - **archive 9종:** 뺀 이유가 기록에 없다. 다시 그리기 전에 그때 무엇이 문제였는지(형태, 크기, 의미 중복) 확인한다.
 - **카테고리:** `misc`에 2종뿐이다. 3차의 세계관 아이콘이 들어오면 `world`나 `items` 카테고리를 새로 만들지 결정한다. 카테고리 목록은 `scripts/build.mjs`에 고정돼 있어 추가하려면 코드도 바꿔야 한다.
 - **pixel 정식화:** 134종을 모두 도트로 그리는 데 드는 비용이 크다. 2단계의 40종 반응을 보고 정한다.
 - **배포 시점:** npm 배포 전까지는 호환을 깨는 변경이 자유롭다. 별칭 정리처럼 깨지는 변경은 0.2.0 전에 끝낸다.
+- **Penpot 반영 보류 (2026-11-16):** Penpot 라이브러리는 268개 컴포넌트에서 멈춰 있다. 반영할 것은 11월 13일에 고친 6종(`trophy`, `joystick`, `leaderboard`, `rocket`, `languages`, `arrow-keys`)의 교체와 배치 12의 8종 추가다. 다시 시작할 때 `replace`와 `importStyle`로 넣고 `sync.mjs --init`으로 기준을 맞춘다.
 - **Penpot 연결:** 플러그인 탭이 화면에 보이지 않으면 연결이 끊긴다. 큰 배치를 Penpot에 넣을 때는 Penpot 창을 띄워 둔 상태에서 작업한다.
+
+## 8. 1단계 상세: 아이콘 설계안
+
+1차 16종을 배치 두 개로 나눈다. 형태는 그리기 전의 안이다. 2장 원칙대로 배치를 시작할 때 Flaticon·Kenney·RhosGFX에서 확인하고 바꾼다.
+
+### 배치 12: 결과 화면과 상태 이상 (8종) — 완료 (2026-11-16)
+
+아래 표는 그리기 전의 안이다. 실제로 그린 형태와 달라진 점은 `ICON-REVIEW.md`의 배치 12 기록에 있다. Penpot 컴포넌트는 아직 넣지 않았다.
+
+| 이름 | 형태(안) | 스티커 색 | 별칭 | 나란히 놓고 볼 아이콘 |
+| --- | --- | --- | --- | --- |
+| `star-empty` | `star`와 같은 외곽. filled는 테두리만, sticker는 어두운 슬롯 면 (`heart-empty` 방식) | gold | `star-outline`, `empty-star`, `star-slot`, `star-off` | `star`, `heart-empty` |
+| `star-half` | 왼쪽 절반은 채우고 오른쪽은 빈 칸 | gold | `half-star`, `star-half-stroke`, `star_half` | `star`, `heart-half` |
+| `poison` | 독 방울과 거품 두 개. 방울 하나뿐인 `droplet`과 실루엣이 달라야 한다 | 고정 초록 | `poisoned`, `toxic`, `venom` | `droplet`, `flame`, `snowflake` |
+| `stun` | 호를 그리며 도는 작은 별 세 개 | gold | `stunned`, `dizzy`, `daze` | `sparkles`, `star` |
+| `stat-up` | 위로 향한 셰브론 두 겹. 원 안에 화살표가 든 `level-up`과 구분 | 고정 초록 | `buff`(이동), `boost`, `stat-boost` | `level-up`, `arrow-up` |
+| `stat-down` | 아래로 향한 셰브론 두 겹 | 고정 빨강 | `debuff`, `weaken`, `nerf` | `stat-up`, `arrow-down` |
+| `revive` | 하트와 그 둘레를 도는 화살표. 십자가 든 `heart-plus`(회복)와 구분 | 고정 빨강 | `resurrect`, `continue`, `extra-life` | `heart-plus`, `restart` |
+| `loading` | 끝이 둥근 3/4 원호. 화살촉이 있는 `restart`와 구분 | steel | `spinner`, `loader`, `loader-circle`, `progress_activity` | `restart`, `hourglass` |
+
+### 배치 13: 장비·전투·목록 (8종)
+
+| 이름 | 형태(안) | 스티커 색 | 별칭 | 나란히 놓고 볼 아이콘 |
+| --- | --- | --- | --- | --- |
+| `helmet` | 눈 슬릿이 있는 기사 투구 정면 | steel | `helm`, `headgear`, `head-slot` | `skull`, `shield` |
+| `armor` | 어깨가 있는 흉갑 정면 | steel | `armor`(이동), `chestplate`, `body-armor` | `shirt`, `shield` |
+| `boots` | 옆에서 본 장화 한 짝 | steel | `boot`, `shoes`, `speed-boots` | `rocket`(속도) |
+| `ring` | 위에 보석이 달린 반지 | gold + 보석은 보조 재질 | `accessory`, `jewelry` | `gem`, `coin` |
+| `bomb` | 둥근 몸통, 짧은 심지, 불꽃. archive 도안을 먼저 본다 | 고정 검정 + 불꽃 | `explosive`, `tnt`, `grenade` | `potion`, `flame` |
+| `boss` | 뿔 두 개가 달린 해골 | steel | `boss-fight`, `elite`, `demon` | `skull`, `crown` |
+| `filter` | 깔때기 | steel | `funnel`, `filter-list`, `filter_alt` | `potion`(병 실루엣) |
+| `sort` | 길이가 줄어드는 가로줄 세 개와 아래 화살표 | steel | `sort-desc`, `arrow-down-wide-narrow`, `sort-amount-down` | `list`, `menu`, `bar-chart` |
+
+`loading`의 회전은 그림이 아니라 옵션으로 넣는다(10장).
+
+## 9. 별칭 이동
+
+새 아이콘이 들어오면 아래 별칭이 가리키는 곳을 바꾼다. 모두 호환이 깨지는 변경이라 0.2.0 변경 기록에 적는다.
+
+| 별칭 | 지금 가리키는 곳 | 옮길 곳 | 시점 |
+| --- | --- | --- | --- |
+| `armor` | `shield` | `armor` (아이콘 이름이 됨) | 배치 13 |
+| `buff` | `sparkles` | `stat-up` | 배치 12 (완료) |
+| `coins` | `coin` | `coins` (아이콘 이름이 됨) | 2단계 |
+| `friends` | `users` | `friend` | 2단계 |
+| `hand` | `pointer` | `interact` | 2단계 |
+
+`bell`의 검색 태그 `ring`은 `ringing`으로 바꾼다. 갤러리에서 "ring"을 찾을 때 반지가 먼저 나오게 하기 위해서다.
+
+빌드는 이름과 별칭이 겹치면 실패한다. 그래서 새 아이콘의 json을 넣는 커밋에서 기존 별칭을 함께 지워야 한다.
+
+## 10. 기능 명세 초안
+
+### 알림 배지
+
+```js
+icon('mail', { badge: true })   // 점
+icon('mail', { badge: 3 })      // 숫자
+icon('mail', { badge: 120 })    // "99+"
+```
+
+```html
+<i data-pg="quest" data-badge="3"></i>
+```
+
+- 위치는 오른쪽 위, 24×24 상자 안이다. 점은 반지름 3, 숫자 배지는 반지름 4.5로 시작해 보면서 맞춘다.
+- 색은 하트의 고정 빨강(`#e33e4a`, 외곽 `#4a1029`)을 쓴다. 재질을 바꿔도 배지는 그대로다.
+- 32px 미만에서는 숫자가 읽히지 않으므로 점만 그린다.
+- filled와 sticker 모두 지원한다. filled에서는 배지 둘레를 아이콘에서 파내 틈을 둔다(꺼짐 사선과 같은 방식).
+- 숫자는 글꼴에 기대지 않게 경로로 그리는 쪽을 먼저 시도한다(7장).
+
+### 쿨다운
+
+```js
+icon('magic-wand', { style: 'sticker', cooldown: 0.4 })  // 40% 남음
+```
+
+- 12시 방향에서 시계 방향으로 줄어드는 어두운 부채꼴을 아이콘 위에 덮는다. 덮개는 아이콘 실루엣 안으로 자른다. 실루엣은 테두리 옵션(`border`)이 쓰는 외곽 레이어를 다시 쓴다.
+- `cooldown: 0`이면 덮개가 없다. `1`이면 `state: 'disabled'`와 비슷하게 보인다.
+- 매 프레임 SVG를 다시 만들면 느리다. 캔버스용으로 덮개만 그리는 함수(`drawCooldown(ctx, x, y, size, ratio)`)를 함께 낼지 3단계에서 정한다.
+
+### 로딩 회전
+
+- `icon('loading', { spin: true })`가 SVG에 회전 애니메이션을 넣는다. 외부 CSS 없이 동작하도록 SVG 안의 `<animateTransform>`을 먼저 검토한다.
+- `prefers-reduced-motion`에서는 돌지 않게 한다.
+
+### 스프라이트 아틀라스
+
+- 빌드가 `dist/atlas/<style>-<size>.png`와 같은 이름의 `.json`을 만든다. 크기는 32·64·128이다.
+- JSON은 TexturePacker의 JSON Hash 형식으로 쓴다. Phaser(`load.atlas`)와 Pixi(`Assets.load`)가 그대로 읽는다.
+- 기본은 sticker의 기본 재질 한 벌이다. 재질별 아틀라스는 파일이 10배가 되므로 필요한 재질을 고르는 스크립트(`node scripts/atlas.mjs --material gold`)로 둔다.
+- 래스터 도구가 필요하다(7장).
+
+## 11. 단계별 샘플 화면
+
+단계가 끝났는지는 아래 화면을 Playglyph 아이콘만으로 만들 수 있는지로 본다. 화면은 `samples/`에 정적 페이지로 둔다.
+
+| 단계 | 화면 | 쓰는 아이콘 |
+| --- | --- | --- |
+| 1 | 스테이지 결과 | `star`, `star-empty`, `star-half`, `trophy`, `coin`, `restart`, `home`, `play` |
+| 1 | 전투 HUD | `heart` 계열, `zap`, `poison`, `stun`, `stat-up`, `stat-down`, `flame`, `snowflake`, `boss`, `revive` |
+| 1 | 장비·인벤토리 | `helmet`, `armor`, `boots`, `ring`, `sword`, `shield`, `backpack`, `filter`, `sort`, `lock` |
+| 1 | 로딩 | `loading` |
+| 2 | 소셜 | `friend`, `guild`, `emote`, `message-circle`, `user-plus`, `leaderboard` |
+| 2 | 모바일 터치 조작 | `dpad`, `jump`, `dash`, `interact`, `pause` |
+| 2 | 상점 | `coins`, `gem`, `exchange`, `spin-wheel`, `gift`, `badge-percent` |
+| 3 | 스킬 바와 메뉴 | 쿨다운이 걸린 스킬 아이콘 4개, 배지가 붙은 `mail`·`quest`·`store` |
+
+화면을 만들다 빠진 아이콘이 나오면 3장 목록에 추가하고, 쓰이지 않은 아이콘은 다음 차수로 미룬다.
